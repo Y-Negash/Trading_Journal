@@ -22,7 +22,7 @@ public class TradeService {
         return tradeRepository.findById(id);
     }
 
-    public void addTrade(Trade trade){
-        tradeRepository.save(trade);
+    public Trade addTrade(Trade trade){
+       return tradeRepository.save(trade);
     }
 }
