@@ -1,8 +1,17 @@
 package com.example.trading_journal.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Trade {
 
 //  PROPERTIES
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long tradeId;
 
     private TradeTypeEnum tradeType;
