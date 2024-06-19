@@ -44,7 +44,7 @@ public class TraderController {
             trader.setNumOfTrades(traderDTO.getNumOfTrades());
             return new ResponseEntity<>(trader, HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(trader, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
 }
