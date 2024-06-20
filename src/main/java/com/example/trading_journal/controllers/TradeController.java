@@ -43,7 +43,6 @@ public class TradeController {
 
     @PatchMapping("/{id}/edit")
     public ResponseEntity<Trade> updateTrade(@PathVariable Long id, @RequestBody TradeDTO tradeDTO){
-    // check if trade exists
         Optional<Trade> trade = tradeService.getTradeById(id);
         if(trade.isPresent()){
             trade.get().setTradeType(tradeDTO.getTradeType());
@@ -56,6 +55,17 @@ public class TradeController {
             return new ResponseEntity<>(updatedTrade, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> removeTrade(@PathVariable Long id){
+        Optional<Trade> trade = tradeService.getTradeById(id);
+        if(trade.isPresent()){
+            tradeService.deleteTrade(id);
+            return new ResponseEntity<>("Trade has been removed", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("This trade does not exist", HttpStatus.NOT_FOUND);
         }
     }
 }
