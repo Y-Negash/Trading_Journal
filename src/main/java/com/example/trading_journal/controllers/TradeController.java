@@ -1,6 +1,7 @@
 package com.example.trading_journal.controllers;
 
 import com.example.trading_journal.models.Trade;
+import com.example.trading_journal.models.TradeDTO;
 import com.example.trading_journal.services.TradeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/trades")
@@ -38,4 +40,23 @@ public class TradeController {
         Trade addedTrade= tradeService.addTrade(newTrade);
         return new ResponseEntity<>(addedTrade, HttpStatus.CREATED);
     }
+
+    @PatchMapping("/{id}/edit")
+    public ResponseEntity<Trade> updateTrade(@PathVariable Long id, @RequestBody TradeDTO tradeDTO){
+    // check if trade exists
+        Optional<Trade> trade = tradeService.getTradeById(id);
+        if(trade.isPresent()){
+            trade.get().setTradeType(tradeDTO.getTradeType());
+            trade.get().setStopLossVal(tradeDTO.getStopLossVal());
+            trade.get().setTakeProfit(tradeDTO.getTakeProfit());
+            trade.get().setTimeOfCreation(tradeDTO.getTimeOfCreation());
+            trade.get().setDateOfCreation(tradeDTO.getDateOfCreation());
+            Trade updatedTrade = tradeService.addTrade(trade.get());
+
+            return new ResponseEntity<>(updatedTrade, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
+    }
 }
+
