@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/traders")
@@ -25,23 +26,20 @@ public class TraderController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Trader> getTrader(@PathVariable long id){
-        Trader trader = traderService.getTraderById(id).orElse(null);
-        if(trader != null){
-            return new ResponseEntity<>(trader, HttpStatus.OK);
+        Optional<Trader> trader = traderService.getTraderById(id);
+        if(trader.isPresent()){
+            return new ResponseEntity<>(trader.get(), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
 
-    @PatchMapping("/{id}/ratio")
+    @PatchMapping("/{id}/edit")
     public ResponseEntity<Trader> updateTrader(@RequestBody TraderDTO traderDTO, @PathVariable long id) {
-        Trader trader = traderService.getTraderById(id).orElse(null);
-        // check if Trader exists
-        if (trader != null) {
-            // set properties to updated version using setters
-            trader.setNumOfWins(traderDTO.getNumOfWins());
-            trader.setNumOfTrades(traderDTO.getNumOfTrades());
-            return new ResponseEntity<>(trader, HttpStatus.OK);
+        Optional<Trader> trader = traderService.getTraderById(id);
+        if (trader.isPresent()) {
+            Trader updatedTrader = traderService.updateTrader(traderDTO, id);
+            return new ResponseEntity<>(updatedTrader, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
