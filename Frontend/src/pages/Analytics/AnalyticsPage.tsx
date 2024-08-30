@@ -1,11 +1,12 @@
 import React from "react";
 
-const AnalyticsPage = () => {
+const AnalyticsPage:React.FC = () => {
+   
    return(
     <>
-    <h1>This will be the Analytics Page</h1>
+      <h2>ANALYTICS PAGE</h2>
     </>
-   )
+   );
 }
 
 export default AnalyticsPage;
