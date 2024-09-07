@@ -1,10 +1,15 @@
 import React from "react";
+import TradeForm from "./TradeForm";
+import './HomePage.css';
 
 const HomePage: React.FC = () => {
-    
+   
     return(
         <>
-        <h1>HOMEPAGE</h1>
+        <div className="container">
+            <h1 id="title">Trading Journal</h1>
+            <TradeForm />
+        </div>
         </>
     );
 }

@@ -1,4 +1,3 @@
-import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './pages/Home/HomePage';
 import AnalyticsPage from './pages/Analytics/AnalyticsPage';
