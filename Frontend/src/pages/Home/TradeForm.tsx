@@ -2,14 +2,11 @@ import React from "react";
 
 const TradeForm: React.FC = () => {
 
-    function handleSubmit(e: FormEvent<HTMLFormElement>): void {
-        throw new Error("Function not implemented.");
-    }
 
     return(
         <>
         <h2>Add a trade: </h2>
-        <form onSubmit={handleSubmit}>
+        <form>
             <label>Name: </label>
             <input type="text" id="name" name="name" />
             <label>Date: </label>
