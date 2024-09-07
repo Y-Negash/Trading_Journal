@@ -1,8 +1,6 @@
 .container {
     display: flex;
-}
-
-#title {
-    margin: 1rem;
-    text-align: left;
+    flex-direction: column;
+    
+    
 }
