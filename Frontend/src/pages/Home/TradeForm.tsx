@@ -1,24 +1,93 @@
-import React from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 
-const TradeForm: React.FC = () => {
+interface Trade{
+    name: string,
+    tradeDate: Date,
+    entryPoint: number,
+    exitPoint: number,
+    stopLoss: number,
+    takeProfit: number,
+}
 
+interface TradeFormProps{
+    addTrade: (trade: Trade) => void,
+
+}
+
+const TradeForm: React.FC<TradeFormProps> = ({ addTrade }) => {
+
+    const[name, setName] = useState("");
+    const[tradeDate, setTradeDate] = useState(new Date(0));
+    const[entryPoint, setEntryPoint] = useState(0);
+    const[exitPoint, setExitPoint] = useState(0);
+    const[stopLoss, setStopLoss] = useState(0);
+    const[takeProfit, setTakeProfit] = useState(0);
+
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        addTrade({name, tradeDate, entryPoint, exitPoint, stopLoss, takeProfit});
+        console.log("being added");
+        setName("");
+        setTradeDate(new Date(0));
+        setEntryPoint(0);
+        setExitPoint(0);
+        setStopLoss(0);
+        setTakeProfit(0);
+    }
+
+    const dateString = tradeDate.toISOString().split('T')[0];
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setTradeDate(new Date(e.target.value));
+    }
 
     return(
         <>
         <h2>Add a trade: </h2>
-        <form>
+        <form onSubmit={handleSubmit}>
             <label>Name: </label>
-            <input type="text" id="name" name="name" />
+            <input 
+                id="name" 
+                type="text" 
+                value={name}
+                onChange={(e) => {setName(e.target.value)}}
+            />
             <label>Date: </label>
-            <input type="date" id="date" name="date"/>
+            <input 
+                id="date" 
+                type="date" 
+                value={dateString}
+                onChange={handleChange}
+            />
             <label>Entry Point: </label>
-            <input type="number" id="entry" name="entry"/>
+            <input 
+                id="entry" 
+                type="number" 
+                value={entryPoint}
+                onChange={(e) => {setEntryPoint(e.target.valueAsNumber)}}
+            />
             <label>Exit Point: </label>
-            <input type="number" id="exit" name="exit"/>
+            <input 
+                id="exit" 
+                type="number" 
+                value={exitPoint}
+                onChange={(e) => {setExitPoint(e.target.valueAsNumber)}}
+            />
             <label>Stop Loss: </label>
-            <input type="number" id="stop" name="stop"/>
+            <input 
+                id="stop" 
+                type="number" 
+                value={stopLoss}
+                onChange={(e) => {setStopLoss(e.target.valueAsNumber)}}
+            />
             <label>Take Profit: </label>
-            <input type="number" id="profit" name="profit"/>
+            <input 
+                id="take" 
+                type="number" 
+                value={takeProfit}
+                onChange={(e) => {setTakeProfit(e.target.valueAsNumber)}}
+            />
+            <button type="submit">Submit</button>
         </form>
         </>
     )
