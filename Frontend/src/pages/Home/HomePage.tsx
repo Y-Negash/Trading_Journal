@@ -17,12 +17,10 @@ interface HomePageProps{
 const HomePage: React.FC<HomePageProps> = ({ addTrade }) => {
 
     return(
-        <>
         <div className="container">
             <h1 id="title">Trading Journal</h1>
-            <TradeForm addTrade={addTrade} />
+            <TradeForm className="trade-form" addTrade={addTrade} />
         </div>
-        </>
     );
 }
 

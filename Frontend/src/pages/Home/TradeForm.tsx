@@ -1,4 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
+import './TradeForm.css';
 
 interface Trade{
     name: string,
@@ -11,7 +12,6 @@ interface Trade{
 
 interface TradeFormProps{
     addTrade: (trade: Trade) => void,
-
 }
 
 const TradeForm: React.FC<TradeFormProps> = ({ addTrade }) => {
@@ -44,7 +44,7 @@ const TradeForm: React.FC<TradeFormProps> = ({ addTrade }) => {
     return(
         <>
         <h2>Add a trade: </h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="trade-form">
             <label>Name: </label>
             <input 
                 id="name" 
