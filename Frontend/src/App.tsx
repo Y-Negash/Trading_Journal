@@ -10,14 +10,11 @@ function App() {
   
   const [trades, setTrades] = useState<Trade[]>([]);
   
-  const addTrade = (trade: Trade) => {
-    setTrades([...trades, trade]);
-  }
  
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <HomePage addTrade={addTrade} />,
+      element: <HomePage trades={trades} setTrades={setTrades}/>,
     },
     {
       path: '/analytics',
