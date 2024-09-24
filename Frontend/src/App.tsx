@@ -4,15 +4,7 @@ import AnalyticsPage from './pages/Analytics/AnalyticsPage';
 import IssuesPage from './pages/Issues/IssuesPage';
 import TradePage from './pages/TradePage/TradePage';
 import { useState } from 'react';
-
-interface Trade{
-  name: string,
-  tradeDate: Date,
-  entryPoint: number,
-  exitPoint: number,
-  stopLoss: number,
-  takeProfit: number,
-}
+import { Trade } from './interfaces';
 
 function App() {
   

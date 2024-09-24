@@ -1,17 +1,9 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import './TradeForm.css';
-
-interface Trade{
-    name: string,
-    tradeDate: Date,
-    entryPoint: number,
-    exitPoint: number,
-    stopLoss: number,
-    takeProfit: number,
-}
+import { Trade } from '../../interfaces';
 
 interface TradeFormProps{
-    addTrade: (trade: Trade) => void,
+    addTrade: (trade: Omit<Trade, 'id'>) => void,
 }
 
 const TradeForm: React.FC<TradeFormProps> = ({ addTrade }) => {
@@ -26,7 +18,6 @@ const TradeForm: React.FC<TradeFormProps> = ({ addTrade }) => {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         addTrade({name, tradeDate, entryPoint, exitPoint, stopLoss, takeProfit});
-        console.log("being added");
         setName("");
         setTradeDate(new Date(0));
         setEntryPoint(0);

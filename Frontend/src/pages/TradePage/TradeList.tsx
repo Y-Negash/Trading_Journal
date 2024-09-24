@@ -1,13 +1,5 @@
 import React from "react";
-
-interface Trade{
-    name: string,
-    tradeDate: Date,
-    entryPoint: number,
-    exitPoint: number,
-    stopLoss: number,
-    takeProfit: number,
-}
+import { Trade } from '../../interfaces';
 
 interface TradeListProps{
     trades: Trade[];

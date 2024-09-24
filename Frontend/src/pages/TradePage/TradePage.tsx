@@ -1,20 +1,12 @@
 import React from "react";
 import TradeList from "./TradeList";
-
-interface Trade{
-    name: string,
-    tradeDate: Date,
-    entryPoint: number,
-    exitPoint: number,
-    stopLoss: number,
-    takeProfit: number,
-}
+import { Trade } from '../../interfaces';
 
 interface TradePageProps{
     trades: Trade[]
 }
 
-const Trade: React.FC<TradePageProps> = ({ trades }) => {
+const TradePage: React.FC<TradePageProps> = ({ trades }) => {
 
     return(
         <>
@@ -24,4 +16,4 @@ const Trade: React.FC<TradePageProps> = ({ trades }) => {
     )
 }
 
-export default Trade;
+export default TradePage;
