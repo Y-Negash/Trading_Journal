@@ -44,10 +44,11 @@ public class TradeController {
     public ResponseEntity<Trade> updateTrade(@PathVariable Long id, @RequestBody TradeDTO tradeDTO){
         Optional<Trade> trade = tradeService.getTradeById(id);
         if(trade.isPresent()){
-            trade.get().setTradeType(tradeDTO.getTradeType());
-            trade.get().setStopLossVal(tradeDTO.getStopLossVal());
+            trade.get().setName(tradeDTO.getName());
+            trade.get().setEntryPoint(tradeDTO.getEntryPoint());
+            trade.get().setExitPoint(tradeDTO.getExitPoint());
+            trade.get().setStopLoss(tradeDTO.getStopLoss());
             trade.get().setTakeProfit(tradeDTO.getTakeProfit());
-            trade.get().setTimeOfCreation(tradeDTO.getTimeOfCreation());
             trade.get().setDateOfCreation(tradeDTO.getDateOfCreation());
             Trade updatedTrade = tradeService.addTrade(trade.get());
 
