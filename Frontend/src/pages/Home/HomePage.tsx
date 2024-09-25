@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TradeForm from "./TradeForm";
 import './HomePage.css';
 import { Trade } from '../../interfaces';
-import TradeList from "../TradePage/TradeList";
 
 interface HomePageProps{
     trades: Trade[],
@@ -10,6 +9,16 @@ interface HomePageProps{
 }
 
 const HomePage: React.FC<HomePageProps> = ({trades, setTrades}) => {
+    
+    const loadTrades = async () => {
+        const response = await fetch('http://localhost:8080/trades');
+        const jsonData = await response.json();
+        setTrades(jsonData);
+    }
+
+    useEffect(() => {
+        loadTrades()
+    },[])
 
     const addTrade = async (trade: Omit<Trade, 'id'>) => {
     const response = await fetch('http://localhost:8080/trades',{
