@@ -1,37 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import TradeForm from "./TradeForm";
 import './HomePage.css';
 import { Trade } from '../../interfaces';
 
 interface HomePageProps{
-    trades: Trade[],
-    setTrades: React.Dispatch<React.SetStateAction<Trade[]>>
+    addTrade: (trade: Omit<Trade, 'id'>) => Promise<void>;
 }
 
-const HomePage: React.FC<HomePageProps> = ({trades, setTrades}) => {
+const HomePage: React.FC<HomePageProps> = ({addTrade}) => {
     
-    const loadTrades = async () => {
-        const response = await fetch('http://localhost:8080/trades');
-        const jsonData = await response.json();
-        setTrades(jsonData);
-    }
 
-    useEffect(() => {
-        loadTrades()
-    },[])
-
-    const addTrade = async (trade: Omit<Trade, 'id'>) => {
-    const response = await fetch('http://localhost:8080/trades',{
-        method: 'POST',
-        headers: {
-            'Content-Type':'application/json',
-            },
-        body: JSON.stringify(trade),
-        });
-    const newTrade = await response.json();
-    setTrades([...trades, newTrade])
-    }
-    
     return(
         <div className="container">
             <h1 id="title">Trading Journal</h1>

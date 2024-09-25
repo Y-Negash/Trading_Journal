@@ -1,7 +1,7 @@
 export interface Trade{
     id?: number,
     name: string,
-    tradeDate: Date,
+    tradeDate: string,
     entryPoint: number,
     exitPoint: number,
     stopLoss: number,

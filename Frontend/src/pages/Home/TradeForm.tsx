@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { FormEvent, useState } from "react";
 import './TradeForm.css';
 import { Trade } from '../../interfaces';
 
@@ -9,7 +9,7 @@ interface TradeFormProps{
 const TradeForm: React.FC<TradeFormProps> = ({ addTrade }) => {
 
     const[name, setName] = useState("");
-    const[tradeDate, setTradeDate] = useState(new Date(0));
+    const[tradeDate, setTradeDate] = useState("");
     const[entryPoint, setEntryPoint] = useState(0);
     const[exitPoint, setExitPoint] = useState(0);
     const[stopLoss, setStopLoss] = useState(0);
@@ -19,17 +19,11 @@ const TradeForm: React.FC<TradeFormProps> = ({ addTrade }) => {
         e.preventDefault();
         addTrade({name, tradeDate, entryPoint, exitPoint, stopLoss, takeProfit});
         setName("");
-        setTradeDate(new Date(0));
+        setTradeDate("");
         setEntryPoint(0);
         setExitPoint(0);
         setStopLoss(0);
         setTakeProfit(0);
-    }
-
-    const dateString = tradeDate.toISOString().split('T')[0];
-
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setTradeDate(new Date(e.target.value));
     }
 
     return(
@@ -47,8 +41,8 @@ const TradeForm: React.FC<TradeFormProps> = ({ addTrade }) => {
             <input 
                 id="date" 
                 type="date" 
-                value={dateString}
-                onChange={handleChange}
+                value={tradeDate}
+                onChange={(e) => {setTradeDate(e.target.value)}}
             />
             <label>Entry Point: </label>
             <input 

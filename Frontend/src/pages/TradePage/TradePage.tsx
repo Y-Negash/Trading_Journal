@@ -3,7 +3,7 @@ import TradeList from "./TradeList";
 import { Trade } from '../../interfaces';
 
 interface TradePageProps{
-    trades: Trade[]
+    trades: Trade[];
 }
 
 const TradePage: React.FC<TradePageProps> = ({ trades }) => {
