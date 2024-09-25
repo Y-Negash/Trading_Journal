@@ -2,7 +2,6 @@ package com.example.trading_journal.components;
 
 import com.example.trading_journal.models.Note;
 import com.example.trading_journal.models.Trade;
-import com.example.trading_journal.models.TradeTypeEnum;
 import com.example.trading_journal.models.Trader;
 import com.example.trading_journal.repositories.NoteRepository;
 import com.example.trading_journal.repositories.TradeRepository;
@@ -37,15 +36,16 @@ public class DataLoader implements ApplicationRunner {
         traderRepository.save(trader2);
         traderRepository.save(trader3);
 
-        Trade trade1 = new Trade(TradeTypeEnum.BUY, 540, 600, "13:00", "12/06/24");
-        Trade trade2 = new Trade(TradeTypeEnum.SELL, 660, 510, "1:00", "14/06/24");
-        Trade trade3 = new Trade(TradeTypeEnum.SELL, 600, 410, "3:00", "10/06/24");
-        Trade trade4 = new Trade(TradeTypeEnum.BUY, 333, 60, "19:00", "1/04/24");
+        Trade trade1 = new Trade("EUR/USD1",650,344,333,241,"14/10/2024");
+        Trade trade2 = new Trade("USD/JPY1",50,34,3,4,"13/10/2024");
+        Trade trade3 = new Trade("GBP/USD1",86,45,30,20,"12/10/2024");
+        Trade trade4 = new Trade("AUD/USD1",65,44,33,41,"11/10/2024");
 
-        tradeRepository.save(trade1);
-        tradeRepository.save(trade2);
-        tradeRepository.save(trade3);
+
         tradeRepository.save(trade4);
+        tradeRepository.save(trade1);
+        tradeRepository.save(trade3);
+        tradeRepository.save(trade2);
 
         Note goodNote = new Note("Great trade, I analysed well!");
         Note okayNote = new Note("This was quite average, I could've have improved here");

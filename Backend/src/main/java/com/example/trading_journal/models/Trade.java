@@ -14,13 +14,15 @@ public class Trade {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long tradeId;
 
-    private TradeTypeEnum tradeType;
+    private String name;
 
-    private int stopLossVal;
+    private int entryPoint;
+
+    private int exitPoint;
+
+    private int stopLoss;
 
     private int takeProfit;
-
-    private String timeOfCreation;
 
     private String dateOfCreation;
 
@@ -28,62 +30,71 @@ public class Trade {
 
     public Trade(){}
 
-    public Trade(TradeTypeEnum tradeType, int stopLossVal, int takeProfit, String timeOfCreation, String dateOfCreation){
-        this.tradeType = tradeType;
-        this.stopLossVal = stopLossVal;
+    public Trade(String name, int entryPoint, int exitPoint, int stopLoss, int takeProfit, String dateOfCreation) {
+        this.name = name;
+        this.entryPoint = entryPoint;
+        this.exitPoint = exitPoint;
+        this.stopLoss = stopLoss;
         this.takeProfit = takeProfit;
-        this.timeOfCreation = timeOfCreation;
         this.dateOfCreation = dateOfCreation;
     }
 
 //    GETTERS AND SETTERS
 
-    public long getTradeId(){
+
+    public long getTradeId() {
         return tradeId;
     }
 
-    public void setTradeId(long tradeId){
+    public void setTradeId(long tradeId) {
         this.tradeId = tradeId;
     }
 
-    public TradeTypeEnum getTradeType(){
-        return tradeType;
+    public String getName() {
+        return name;
     }
 
-    public void setTradeType(TradeTypeEnum tradeType){
-        this.tradeType = tradeType;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getStopLossVal(){
-        return stopLossVal;
+    public int getEntryPoint() {
+        return entryPoint;
     }
 
-    public void setStopLossVal(int stopLossVal){
-        this.stopLossVal = stopLossVal;
+    public void setEntryPoint(int entryPoint) {
+        this.entryPoint = entryPoint;
     }
 
-    public int getTakeProfit(){
+    public int getExitPoint() {
+        return exitPoint;
+    }
+
+    public void setExitPoint(int exitPoint) {
+        this.exitPoint = exitPoint;
+    }
+
+    public int getStopLoss() {
+        return stopLoss;
+    }
+
+    public void setStopLoss(int stopLoss) {
+        this.stopLoss = stopLoss;
+    }
+
+    public int getTakeProfit() {
         return takeProfit;
     }
 
-    public void setTakeProfit(int takeProfit){
+    public void setTakeProfit(int takeProfit) {
         this.takeProfit = takeProfit;
     }
 
-    public String getTimeOfCreation(){
-        return timeOfCreation;
-    }
-
-    public void setTimeOfCreation(String timeOfCreation){
-        this.timeOfCreation = timeOfCreation;
-    }
-
-    public String getDateOfCreation(){
+    public String getDateOfCreation() {
         return dateOfCreation;
     }
 
-    public void setDateOfCreation(String dateOfCreation){
+    public void setDateOfCreation(String dateOfCreation) {
         this.dateOfCreation = dateOfCreation;
     }
-
 }

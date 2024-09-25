@@ -1,13 +1,5 @@
 import React from "react";
-
-interface Trade{
-    name: string,
-    tradeDate: Date,
-    entryPoint: number,
-    exitPoint: number,
-    stopLoss: number,
-    takeProfit: number,
-}
+import { Trade } from '../../interfaces';
 
 interface TradeListProps{
     trades: Trade[];
@@ -16,16 +8,20 @@ const TradeList:React.FC<TradeListProps> = ({ trades }) => {
 
     const mappedTrades = trades.map((trade) => {
         return (
-            <li key={trade.name}>
+            <li key={trade.id}>
                 {trade.name}
                 {trade.entryPoint}
+                {trade.exitPoint}
+                {trade.stopLoss}
+                {trade.takeProfit}
+                {trade.tradeDate}
             </li>
         )
     })
     return(
-        <>
+        <ul>
             {mappedTrades}
-        </>
+        </ul>
     )
 }
 

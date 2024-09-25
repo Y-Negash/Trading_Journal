@@ -2,36 +2,54 @@ package com.example.trading_journal.models;
 
 public class TradeDTO {
 
-    private TradeTypeEnum tradeType;
-    private int stopLossVal;
+    private String name;
+    private int entryPoint;
+    private int exitPoint;
+    private int stopLoss;
     private int takeProfit;
-    private String timeOfCreation;
     private String dateOfCreation;
 
     public TradeDTO(){}
 
-    public TradeDTO(TradeTypeEnum tradeType, int stopLossVal, int takeProfit, String timeOfCreation, String dateOfCreation) {
-        this.tradeType = tradeType;
-        this.stopLossVal = stopLossVal;
+    public TradeDTO(String name, int entryPoint, int exitPoint, int stopLoss, int takeProfit, String dateOfCreation) {
+        this.name = name;
+        this.entryPoint = entryPoint;
+        this.exitPoint = exitPoint;
+        this.stopLoss = stopLoss;
         this.takeProfit = takeProfit;
-        this.timeOfCreation = timeOfCreation;
         this.dateOfCreation = dateOfCreation;
     }
 
-    public TradeTypeEnum getTradeType() {
-        return tradeType;
+    public String getName() {
+        return name;
     }
 
-    public void setTradeType(TradeTypeEnum tradeType) {
-        this.tradeType = tradeType;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getStopLossVal() {
-        return stopLossVal;
+    public int getEntryPoint() {
+        return entryPoint;
     }
 
-    public void setStopLossVal(int stopLossVal) {
-        this.stopLossVal = stopLossVal;
+    public void setEntryPoint(int entryPoint) {
+        this.entryPoint = entryPoint;
+    }
+
+    public int getExitPoint() {
+        return exitPoint;
+    }
+
+    public void setExitPoint(int exitPoint) {
+        this.exitPoint = exitPoint;
+    }
+
+    public int getStopLoss() {
+        return stopLoss;
+    }
+
+    public void setStopLoss(int stopLoss) {
+        this.stopLoss = stopLoss;
     }
 
     public int getTakeProfit() {
@@ -40,14 +58,6 @@ public class TradeDTO {
 
     public void setTakeProfit(int takeProfit) {
         this.takeProfit = takeProfit;
-    }
-
-    public String getTimeOfCreation() {
-        return timeOfCreation;
-    }
-
-    public void setTimeOfCreation(String timeOfCreation) {
-        this.timeOfCreation = timeOfCreation;
     }
 
     public String getDateOfCreation() {

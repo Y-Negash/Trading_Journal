@@ -1,23 +1,15 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
-
-interface Trade{
-    name: string,
-    tradeDate: Date,
-    entryPoint: number,
-    exitPoint: number,
-    stopLoss: number,
-    takeProfit: number,
-}
+import React, { FormEvent, useState } from "react";
+import './TradeForm.css';
+import { Trade } from '../../interfaces';
 
 interface TradeFormProps{
-    addTrade: (trade: Trade) => void,
-
+    addTrade: (trade: Omit<Trade, 'id'>) => void,
 }
 
 const TradeForm: React.FC<TradeFormProps> = ({ addTrade }) => {
 
     const[name, setName] = useState("");
-    const[tradeDate, setTradeDate] = useState(new Date(0));
+    const[tradeDate, setTradeDate] = useState("");
     const[entryPoint, setEntryPoint] = useState(0);
     const[exitPoint, setExitPoint] = useState(0);
     const[stopLoss, setStopLoss] = useState(0);
@@ -26,25 +18,18 @@ const TradeForm: React.FC<TradeFormProps> = ({ addTrade }) => {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         addTrade({name, tradeDate, entryPoint, exitPoint, stopLoss, takeProfit});
-        console.log("being added");
         setName("");
-        setTradeDate(new Date(0));
+        setTradeDate("");
         setEntryPoint(0);
         setExitPoint(0);
         setStopLoss(0);
         setTakeProfit(0);
     }
 
-    const dateString = tradeDate.toISOString().split('T')[0];
-
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setTradeDate(new Date(e.target.value));
-    }
-
     return(
         <>
         <h2>Add a trade: </h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="trade-form">
             <label>Name: </label>
             <input 
                 id="name" 
@@ -56,8 +41,8 @@ const TradeForm: React.FC<TradeFormProps> = ({ addTrade }) => {
             <input 
                 id="date" 
                 type="date" 
-                value={dateString}
-                onChange={handleChange}
+                value={tradeDate}
+                onChange={(e) => {setTradeDate(e.target.value)}}
             />
             <label>Entry Point: </label>
             <input 
