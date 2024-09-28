@@ -28,7 +28,7 @@ const TradeForm: React.FC<TradeFormProps> = ({ addTrade }) => {
 
     return(
         <>
-        <h2>Add a trade: </h2>
+        <h2 id="form-title">Add a trade: </h2>
         <form onSubmit={handleSubmit} className="trade-form">
             <label>Name: </label>
             <input 

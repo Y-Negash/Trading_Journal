@@ -3,3 +3,7 @@
     flex-direction: column;
     justify-content: center;
 }
+
+#form-title{
+    font-weight: normal;
+}

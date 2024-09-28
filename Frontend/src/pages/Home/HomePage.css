@@ -4,3 +4,8 @@
     margin: 1rem;
 }
 
+#title {
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+}
