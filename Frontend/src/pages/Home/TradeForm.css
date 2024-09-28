@@ -1,5 +1,31 @@
-.trade-form{
+.form-container {
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
     justify-content: center;
+    width: 30%;
+    background-color: white;
+    padding: 1rem 2rem;
+    margin: 3rem 2rem;
+    border-radius: 1rem;
+}
+
+.trade-form {
+    display: flex;
+    flex-direction:column;
+}
+
+input {
+    margin-bottom: 0.5rem;
+    padding: 0.2rem;
+}
+
+label {
+    font-weight: 350;
+    padding-bottom: 0.5rem;
+}
+
+
+#form-title {
+    font-weight: normal;
+    text-align: center;
 }
