@@ -6,4 +6,6 @@ export interface Trade{
     exitPoint: number,
     stopLoss: number,
     takeProfit: number,
+    issueName?: string,
+    issueDescription?: string,
 }
