@@ -27,8 +27,8 @@ const TradeForm: React.FC<TradeFormProps> = ({ addTrade }) => {
     }
 
     return(
-        <>
-        <h2 id="form-title">Add a trade: </h2>
+        <article className="form-container">
+        <h2 id="form-title">Add A Trade </h2>
         <form onSubmit={handleSubmit} className="trade-form">
             <label>Name: </label>
             <input 
@@ -36,45 +36,45 @@ const TradeForm: React.FC<TradeFormProps> = ({ addTrade }) => {
                 type="text" 
                 value={name}
                 onChange={(e) => {setName(e.target.value)}}
-            />
+                />
             <label>Date: </label>
             <input 
                 id="date" 
                 type="date" 
                 value={tradeDate}
                 onChange={(e) => {setTradeDate(e.target.value)}}
-            />
+                />
             <label>Entry Point: </label>
             <input 
                 id="entry" 
                 type="number" 
                 value={entryPoint}
                 onChange={(e) => {setEntryPoint(e.target.valueAsNumber)}}
-            />
+                />
             <label>Exit Point: </label>
             <input 
                 id="exit" 
                 type="number" 
                 value={exitPoint}
                 onChange={(e) => {setExitPoint(e.target.valueAsNumber)}}
-            />
+                />
             <label>Stop Loss: </label>
             <input 
                 id="stop" 
                 type="number" 
                 value={stopLoss}
                 onChange={(e) => {setStopLoss(e.target.valueAsNumber)}}
-            />
+                />
             <label>Take Profit: </label>
             <input 
                 id="take" 
                 type="number" 
                 value={takeProfit}
                 onChange={(e) => {setTakeProfit(e.target.valueAsNumber)}}
-            />
+                />
             <button type="submit">Submit</button>
         </form>
-        </>
+        </article>
     )
 }
 
