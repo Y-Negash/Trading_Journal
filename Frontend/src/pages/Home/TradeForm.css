@@ -2,16 +2,25 @@
     display: flex;
     flex-direction:column;
     justify-content: center;
-    width: 30%;
     background-color: white;
-    padding: 1rem 2rem;
-    margin: 3rem 2rem;
+    padding: 1rem;
+    margin: 3rem 0rem;
     border-radius: 1rem;
 }
 
 .trade-form {
     display: flex;
-    flex-direction:column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.trade-fields, .issue-fields {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+
 }
 
 input {
@@ -24,8 +33,12 @@ label {
     padding-bottom: 0.5rem;
 }
 
-
+#issue-description {
+    width: 100%;
+    height: 100%
+}
 #form-title {
     font-weight: normal;
-    text-align: center;
+    margin-left: 2rem;
+    margin-top: 1rem;
 }
