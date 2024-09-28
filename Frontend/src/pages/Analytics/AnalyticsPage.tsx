@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../../components/navbar/navbar";
+import NavBar from "../../components/navigation/NavBar";
 
 const AnalyticsPage:React.FC = () => {
    

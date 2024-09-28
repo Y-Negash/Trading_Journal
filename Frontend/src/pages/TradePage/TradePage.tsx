@@ -1,7 +1,7 @@
 import React from "react";
 import TradeList from "./TradeList";
 import { Trade } from '../../interfaces';
-import NavBar from "../../components/navbar/navbar";
+import NavBar from "../../components/navigation/NavBar";
 
 interface TradePageProps{
     trades: Trade[];
