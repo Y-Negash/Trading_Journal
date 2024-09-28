@@ -1,0 +1,16 @@
+#navbar-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 0.1rem solid black;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    background-color: white;
+}
+
+.navbar-link {
+    color: black;
+    font-weight: 500;
+    font-size: large;
+}
