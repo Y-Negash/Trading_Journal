@@ -19,16 +19,16 @@ public class Trade {
     private String name;
 
     @Column(name = "entry_point")
-    private int entryPoint;
+    private double entryPoint;
 
     @Column(name = "exit_point")
-    private int exitPoint;
+    private double exitPoint;
 
     @Column(name = "stop_loss")
-    private int stopLoss;
+    private double stopLoss;
 
     @Column(name = "take_profit")
-    private int takeProfit;
+    private double takeProfit;
 
     @Column(name = "date_of_creation")
     private String dateOfCreation;
@@ -41,7 +41,7 @@ public class Trade {
 
     public Trade(){}
 
-    public Trade(String name, int entryPoint, int exitPoint, int stopLoss, int takeProfit, String dateOfCreation) {
+    public Trade(String name, double entryPoint, double exitPoint, double stopLoss, double takeProfit, String dateOfCreation) {
         this.name = name;
         this.entryPoint = entryPoint;
         this.exitPoint = exitPoint;
@@ -76,35 +76,35 @@ public class Trade {
         this.name = name;
     }
 
-    public int getEntryPoint() {
+    public double getEntryPoint() {
         return entryPoint;
     }
 
-    public void setEntryPoint(int entryPoint) {
+    public void setEntryPoint(double entryPoint) {
         this.entryPoint = entryPoint;
     }
 
-    public int getExitPoint() {
+    public double getExitPoint() {
         return exitPoint;
     }
 
-    public void setExitPoint(int exitPoint) {
+    public void setExitPoint(double exitPoint) {
         this.exitPoint = exitPoint;
     }
 
-    public int getStopLoss() {
+    public double getStopLoss() {
         return stopLoss;
     }
 
-    public void setStopLoss(int stopLoss) {
+    public void setStopLoss(double stopLoss) {
         this.stopLoss = stopLoss;
     }
 
-    public int getTakeProfit() {
+    public double getTakeProfit() {
         return takeProfit;
     }
 
-    public void setTakeProfit(int takeProfit) {
+    public void setTakeProfit(double takeProfit) {
         this.takeProfit = takeProfit;
     }
 
