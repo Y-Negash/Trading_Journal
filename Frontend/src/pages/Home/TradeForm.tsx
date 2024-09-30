@@ -14,12 +14,12 @@ const TradeForm: React.FC<TradeFormProps> = ({ addTrade }) => {
     const[exitPoint, setExitPoint] = useState(0);
     const[stopLoss, setStopLoss] = useState(0);
     const[takeProfit, setTakeProfit] = useState(0);
-    const[issueName, setIssueName] = useState("");
+    const[issueName, setIssueName] = useState<string | undefined>("");
     const[issueDescription, setIssueDescription] = useState<string | undefined>("");
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        addTrade({name, tradeDate, entryPoint, exitPoint, stopLoss, takeProfit});
+        addTrade({name, tradeDate, entryPoint, exitPoint, stopLoss, takeProfit, issueName, issueDescription});
         setName("");
         setTradeDate("");
         setEntryPoint(0);

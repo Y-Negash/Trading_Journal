@@ -1,6 +1,8 @@
 package com.example.trading_journal.services;
 
+import com.example.trading_journal.models.Issue;
 import com.example.trading_journal.models.Trade;
+import com.example.trading_journal.models.TradeDTO;
 import com.example.trading_journal.repositories.TradeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,9 +24,24 @@ public class TradeService {
         return tradeRepository.findById(id);
     }
 
-    public Trade addTrade(Trade trade){
-       return tradeRepository.save(trade);
-    }
+    public Trade addTrade(TradeDTO tradeDTO){
+        Trade trade = new Trade(
+                tradeDTO.getName(),
+                tradeDTO.getEntryPoint(),
+                tradeDTO.getExitPoint(),
+                tradeDTO.getStopLoss(),
+                tradeDTO.getTakeProfit(),
+                tradeDTO.getDateOfCreation()
+        );
+
+        if(tradeDTO.getIssueName() != null || tradeDTO.getIssueDescription() != null ){
+            Issue issue = new Issue(tradeDTO.getIssueName(), tradeDTO.getIssueDescription());
+//            issue.setTrade(trade);
+            trade.addIssue(issue);
+        }
+
+        return tradeRepository.save(trade);
+    };
 
     public void deleteTrade(Long id) {
         Optional<Trade> trade = tradeRepository.findById(id);

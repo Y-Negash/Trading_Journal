@@ -35,7 +35,7 @@ public class TradeController {
     }
 
     @PostMapping
-    public ResponseEntity<Trade> createNewTrade(@RequestBody Trade newTrade){
+    public ResponseEntity<Trade> createNewTrade(@RequestBody TradeDTO newTrade){
         Trade addedTrade= tradeService.addTrade(newTrade);
         return new ResponseEntity<>(addedTrade, HttpStatus.CREATED);
     }
@@ -50,7 +50,7 @@ public class TradeController {
             trade.get().setStopLoss(tradeDTO.getStopLoss());
             trade.get().setTakeProfit(tradeDTO.getTakeProfit());
             trade.get().setDateOfCreation(tradeDTO.getDateOfCreation());
-            Trade updatedTrade = tradeService.addTrade(trade.get());
+            Trade updatedTrade = tradeService.addTrade(tradeDTO);
 
             return new ResponseEntity<>(updatedTrade, HttpStatus.OK);
         } else {

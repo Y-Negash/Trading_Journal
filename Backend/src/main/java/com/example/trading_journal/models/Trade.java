@@ -1,9 +1,10 @@
 package com.example.trading_journal.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Trade {
@@ -14,17 +15,27 @@ public class Trade {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long tradeId;
 
+    @Column
     private String name;
 
+    @Column(name = "entry_point")
     private int entryPoint;
 
+    @Column(name = "exit_point")
     private int exitPoint;
 
+    @Column(name = "stop_loss")
     private int stopLoss;
 
+    @Column(name = "take_profit")
     private int takeProfit;
 
+    @Column(name = "date_of_creation")
     private String dateOfCreation;
+
+    @JsonIgnoreProperties({"issue"})
+    @OneToMany(mappedBy = "trade", cascade = CascadeType.ALL)
+    private List<Issue> issues = new ArrayList<>(); // already assigned to empty list so doesn't need to be added to constructor
 
 //    CONSTRUCTORS
 
@@ -38,6 +49,13 @@ public class Trade {
         this.takeProfit = takeProfit;
         this.dateOfCreation = dateOfCreation;
     }
+
+    // METHODS
+
+    public void addIssue(Issue issue){
+        this.issues.add(issue);
+        issue.setTrade(this);
+    };
 
 //    GETTERS AND SETTERS
 
@@ -96,5 +114,13 @@ public class Trade {
 
     public void setDateOfCreation(String dateOfCreation) {
         this.dateOfCreation = dateOfCreation;
+    }
+
+    public List<Issue> getIssues() {
+        return issues;
+    }
+
+    public void setIssues(List<Issue> issues) {
+        this.issues = issues;
     }
 }
