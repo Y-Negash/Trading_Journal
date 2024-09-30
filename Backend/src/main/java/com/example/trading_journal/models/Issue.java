@@ -1,5 +1,6 @@
 package com.example.trading_journal.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
@@ -16,7 +17,7 @@ public class Issue {
    @Column(name = "issueDescription")
    private String issueDescription;
 
-   @JsonIgnoreProperties({"issues"})
+   @JsonIgnore
    @ManyToOne
    @JoinColumn(name = "trade_id")
    private Trade trade;
