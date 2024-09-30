@@ -3,10 +3,10 @@ package com.example.trading_journal.models;
 public class TradeDTO {
 
     private String name;
-    private int entryPoint;
-    private int exitPoint;
-    private int stopLoss;
-    private int takeProfit;
+    private double entryPoint;
+    private double exitPoint;
+    private double stopLoss;
+    private double takeProfit;
     private String dateOfCreation;
     private String issueName;
     private String issueDescription;
@@ -14,7 +14,7 @@ public class TradeDTO {
 
     public TradeDTO(){}
 
-    public TradeDTO(String name, int entryPoint, int exitPoint, int stopLoss, int takeProfit, String dateOfCreation, String issueName, String issueDescription) {
+    public TradeDTO(String name, double entryPoint, int exitPoint, int stopLoss, int takeProfit, String dateOfCreation, String issueName, String issueDescription) {
         this.name = name;
         this.entryPoint = entryPoint;
         this.exitPoint = exitPoint;
@@ -33,35 +33,35 @@ public class TradeDTO {
         this.name = name;
     }
 
-    public int getEntryPoint() {
+    public double getEntryPoint() {
         return entryPoint;
     }
 
-    public void setEntryPoint(int entryPoint) {
+    public void setEntryPoint(double entryPoint) {
         this.entryPoint = entryPoint;
     }
 
-    public int getExitPoint() {
+    public double getExitPoint() {
         return exitPoint;
     }
 
-    public void setExitPoint(int exitPoint) {
+    public void setExitPoint(double exitPoint) {
         this.exitPoint = exitPoint;
     }
 
-    public int getStopLoss() {
+    public double getStopLoss() {
         return stopLoss;
     }
 
-    public void setStopLoss(int stopLoss) {
+    public void setStopLoss(double stopLoss) {
         this.stopLoss = stopLoss;
     }
 
-    public int getTakeProfit() {
+    public double getTakeProfit() {
         return takeProfit;
     }
 
-    public void setTakeProfit(int takeProfit) {
+    public void setTakeProfit(double takeProfit) {
         this.takeProfit = takeProfit;
     }
 
