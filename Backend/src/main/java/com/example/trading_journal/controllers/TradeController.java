@@ -49,7 +49,7 @@ public class TradeController {
             trade.get().setExitPoint(tradeDTO.getExitPoint());
             trade.get().setStopLoss(tradeDTO.getStopLoss());
             trade.get().setTakeProfit(tradeDTO.getTakeProfit());
-            trade.get().setDateOfCreation(tradeDTO.getDateOfCreation());
+            trade.get().setTradeDate(tradeDTO.getTradeDate());
             Trade updatedTrade = tradeService.addTrade(tradeDTO);
 
             return new ResponseEntity<>(updatedTrade, HttpStatus.OK);

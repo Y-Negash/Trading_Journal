@@ -7,20 +7,20 @@ public class TradeDTO {
     private double exitPoint;
     private double stopLoss;
     private double takeProfit;
-    private String dateOfCreation;
+    private String tradeDate;
     private String issueName;
     private String issueDescription;
 
 
     public TradeDTO(){}
 
-    public TradeDTO(String name, double entryPoint, int exitPoint, int stopLoss, int takeProfit, String dateOfCreation, String issueName, String issueDescription) {
+    public TradeDTO(String name, double entryPoint, int exitPoint, int stopLoss, int takeProfit, String tradeDate, String issueName, String issueDescription) {
         this.name = name;
         this.entryPoint = entryPoint;
         this.exitPoint = exitPoint;
         this.stopLoss = stopLoss;
         this.takeProfit = takeProfit;
-        this.dateOfCreation = dateOfCreation;
+        this.tradeDate = tradeDate;
         this.issueName = issueName;
         this.issueDescription = issueDescription;
     }
@@ -65,12 +65,12 @@ public class TradeDTO {
         this.takeProfit = takeProfit;
     }
 
-    public String getDateOfCreation() {
-        return dateOfCreation;
+    public String getTradeDate() {
+        return tradeDate;
     }
 
-    public void setDateOfCreation(String dateOfCreation) {
-        this.dateOfCreation = dateOfCreation;
+    public void setTradeDate(String tradeDate) {
+        this.tradeDate = tradeDate;
     }
 
     public String getIssueName() {
