@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import options from "../../assets/currency-pair.json";
 import { Option, SearchDropdownProps } from "../../interfaces";
+import './searchDropdown.css';
 
 const SearchDropdown: React.FC<SearchDropdownProps> = ({    
     name,
@@ -39,7 +40,7 @@ const SearchDropdown: React.FC<SearchDropdownProps> = ({
     }
  
     return (
-        <>
+        <div className="dropdown-container">
             <input
                 type="text"
                 placeholder="Choose option..."
@@ -47,13 +48,15 @@ const SearchDropdown: React.FC<SearchDropdownProps> = ({
                 onChange={handleChange}
                 onClick={() => setIsOpen(!isOpen)}
                 required
+                className="input"
             />
+        <div className={`arrow ${isOpen ? "open" : ""}`}></div>
             {isOpen && (
-                <div>
+                <div className="options">
                     {displayOptions()}
                 </div>
             )}
-        </>
+        </div>
     );
 
 }
