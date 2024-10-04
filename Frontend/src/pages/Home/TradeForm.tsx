@@ -1,14 +1,15 @@
 import React, { FormEvent, useState } from "react";
 import './TradeForm.css';
-import { Trade } from '../../interfaces';
+import SearchDropdown from "../../components/search-dropdown/SearchDropdown";
+import { TradeFormProps } from "../../interfaces";
 
-interface TradeFormProps{
-    addTrade: (trade: Omit<Trade, 'id'>) => void,
-}
 
-const TradeForm: React.FC<TradeFormProps> = ({ addTrade }) => {
 
-    const[name, setName] = useState("");
+const TradeForm: React.FC<TradeFormProps> = ({ 
+    addTrade,
+ }) => {
+
+    const [name, setName] = useState<string | null>(null);
     const[tradeDate, setTradeDate] = useState("");
     const[entryPoint, setEntryPoint] = useState(0);
     const[exitPoint, setExitPoint] = useState(0);
@@ -16,11 +17,26 @@ const TradeForm: React.FC<TradeFormProps> = ({ addTrade }) => {
     const[takeProfit, setTakeProfit] = useState(0);
     const[issueName, setIssueName] = useState<string | undefined>("");
     const[issueDescription, setIssueDescription] = useState<string | undefined>("");
-
+    
+    
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        addTrade({name, tradeDate, entryPoint, exitPoint, stopLoss, takeProfit, issueName, issueDescription});
-        setName("");
+        
+        if(!name){
+            return;
+        }
+        const trade = {
+            name,
+            tradeDate,
+            entryPoint,
+            exitPoint,
+            stopLoss,
+            takeProfit,
+            issueName,
+            issueDescription
+        }
+        addTrade(trade);
+        setName(null);
         setTradeDate("");
         setEntryPoint(0);
         setExitPoint(0);
@@ -36,13 +52,10 @@ const TradeForm: React.FC<TradeFormProps> = ({ addTrade }) => {
         <form onSubmit={handleSubmit} className="trade-form">
         <div className="trade-fields">
             <label>Name: * </label>
-            <input 
-                id="name" 
-                type="text" 
-                value={name}
-                onChange={(e) => {setName(e.target.value)}}
-                required
-                />
+            <SearchDropdown 
+                name={name} 
+                setName={setName} 
+            />
             <label>Date: *</label>
             <input 
                 id="date" 
