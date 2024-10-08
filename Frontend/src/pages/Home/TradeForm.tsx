@@ -19,15 +19,21 @@ const TradeForm: React.FC<TradeFormProps> = ({
     const[issueDescription, setIssueDescription] = useState<string | undefined>("");
     
     
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         
         if(!name){
-            return;
+            return; // makes name required for submission
         }
+
+        // reverses date for uk date format
+        const reversedDate = tradeDate.split("-").reverse().join("-");
+
+        const tradeName = name.concat(" ", reversedDate); // more unique name
+
         const trade = {
-            name,
-            tradeDate,
+            name: tradeName,
+            tradeDate: reversedDate,
             entryPoint,
             exitPoint,
             stopLoss,
@@ -35,6 +41,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
             issueName,
             issueDescription
         }
+        console.log(tradeName)
         addTrade(trade);
         setName(null);
         setTradeDate("");
