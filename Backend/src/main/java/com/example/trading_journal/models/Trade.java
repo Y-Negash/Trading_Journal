@@ -30,8 +30,8 @@ public class Trade {
     @Column(name = "take_profit")
     private double takeProfit;
 
-    @Column(name = "date_of_creation")
-    private String dateOfCreation;
+    @Column(name = "trade_date")
+    private String tradeDate;
 
     @JsonIgnoreProperties({"issue"})
     @OneToMany(mappedBy = "trade", cascade = CascadeType.ALL)
@@ -41,13 +41,13 @@ public class Trade {
 
     public Trade(){}
 
-    public Trade(String name, double entryPoint, double exitPoint, double stopLoss, double takeProfit, String dateOfCreation) {
+    public Trade(String name, double entryPoint, double exitPoint, double stopLoss, double takeProfit, String tradeDate) {
         this.name = name;
         this.entryPoint = entryPoint;
         this.exitPoint = exitPoint;
         this.stopLoss = stopLoss;
         this.takeProfit = takeProfit;
-        this.dateOfCreation = dateOfCreation;
+        this.tradeDate = tradeDate;
     }
 
     // METHODS
@@ -108,12 +108,12 @@ public class Trade {
         this.takeProfit = takeProfit;
     }
 
-    public String getDateOfCreation() {
-        return dateOfCreation;
+    public String getTradeDate() {
+        return tradeDate;
     }
 
-    public void setDateOfCreation(String dateOfCreation) {
-        this.dateOfCreation = dateOfCreation;
+    public void setTradeDate(String tradeDate) {
+        this.tradeDate = tradeDate;
     }
 
     public List<Issue> getIssues() {

@@ -1,0 +1,158 @@
+[
+    {
+      "id": 1,
+      "name": "AUD/USD"
+    },
+    {
+      "id": 2,
+      "name": "AUD/CAD"
+    },
+    {
+      "id": 3,
+      "name": "AUD/CHF"
+    },
+    {
+      "id": 4,
+      "name": "AUD/JPY"
+    },
+    {
+      "id": 5,
+      "name": "AUD/NZD"
+    },
+    {
+      "id": 6,
+      "name": "CAD/USD"
+    },
+    {
+      "id": 7,
+      "name": "CAD/CHF"
+    },
+    {
+      "id": 8,
+      "name": "CAD/JPY"
+    },
+    {
+      "id": 9,
+      "name": "CHF/USD"
+    },
+    {
+      "id": 10,
+      "name": "CHF/JPY"
+    },
+    {
+      "id": 11,
+      "name": "EUR/AUD"
+    },
+    {
+      "id": 12,
+      "name": "EUR/CAD"
+    },
+    {
+      "id": 13,
+      "name": "EUR/CHF"
+    },
+    {
+      "id": 14,
+      "name": "EUR/GBP"
+    },
+    {
+      "id": 15,
+      "name": "EUR/JPY"
+    },
+    {
+      "id": 16,
+      "name": "EUR/NZD"
+    },
+    {
+      "id": 17,
+      "name": "GBP/AUD"
+    },
+    {
+      "id": 18,
+      "name": "GBP/CAD"
+    },
+    {
+      "id": 19,
+      "name": "GBP/CHF"
+    },
+    {
+      "id": 20,
+      "name": "GBP/JPY"
+    },
+    {
+      "id": 21,
+      "name": "GBP/NZD"
+    },
+    {
+      "id": 22,
+      "name": "GBP/USD"
+    },
+    {
+      "id": 23,
+      "name": "NZD/AUD"
+    },
+    {
+      "id": 24,
+      "name": "NZD/CAD"
+    },
+    {
+      "id": 25,
+      "name": "NZD/CHF"
+    },
+    {
+      "id": 26,
+      "name": "NZD/JPY"
+    },
+    {
+      "id": 27,
+      "name": "NZD/USD"
+    },
+    {
+      "id": 28,
+      "name": "USD/CAD"
+    },
+    {
+      "id": 29,
+      "name": "USD/CHF"
+    },
+    {
+      "id": 30,
+      "name": "USD/JPY"
+    },
+    {
+      "id": 31,
+      "name": "USD/HKD"
+    },
+    {
+      "id": 32,
+      "name": "USD/SGD"
+    },
+    {
+      "id": 33,
+      "name": "USD/SEK"
+    },
+    {
+      "id": 34,
+      "name": "USD/NOK"
+    },
+    {
+      "id": 35,
+      "name": "USD/INR"
+    },
+    {
+      "id": 36,
+      "name": "USD/BRL"
+    },
+    {
+      "id": 37,
+      "name": "USD/ZAR"
+    },
+    {
+      "id": 38,
+      "name": "USD/TRY"
+    },
+    {
+      "id": 39,
+      "name": "USD/MXN"
+    }
+]

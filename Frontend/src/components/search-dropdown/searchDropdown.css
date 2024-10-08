@@ -1,0 +1,47 @@
+.dropdown-container {
+    position: relative;
+    cursor: default;
+    border-color: transparent transparent #999;
+    border-width: 0 5px 5px;
+}
+
+.options {
+    
+    color: #333;
+    box-sizing: border-box;
+    color: rgba(51, 51, 51, 0.8);
+    cursor: pointer;
+    padding: 0.1rem 0.5rem;
+
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    max-height: 6rem;
+    overflow-y: auto;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.input{
+    width: 100%;
+    margin-bottom: 0rem;
+    padding: 0.3rem 0rem 0.2rem 0.4rem;
+}
+
+.arrow {
+    border-color: #999 transparent transparent;
+    border-style: solid;
+    border-width: 5px 5px 0;
+    position: absolute;
+    right: 0.8rem;
+    top: 0.8rem;
+}
+
+.arrow.open {
+    border-color: transparent;
+}
+
+.options div:hover {
+    background-color: #c6d8ff;
+    color: #333;
+}

@@ -31,7 +31,7 @@ public class TradeService {
                 tradeDTO.getExitPoint(),
                 tradeDTO.getStopLoss(),
                 tradeDTO.getTakeProfit(),
-                tradeDTO.getDateOfCreation()
+                tradeDTO.getTradeDate()
         );
 
         if(tradeDTO.getIssueName() != null || tradeDTO.getIssueDescription() != null ){

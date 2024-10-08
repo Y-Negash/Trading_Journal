@@ -9,7 +9,7 @@ import { Trade } from './interfaces';
 function App() {
   
   const [trades, setTrades] = useState<Trade[]>([]);
-  
+
   const loadTrades = async () => {
     const response = await fetch('http://localhost:8080/trades');
     const jsonData = await response.json();
@@ -21,7 +21,6 @@ function App() {
   },[])
 
   const addTrade = async (trade: Omit<Trade, 'id'>) => {
-    console.log(trade)
     const response = await fetch('http://localhost:8080/trades',{
         method: 'POST',
         headers: {
