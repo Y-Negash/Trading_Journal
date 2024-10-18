@@ -1,9 +1,10 @@
 package com.example.trading_journal.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Trade {
@@ -14,30 +15,47 @@ public class Trade {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long tradeId;
 
+    @Column
     private String name;
 
-    private int entryPoint;
+    @Column(name = "entry_point")
+    private double entryPoint;
 
-    private int exitPoint;
+    @Column(name = "exit_point")
+    private double exitPoint;
 
-    private int stopLoss;
+    @Column(name = "stop_loss")
+    private double stopLoss;
 
-    private int takeProfit;
+    @Column(name = "take_profit")
+    private double takeProfit;
 
-    private String dateOfCreation;
+    @Column(name = "trade_date")
+    private String tradeDate;
+
+    @JsonIgnoreProperties({"issue"})
+    @OneToMany(mappedBy = "trade", cascade = CascadeType.ALL)
+    private List<Issue> issues = new ArrayList<>(); // already assigned to empty list so doesn't need to be added to constructor
 
 //    CONSTRUCTORS
 
     public Trade(){}
 
-    public Trade(String name, int entryPoint, int exitPoint, int stopLoss, int takeProfit, String dateOfCreation) {
+    public Trade(String name, double entryPoint, double exitPoint, double stopLoss, double takeProfit, String tradeDate) {
         this.name = name;
         this.entryPoint = entryPoint;
         this.exitPoint = exitPoint;
         this.stopLoss = stopLoss;
         this.takeProfit = takeProfit;
-        this.dateOfCreation = dateOfCreation;
+        this.tradeDate = tradeDate;
     }
+
+    // METHODS
+
+    public void addIssue(Issue issue){
+        this.issues.add(issue);
+        issue.setTrade(this);
+    };
 
 //    GETTERS AND SETTERS
 
@@ -58,43 +76,51 @@ public class Trade {
         this.name = name;
     }
 
-    public int getEntryPoint() {
+    public double getEntryPoint() {
         return entryPoint;
     }
 
-    public void setEntryPoint(int entryPoint) {
+    public void setEntryPoint(double entryPoint) {
         this.entryPoint = entryPoint;
     }
 
-    public int getExitPoint() {
+    public double getExitPoint() {
         return exitPoint;
     }
 
-    public void setExitPoint(int exitPoint) {
+    public void setExitPoint(double exitPoint) {
         this.exitPoint = exitPoint;
     }
 
-    public int getStopLoss() {
+    public double getStopLoss() {
         return stopLoss;
     }
 
-    public void setStopLoss(int stopLoss) {
+    public void setStopLoss(double stopLoss) {
         this.stopLoss = stopLoss;
     }
 
-    public int getTakeProfit() {
+    public double getTakeProfit() {
         return takeProfit;
     }
 
-    public void setTakeProfit(int takeProfit) {
+    public void setTakeProfit(double takeProfit) {
         this.takeProfit = takeProfit;
     }
 
-    public String getDateOfCreation() {
-        return dateOfCreation;
+    public String getTradeDate() {
+        return tradeDate;
     }
 
-    public void setDateOfCreation(String dateOfCreation) {
-        this.dateOfCreation = dateOfCreation;
+    public void setTradeDate(String tradeDate) {
+        this.tradeDate = tradeDate;
+    }
+
+    public List<Issue> getIssues() {
+        return issues;
+    }
+
+    public void setIssues(List<Issue> issues) {
+        this.issues = issues;
     }
 }
