@@ -6,6 +6,7 @@
     padding: 1rem;
     margin: 3rem 0rem;
     border-radius: 1rem;
+    border: 0.2rem, solid, black;
 }
 
 .trade-form {
@@ -18,28 +19,28 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    margin-top: 1rem;
-    padding: 1rem 2rem;
-
+    padding: 0.5rem 2rem;
+    /* margin-right: 5rem; */
+    margin: 1rem 3rem;
 }
 
 input {
     margin-bottom: 0.5rem;
     padding: 0.2rem;
+    
 }
 
 label {
-    font-weight: 350;
-    padding-bottom: 0.5rem;
+    margin: 0.5rem 0rem;
 }
 
 #issue-description {
     width: 100%;
     height: 100%;
     margin-bottom: 0.5rem;
+    font-family: segoe UI;
 }
 #form-title {
-    font-weight: normal;
     margin-left: 2rem;
-    margin-top: 1rem;
+    font-weight: 500;
 }
