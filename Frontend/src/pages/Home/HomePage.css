@@ -3,10 +3,3 @@
     flex-direction: column;
     margin: 1rem;
 }
-
-#title {
-    display: flex;
-    justify-content: center;
-    font-size: xxx-large;
-    font-family: Georgia, 'Times New Roman', serif;
-}

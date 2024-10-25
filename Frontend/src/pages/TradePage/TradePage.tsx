@@ -11,11 +11,10 @@ interface TradePageProps{
 const TradePage: React.FC<TradePageProps> = ({ trades }) => {
 
     return(
-        <>
-            <h2 id="tradepage-title">TRADES PAGE</h2>
+        <div className="container">
             <NavBar />
             <TradeList trades={trades} />
-        </>
+        </div>
     )
 }
 
