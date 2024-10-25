@@ -13,7 +13,6 @@ const HomePage: React.FC<HomePageProps> = ({addTrade}) => {
 
     return(
         <div className="container">
-            <h2 id="title">Trading Journal</h2>
             <NavBar />
             <TradeForm addTrade={addTrade} />
             

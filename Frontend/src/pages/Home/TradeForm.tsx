@@ -58,12 +58,12 @@ const TradeForm: React.FC<TradeFormProps> = ({
         <h2 id="form-title">Add A Trade </h2>
         <form onSubmit={handleSubmit} className="trade-form">
         <div className="trade-fields">
-            <label>Name: * </label>
+            <label>Name</label>
             <SearchDropdown 
                 name={name} 
                 setName={setName} 
             />
-            <label>Date: *</label>
+            <label>Date </label>
             <input 
                 id="date" 
                 type="date" 
@@ -71,7 +71,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
                 onChange={(e) => {setTradeDate(e.target.value)}}
                 required
                 />
-            <label>Entry Point: *</label>
+            <label>Entry Point </label>
             <input 
                 id="entry" 
                 type="number" 
@@ -79,7 +79,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
                 onChange={(e) => {setEntryPoint(e.target.valueAsNumber)}}
                 required
                 />
-            <label>Exit Point: *</label>
+            <label>Exit Point </label>
             <input 
                 id="exit" 
                 type="number" 
@@ -87,7 +87,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
                 onChange={(e) => {setExitPoint(e.target.valueAsNumber)}}
                 required
                 />
-            <label>Stop Loss: *</label>
+            <label>Stop Loss </label>
             <input 
                 id="stop" 
                 type="number" 
@@ -95,7 +95,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
                 onChange={(e) => {setStopLoss(e.target.valueAsNumber)}}
                 required
                 />
-            <label>Take Profit: *</label>
+            <label>Take Profit </label>
             <input 
                 id="take" 
                 type="number" 
@@ -105,14 +105,14 @@ const TradeForm: React.FC<TradeFormProps> = ({
                 />
         </div>
         <div className="issue-fields">
-            <label>Issue Name: </label>
+            <label>Issue Name <em>(optional)</em> </label>
             <input 
                 id="issue-name" 
                 type="text" 
                 value={issueName}
                 onChange={(e) => {setIssueName(e.target.value)}}
                 />
-            <label>Issue Description: </label>
+            <label>Issue Description <em>(optional)</em> </label>
             <textarea
                 id="issue-description"
                 value={issueDescription}
