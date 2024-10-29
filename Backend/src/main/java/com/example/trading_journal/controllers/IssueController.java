@@ -36,4 +36,14 @@ public class IssueController {
             return new ResponseEntity<>(issue.get(), HttpStatus.OK);
         }
     }
+
+    @GetMapping("/date/{tradeDate}")
+    public ResponseEntity<List<Issue>> getIssueByDate(@PathVariable String tradeDate){
+        List<Issue> issues = issueService.getIssueByDate(tradeDate);
+        if(issues.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(issues, HttpStatus.OK);
+        }
+    }
 }
