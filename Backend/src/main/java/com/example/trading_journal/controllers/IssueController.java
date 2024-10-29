@@ -31,7 +31,7 @@ public class IssueController {
     public ResponseEntity<Issue> getIssueById(@PathVariable Long id){
         Optional<Issue> issue = issueService.getIssueById(id);
         if(issue.isEmpty()){
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             return new ResponseEntity<>(issue.get(), HttpStatus.OK);
         }
