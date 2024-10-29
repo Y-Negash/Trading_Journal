@@ -22,7 +22,7 @@ public class IssueService {
         return issueRepository.findById(id);
     }
 
-    public Optional<List<Issue>> getIssueByDate(String tradeDate){
+    public List<Issue> getIssueByDate(String tradeDate){
         return issueRepository.getIssueByTradeDate(tradeDate);
     }
 }

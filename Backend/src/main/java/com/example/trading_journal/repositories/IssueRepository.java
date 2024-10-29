@@ -7,5 +7,5 @@ import java.util.List;
 import java.util.Optional;
 
 public interface IssueRepository extends JpaRepository<Issue, Long> {
-    Optional<List<Issue>> getIssueByTradeDate(String tradeDate);
+    List<Issue> getIssueByTradeDate(String tradeDate);
 }
