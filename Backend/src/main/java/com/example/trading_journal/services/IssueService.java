@@ -14,12 +14,15 @@ public class IssueService {
     @Autowired
     IssueRepository issueRepository;
 
-    public List<Issue> getAllNotes(){
+    public List<Issue> getAllIssues(){
         return issueRepository.findAll();
     }
 
-    public Optional<Issue> getNoteById(Long id) {
+    public Optional<Issue> getIssueById(Long id) {
         return issueRepository.findById(id);
     }
 
+    public Optional<List<Issue>> getIssueByDate(String tradeDate){
+        return issueRepository.getIssueByTradeDate(tradeDate);
+    }
 }
