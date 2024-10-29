@@ -1,9 +1,9 @@
 package com.example.trading_journal.components;
 
-import com.example.trading_journal.models.Note;
+import com.example.trading_journal.models.Issue;
 import com.example.trading_journal.models.Trade;
 import com.example.trading_journal.models.Trader;
-import com.example.trading_journal.repositories.NoteRepository;
+import com.example.trading_journal.repositories.IssueRepository;
 import com.example.trading_journal.repositories.TradeRepository;
 import com.example.trading_journal.repositories.TraderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class DataLoader implements ApplicationRunner {
     TradeRepository tradeRepository;
 
     @Autowired
-    NoteRepository noteRepository;
+    IssueRepository issueRepository;
 
     public DataLoader(){}
 
@@ -47,13 +47,13 @@ public class DataLoader implements ApplicationRunner {
         tradeRepository.save(trade3);
         tradeRepository.save(trade2);
 
-        Note goodNote = new Note("Great trade, I analysed well!");
-        Note okayNote = new Note("This was quite average, I could've have improved here");
-        Note badNote = new Note("This is one of the worst I've done :( ");
+        Issue goodNote = new Issue("14/10/2024","Issue 1","Great trade, I analysed well!");
+        Issue okayNote = new Issue("13/10/2024","Issue 2","This was quite average, I could've have improved here");
+        Issue badNote = new Issue("12/10/2024","Issue 3","This is one of the worst I've done :( ");
 
-        noteRepository.save(goodNote);
-        noteRepository.save(okayNote);
-        noteRepository.save(badNote);
+        issueRepository.save(goodNote);
+        issueRepository.save(okayNote);
+        issueRepository.save(badNote);
     }
 
 }

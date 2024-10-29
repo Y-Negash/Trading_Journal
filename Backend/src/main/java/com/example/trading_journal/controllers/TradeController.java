@@ -26,11 +26,11 @@ public class TradeController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Trade> getTradeById(@PathVariable Long id) {
-        Trade trade = tradeService.getTradeById(id).orElse(null);
-        if(trade != null){
-            return new ResponseEntity<>(trade, HttpStatus.OK);
+        Optional<Trade> trade = tradeService.getTradeById(id);
+        if(trade.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(trade.get(), HttpStatus.NOT_FOUND);
         }
     }
 
@@ -54,7 +54,7 @@ public class TradeController {
 
             return new ResponseEntity<>(updatedTrade, HttpStatus.OK);
         } else {
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
