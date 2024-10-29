@@ -27,7 +27,7 @@ public class IssueController {
         return new ResponseEntity<>(issues, HttpStatus.OK);
     }
 
-    @GetMapping("/{id")
+    @GetMapping("/{id}")
     public ResponseEntity<Issue> getIssueById(@PathVariable Long id){
         Optional<Issue> issue = issueService.getIssueById(id);
         if(issue.isEmpty()){
