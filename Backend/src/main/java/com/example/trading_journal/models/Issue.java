@@ -17,6 +17,9 @@ public class Issue {
    @Column(name = "issueDescription")
    private String issueDescription;
 
+   @Column(name = "tradeDate")
+   private String tradeDate;
+
    @JsonIgnore
    @ManyToOne
    @JoinColumn(name = "trade_id")
@@ -24,9 +27,18 @@ public class Issue {
 
     public Issue() {}
 
-    public Issue(String issueName, String issueDescription) {
+    public Issue(String tradeDate, String issueName, String issueDescription) {
+        this.tradeDate = tradeDate;
         this.issueName = issueName;
         this.issueDescription = issueDescription;
+    }
+
+    public String getTradeDate(){
+        return tradeDate;
+    }
+
+    public void setTradeDate(String tradeDate){
+        this.tradeDate = tradeDate;
     }
 
     public Long getIssueId(){

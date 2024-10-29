@@ -47,9 +47,9 @@ public class DataLoader implements ApplicationRunner {
         tradeRepository.save(trade3);
         tradeRepository.save(trade2);
 
-        Issue goodNote = new Issue("Issue 1","Great trade, I analysed well!");
-        Issue okayNote = new Issue("Issue 2","This was quite average, I could've have improved here");
-        Issue badNote = new Issue("Issue 3","This is one of the worst I've done :( ");
+        Issue goodNote = new Issue("14/10/2024","Issue 1","Great trade, I analysed well!");
+        Issue okayNote = new Issue("13/10/2024","Issue 2","This was quite average, I could've have improved here");
+        Issue badNote = new Issue("12/10/2024","Issue 3","This is one of the worst I've done :( ");
 
         issueRepository.save(goodNote);
         issueRepository.save(okayNote);
