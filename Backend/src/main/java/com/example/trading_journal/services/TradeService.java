@@ -35,8 +35,8 @@ public class TradeService {
         );
 
         if(tradeDTO.getIssueName() != null || tradeDTO.getIssueDescription() != null ){
-            Issue issue = new Issue(tradeDTO.getIssueName(), tradeDTO.getIssueDescription());
-//            issue.setTrade(trade);
+            Issue issue = new Issue(tradeDTO.getTradeDate(), tradeDTO.getIssueName(), tradeDTO.getIssueDescription());
+            issue.setTrade(trade);
             trade.addIssue(issue);
         }
 
