@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "../../components/navigation/NavBar";
 import { Trade } from '../../interfaces';
+import './IssuePage.css';
 
 interface IssuePageProps{
     trades: Trade[];
