@@ -103,6 +103,10 @@ const TradeForm: React.FC<TradeFormProps> = ({
                 onChange={(e) => {setTakeProfit(e.target.valueAsNumber)}}
                 required
                 />
+            <div className="calculator-links">
+                <a href="https://www.forextime.com/uk/trading-tools/trading-calculator/pip-calculator" target="_blank">Pip Calculator</a>
+                <a href="https://www.myfxbook.com/forex-calculators/position-size" target="_blank">Position Size Calculator</a>
+            </div>
         </div>
         <div className="issue-fields">
             <label>Issue Name <em>(optional)</em> </label>
