@@ -8,8 +8,19 @@ interface TradePageProps{
 }
 
 const TradePage: React.FC<TradePageProps> = ({ trades }) => {
+    
+    const getTradeType = (trade: Trade) => {
+        if(trade.entryPoint > trade.takeProfit || trade.entryPoint < trade.stopLoss){
+            return "SELL";
+        } else {
+            return "BUY";
+        }
+    }
 
     const mappedTrades = trades.map((trade) => {
+
+       const tradeType= getTradeType(trade);
+
         return (
                 <ul key={trade.id}  className="trade-list">
                     <h3>{trade.name}</h3>
@@ -19,6 +30,7 @@ const TradePage: React.FC<TradePageProps> = ({ trades }) => {
                     <p>Stop Loss: £{trade.stopLoss}</p>
                     <p>Take Profit: £{trade.takeProfit}</p>
                     <p>{trade.tradeDate}</p>
+                    <button>{tradeType}</button>
                 </ul>
         )
     })
@@ -27,7 +39,7 @@ const TradePage: React.FC<TradePageProps> = ({ trades }) => {
         <div className="container">
             <NavBar />
             <div className="trade-container">
-            {mappedTrades}
+                {mappedTrades}
             </div>
         </div>
     )
