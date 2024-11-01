@@ -48,15 +48,22 @@ label {
     text-align: center;
     padding: 1rem 0 0 0;
     color: black;
-    text-shadow: 0px 0px 2px #6b5ca5;
+    text-shadow: 0px 0px 2px var(--dashboard-color);
 }
 
-.trade-form button {
+.issue-fields button {
     font-size: 24px;
-    background-color: #6b5ca5;
+    background-color: var(--dashboard-color);
     padding: 0.4em 1.2em;
     margin: 1rem 0rem;
     box-shadow: 1px 3px grey;
+    color: whitesmoke;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
 }
 
 .trade-form button:active {
