@@ -17,6 +17,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
     const[takeProfit, setTakeProfit] = useState(0);
     const[issueName, setIssueName] = useState<string | undefined>("");
     const[issueDescription, setIssueDescription] = useState<string | undefined>("");
+    const [errorMessage, setErrorMessage] = useState("");
     
     
     const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
@@ -26,6 +27,11 @@ const TradeForm: React.FC<TradeFormProps> = ({
             return; // makes name required for submission
         }
 
+        if (!issueName || !issueDescription) {
+            setErrorMessage("Please give your issue a name and description.");
+            return;
+        }
+            setErrorMessage("");
         // reverses date for uk date format
         const reversedDate = tradeDate.split("-").reverse().join("-");
 
@@ -42,6 +48,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
             issueDescription
         }
         console.log(tradeName)
+
         addTrade(trade);
         setName(null);
         setTradeDate("");
@@ -116,6 +123,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
                 value={issueName}
                 onChange={(e) => {setIssueName(e.target.value)}}
                 />
+            {errorMessage && <p className="error">{errorMessage}</p>}
             <label>Issue Description <em>(optional)</em> </label>
             <textarea
                 id="issue-description"

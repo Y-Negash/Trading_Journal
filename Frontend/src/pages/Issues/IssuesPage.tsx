@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "../../components/navigation/NavBar";
-import { Trade } from '../../interfaces';
+import { Issue, Trade } from '../../interfaces';
 import './IssuePage.css';
 
 interface IssuePageProps{
@@ -8,16 +8,21 @@ interface IssuePageProps{
 }
 
 const IssuesPage: React.FC<IssuePageProps> = ({trades}) => {
-    const mappedIssues = trades.flatMap((trade) => trade.issues?.map((issue) =>{
-        return(
-        
-            <ul key={trade.id} className="issue-list">
-                <h3>{issue.issueName}</h3>
-                <hr />
-                <p>{issue.tradeDate}</p>
-                <p>{issue.issueDescription}</p>
-            </ul>
-        )
+    const mappedIssues = trades.flatMap((trade) => trade.issues?.map((issue: Issue) =>{
+        const {issueName, issueDescription} = issue;
+
+        // if issue name & des or just name exist, creates trade tile
+        if(issueName && issueDescription || issueName){ 
+            return(
+            
+                <ul key={trade.id} className="issue-list">
+                    <h3>{issueName}</h3>
+                    <hr />
+                    <p>{trade.tradeDate}</p>
+                    <p>{issueDescription}</p>
+                </ul>
+            )
+        }
 }))
 
     return(
