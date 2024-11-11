@@ -1,11 +1,7 @@
 import React from "react";
-import { Trade } from '../../interfaces';
+import { Trade, TradePageProps } from '../../interfaces';
 import NavBar from "../../components/navigation/NavBar";
 import './TradePage.css';
-
-interface TradePageProps{
-    trades: Trade[];
-}
 
 const TradePage: React.FC<TradePageProps> = ({ trades }) => {
     
