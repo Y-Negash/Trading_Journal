@@ -35,7 +35,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <HomePage addTrade={addTrade} />,
+      element: <HomePage addTrade={addTrade} trades={trades} />,
     },
     {
       path: '/analytics',

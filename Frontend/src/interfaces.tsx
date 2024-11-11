@@ -10,6 +10,11 @@ export interface Trade{
     issueDescription?: string,
 }
 
+export interface HomePageProps{
+    trades: Trade[],
+    addTrade: (trade: Omit<Trade, 'id'>) => Promise<void>;
+}
+
 export interface TradeFormProps{
     addTrade: (trade: Omit<Trade, 'id'>) => void,
 }
@@ -22,4 +27,8 @@ export interface Option {
 export interface SearchDropdownProps{
     name: string | null,
     setName: React.Dispatch<React.SetStateAction<string|null>>
+}
+
+export interface TradeWidgetProps{
+    trades: Trade[]
 }
