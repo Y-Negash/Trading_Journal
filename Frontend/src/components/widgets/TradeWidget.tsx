@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Trade, TradeWidgetProps } from "../../interfaces";
+import { Trade, TradePageProps } from "../../interfaces";
 
-const TradeWidget:React.FC<TradeWidgetProps>= ({trades}) => {
+const TradeWidget:React.FC<TradePageProps>= ({trades}) => {
     
     const [latestTrades, setLatestTrades]=useState<Trade[]>([]);
     
