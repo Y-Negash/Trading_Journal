@@ -43,7 +43,7 @@ function App() {
     },
     {
       path: '/issues',
-      element: <IssuesPage />
+      element: <IssuesPage trades={trades}/>
     },
     {
       path: '/trades',

@@ -1,0 +1,75 @@
+#tradepage-title{
+    text-align: center;
+    font-size: xx-large;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.trade-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 3rem;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.trade-list{
+    background-color: white;
+    border-radius: 1.5rem;
+    margin: 1rem;
+    text-align: center;
+    padding: 0.5rem;
+    width: 16%;
+    box-shadow: 1px 3px 8px 2px #719AD3;
+}
+
+.trade-list p {
+    text-align: left;
+    padding-left: 0.5rem;
+    margin: 0.3rem;
+}
+
+.sell, .buy {
+    border-radius: 2px;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 0.1rem 0.6rem;
+    font-family: inherit;
+    color: whitesmoke;
+    transition: border-color 0.25s;
+    border: none;
+    width: 100%;
+}
+
+.sell {
+    background-color: var(--tradepage-color);
+}
+
+.buy {
+    background-color: var(--tradepage-color1);
+}
+  
+.details {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.5rem;
+    padding-bottom: 0.4rem;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 5px 0;
+}
+
+.detail-item p {
+    margin: 0;
+}
+

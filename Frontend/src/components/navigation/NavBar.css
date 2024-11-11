@@ -14,3 +14,11 @@
     font-weight: 500;
     font-size: large;
 }
+
+#title {
+    display: flex;
+    justify-content: center;
+    font-size: xxx-large;
+    font-family: Georgia, 'Times New Roman', serif;
+    margin: 1rem;
+}

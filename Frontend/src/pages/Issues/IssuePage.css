@@ -1,0 +1,25 @@
+.issue-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 4rem;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.issue-list{
+    background-color: white;
+    border-radius: 1.5rem;
+    margin: 1rem;
+    text-align: center;
+    padding: 0.5rem;
+    width: 16%;
+    height: 12rem;
+    box-shadow: 1px 3px 8px 2px #084192;
+}
+
+.issue-list p {
+    text-align: left;
+    padding-left: 0.5rem;
+    margin: 0.3rem;
+}

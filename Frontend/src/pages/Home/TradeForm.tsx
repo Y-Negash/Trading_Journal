@@ -17,6 +17,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
     const[takeProfit, setTakeProfit] = useState(0);
     const[issueName, setIssueName] = useState<string | undefined>("");
     const[issueDescription, setIssueDescription] = useState<string | undefined>("");
+    const [errorMessage, setErrorMessage] = useState("");
     
     
     const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
@@ -26,6 +27,11 @@ const TradeForm: React.FC<TradeFormProps> = ({
             return; // makes name required for submission
         }
 
+        if (!issueName || !issueDescription) {
+            setErrorMessage("Please give your issue a name and description.");
+            return;
+        }
+            setErrorMessage("");
         // reverses date for uk date format
         const reversedDate = tradeDate.split("-").reverse().join("-");
 
@@ -42,6 +48,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
             issueDescription
         }
         console.log(tradeName)
+
         addTrade(trade);
         setName(null);
         setTradeDate("");
@@ -58,12 +65,12 @@ const TradeForm: React.FC<TradeFormProps> = ({
         <h2 id="form-title">Add A Trade </h2>
         <form onSubmit={handleSubmit} className="trade-form">
         <div className="trade-fields">
-            <label>Name: * </label>
+            <label>Name</label>
             <SearchDropdown 
                 name={name} 
                 setName={setName} 
             />
-            <label>Date: *</label>
+            <label>Date </label>
             <input 
                 id="date" 
                 type="date" 
@@ -71,7 +78,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
                 onChange={(e) => {setTradeDate(e.target.value)}}
                 required
                 />
-            <label>Entry Point: *</label>
+            <label>Entry Point </label>
             <input 
                 id="entry" 
                 type="number" 
@@ -79,7 +86,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
                 onChange={(e) => {setEntryPoint(e.target.valueAsNumber)}}
                 required
                 />
-            <label>Exit Point: *</label>
+            <label>Exit Point </label>
             <input 
                 id="exit" 
                 type="number" 
@@ -87,7 +94,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
                 onChange={(e) => {setExitPoint(e.target.valueAsNumber)}}
                 required
                 />
-            <label>Stop Loss: *</label>
+            <label>Stop Loss </label>
             <input 
                 id="stop" 
                 type="number" 
@@ -95,7 +102,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
                 onChange={(e) => {setStopLoss(e.target.valueAsNumber)}}
                 required
                 />
-            <label>Take Profit: *</label>
+            <label>Take Profit </label>
             <input 
                 id="take" 
                 type="number" 
@@ -103,16 +110,21 @@ const TradeForm: React.FC<TradeFormProps> = ({
                 onChange={(e) => {setTakeProfit(e.target.valueAsNumber)}}
                 required
                 />
+            <div className="calculator-links">
+                <a href="https://www.forextime.com/uk/trading-tools/trading-calculator/pip-calculator" target="_blank">Pip Calculator</a>
+                <a href="https://www.myfxbook.com/forex-calculators/position-size" target="_blank">Position Size Calculator</a>
+            </div>
         </div>
         <div className="issue-fields">
-            <label>Issue Name: </label>
+            <label>Issue Name <em>(optional)</em> </label>
             <input 
                 id="issue-name" 
                 type="text" 
                 value={issueName}
                 onChange={(e) => {setIssueName(e.target.value)}}
                 />
-            <label>Issue Description: </label>
+            {errorMessage && <p className="error">{errorMessage}</p>}
+            <label>Issue Description <em>(optional)</em> </label>
             <textarea
                 id="issue-description"
                 value={issueDescription}

@@ -27,21 +27,21 @@ public class TraderController {
     @GetMapping("/{id}")
     public ResponseEntity<Trader> getTrader(@PathVariable long id){
         Optional<Trader> trader = traderService.getTraderById(id);
-        if(trader.isPresent()){
-            return new ResponseEntity<>(trader.get(), HttpStatus.OK);
+        if(trader.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(trader.get(), HttpStatus.OK);
         }
     }
 
     @PatchMapping("/{id}/edit")
     public ResponseEntity<Trader> updateTrader(@RequestBody TraderDTO traderDTO, @PathVariable long id) {
         Optional<Trader> trader = traderService.getTraderById(id);
-        if (trader.isPresent()) {
+        if (trader.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
             Trader updatedTrader = traderService.updateTrader(traderDTO, id);
             return new ResponseEntity<>(updatedTrader, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
 }
