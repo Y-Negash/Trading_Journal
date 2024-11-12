@@ -22,8 +22,9 @@ function App() {
 }
   useEffect(() => {
       loadTrades()
-  },[])
-
+    },[])
+    
+    
   const addTrade = async (trade: Omit<Trade, 'id'>) => {
     const response = await fetch('http://localhost:8080/trades',{
         method: 'POST',
@@ -34,6 +35,7 @@ function App() {
         });
     const newTrade = await response.json();
     setTrades([...trades, newTrade]);
+    setIssues([...issues, newTrade.issues[0]]);
   }
  
   const router = createBrowserRouter([
