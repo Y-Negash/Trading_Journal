@@ -26,12 +26,13 @@ Backend:
 
 **Trades Page:** 
 > Displays a list of trades retrieved from the backend API.
+> 
+**Issues Page:** 
+> Tracks bugs or issues related to trades.
 
 **Analytics Page:** 
 > (In future) Will analyze trades and provide detailed performance statistics.
 
-**Issues Page:** 
-> (In Future) Tracks bugs or issues related to trades.
 
 ## Setup and Installation
 **Frontend**
