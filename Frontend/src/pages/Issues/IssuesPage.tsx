@@ -26,6 +26,7 @@ const IssuesPage: React.FC<IssuePageProps> = ({issues}) => {
     return(
         <>
         <div className="container">
+        <h3 id="issuepage-title">Issue Page</h3>
             <NavBar />
             <section className="issue-container">
                 {mappedIssues}

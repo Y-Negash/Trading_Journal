@@ -7,8 +7,10 @@ nav {
     justify-content: space-around;
     align-items: center;
     height: 100%;
-    /* margin-top: 0.5rem; */
     background-color:var(--background-color);
+    position: fixed;
+    top: 0;
+    padding: 2rem;
 }
 
 .navbar-link {

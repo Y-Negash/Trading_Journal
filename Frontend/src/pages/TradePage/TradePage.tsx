@@ -67,6 +67,7 @@ const TradePage: React.FC<TradePageProps> = ({ trades }) => {
     return(
         <div className="container">
             <NavBar />
+            <h3 id="tradepage-title">Trade Page</h3>
             <div className="trade-container">
                 {mappedTrades}
             </div>
