@@ -6,7 +6,7 @@
     background-color: white;
     margin: 1rem 2rem;
     border-radius: 1rem;
-    box-shadow: 0px 0px 15px 1px #6b5ca5;
+    box-shadow: 1px 3px 10px 3px var(--shadow-color);
 }
 
 .trade-form {
@@ -43,6 +43,8 @@
     border-radius: 3px;
     width: 80%;
     margin: 0.2rem 0;
+    color: var(--button-color);
+    font-weight: 600;
 }
 
 
@@ -61,6 +63,8 @@
     border: 1px solid grey;
     border-radius: 3px;
     padding: 0.5rem;
+    color: var(--button-color);
+    font-weight: 600;
 }
 
 #issue-description {
@@ -71,25 +75,28 @@
     margin-bottom: 0.5rem;
     font-family: segoe UI;
     resize: none;
+    color: var(--button-color);
+    font-weight: 600;
 }
 #form-title {
-    font-weight: 500;
+    font-family: Roboto, sans-serif;
+    font-size: x-large;
+    font-weight: 600;
     text-align: center;
-    color: black;
     grid-column: 1 / 3;
-    text-shadow: 0px 0px 2px var(--dashboard-color);
     margin-top: 1rem;
+    color: var(--button-color);
 }
 
 .issue-fields button, .trade-fields a {
-    background-color: var(--dashboard-color);
+    background-color: var(--button-color);
     padding: 0.6em 1.2em;
-    box-shadow: 1px 2px 2px black;
+    box-shadow: 1px 2px 2px rgb(4, 4, 55);
     color: whitesmoke;
     border-radius: 8px;
-    border: 2px solid var(--border-color);
-    font-weight: 500;
+    border: 1px solid black;
     font-family: inherit;
+    font-weight: 500;
     cursor: pointer;
     transition: border-color 0.25s;
 }
@@ -97,8 +104,9 @@
 .calculator-links{
     display: flex;
     gap: 10px;
-    margin-top: 1rem; 
+    padding-top: 1.5rem;
     grid-column: 1 / 3;
+    text-align: center;
 }
 
 .trade-fields a {

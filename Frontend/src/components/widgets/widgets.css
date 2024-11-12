@@ -10,10 +10,10 @@
     flex-direction: column;
     flex: 1;
     background-color: white;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     padding: 1rem;
     margin: 1.5rem 2rem;
-    box-shadow: 0px 0px 15px 1px #6b5ca5;
+    box-shadow: 1px 3px 10px 3px var(--shadow-color);
     align-items: center; 
 }
 
@@ -29,14 +29,17 @@
 }
 
 .recent-trade:hover, .recent-issue:hover {
-    background-color: #8f80c9aa;
+    border: 2px dotted var(--shadow-color);
     border-radius: 2px;
 }
 
 .widget-title {
     font-size: x-large;
-    font-weight: 500;
+    font-weight: 600;
+    font-family: Roboto, sans-serif;
     text-align: center;
+    margin-bottom: 0.3rem;
+    color: var(--button-color);
 }
 
 .icon {

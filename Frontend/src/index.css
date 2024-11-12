@@ -4,28 +4,33 @@
   box-sizing: border-box;
 }
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif, Roboto;
   line-height: 1.5;
   font-weight: 600;
   --background-color: #dde2e8;
   --link-color: #646cff;
-  --link-color1: #535bf2;
+  --link-color1: white;
   --border-color: #433a69;
+  --dashboard-color: #C5DCFC;
+  --nav-color: #64A1F7;
+  --shadow-color: #719AD3;
+  --button-color: #0034A3;
   --tradepage-color: #719AD3;
   --tradepage-color1: #5f1a4c;
-  --dashboard-color: #6b5ca5;
-
-
+  
+  
+  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
- html, body {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  background-color: var(--dashboard-color);
   width: 100%;
 }
 
@@ -37,7 +42,6 @@
 
 a {
   font-weight: 500;
-  /* color: var(--link-color); */
   text-decoration: inherit;
 }
 

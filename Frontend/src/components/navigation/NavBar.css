@@ -7,10 +7,11 @@ nav {
     justify-content: space-around;
     align-items: center;
     height: 100%;
-    background-color:var(--background-color);
+    background-color:var(--nav-color);
     position: fixed;
     top: 0;
     padding: 2rem;
+    box-shadow:  2px 0px 8px 0.5px var(--button-color);
 }
 
 .navbar-link {

@@ -10,7 +10,7 @@ import IssueWidget from "../../components/widgets/IssueWidget";
 const Dashboard: React.FC<DashboardProps> = ({addTrade, trades, issues}) => {
 
     return(
-        <div className="container">
+        <div className="dashboard-container container">
             <NavBar />
             <section className="widgets-container">
                 <TradeWidget trades={trades}/>

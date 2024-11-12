@@ -30,7 +30,6 @@ const IssueWidget:React.FC<IssuePageProps> = ({ issues }) => {
     return(
         <div className="recent-issues">
             <h3 className="widget-title">Recent Issues</h3>
-            <hr/>
             <div className="recent-issue-list">
 
             {mappedLatestIssues}
