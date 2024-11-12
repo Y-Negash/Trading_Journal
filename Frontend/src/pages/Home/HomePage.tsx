@@ -12,8 +12,10 @@ const HomePage: React.FC<HomePageProps> = ({addTrade, trades, issues}) => {
     return(
         <div className="container">
             <NavBar />
-            <TradeWidget trades={trades}/>
-            <IssueWidget issues={issues} />
+            <section className="widgets-container">
+                <TradeWidget trades={trades}/>
+                <IssueWidget issues={issues} />
+            </section>
             <TradeForm addTrade={addTrade} />
             
         </div>
