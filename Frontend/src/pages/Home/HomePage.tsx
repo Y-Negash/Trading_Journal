@@ -1,19 +1,21 @@
 import React from "react";
 import TradeForm from "./TradeForm";
 import './HomePage.css';
-import { Trade } from '../../interfaces';
+import { HomePageProps } from '../../interfaces';
 import NavBar from "../../components/navigation/NavBar";
+import TradeWidget from "../../components/widgets/TradeWidget";
+import IssueWidget from "../../components/widgets/IssueWidget";
 
-interface HomePageProps{
-    addTrade: (trade: Omit<Trade, 'id'>) => Promise<void>;
-}
 
-const HomePage: React.FC<HomePageProps> = ({addTrade}) => {
-    
+const HomePage: React.FC<HomePageProps> = ({addTrade, trades, issues}) => {
 
     return(
         <div className="container">
             <NavBar />
+            <section className="widgets-container">
+                <TradeWidget trades={trades}/>
+                <IssueWidget issues={issues} />
+            </section>
             <TradeForm addTrade={addTrade} />
             
         </div>

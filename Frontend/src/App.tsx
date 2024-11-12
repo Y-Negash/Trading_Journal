@@ -4,18 +4,22 @@ import AnalyticsPage from './pages/Analytics/AnalyticsPage';
 import IssuesPage from './pages/Issues/IssuesPage';
 import TradePage from './pages/TradePage/TradePage';
 import { useState,useEffect } from 'react';
-import { Trade } from './interfaces';
+import { Trade, Issue } from './interfaces';
 
 function App() {
   
   const [trades, setTrades] = useState<Trade[]>([]);
+  const [issues, setIssues] = useState<Issue[]>([]);
 
   const loadTrades = async () => {
-    const response = await fetch('http://localhost:8080/trades');
-    const jsonData = await response.json();
-    setTrades(jsonData);
+    const trades = await fetch('http://localhost:8080/trades');
+    const tradeData = await trades.json();
+    setTrades(tradeData);
+    
+    const issues = await fetch('http://localhost:8080/issues');
+    const issuesData = await issues.json();
+    setIssues(issuesData);
 }
-
   useEffect(() => {
       loadTrades()
   },[])
@@ -35,7 +39,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <HomePage addTrade={addTrade} />,
+      element: <HomePage addTrade={addTrade} trades={trades} issues={issues}/>,
     },
     {
       path: '/analytics',
@@ -43,7 +47,7 @@ function App() {
     },
     {
       path: '/issues',
-      element: <IssuesPage trades={trades}/>
+      element: <IssuesPage issues={issues}/>
     },
     {
       path: '/trades',
