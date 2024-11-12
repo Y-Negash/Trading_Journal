@@ -1,13 +1,13 @@
 import React from "react";
 import TradeForm from "./TradeForm";
-import './HomePage.css';
-import { HomePageProps } from '../../interfaces';
+import './Dashboard.css';
+import { DashboardProps } from '../../interfaces';
 import NavBar from "../../components/navigation/NavBar";
 import TradeWidget from "../../components/widgets/TradeWidget";
 import IssueWidget from "../../components/widgets/IssueWidget";
 
 
-const HomePage: React.FC<HomePageProps> = ({addTrade, trades, issues}) => {
+const Dashboard: React.FC<DashboardProps> = ({addTrade, trades, issues}) => {
 
     return(
         <div className="container">
@@ -22,4 +22,4 @@ const HomePage: React.FC<HomePageProps> = ({addTrade, trades, issues}) => {
     );
 }
 
-export default HomePage;
+export default Dashboard;

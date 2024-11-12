@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Issue, IssuePageProps } from "../../interfaces";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBug } from "@fortawesome/free-solid-svg-icons";
+import './widgets.css';
 
 const IssueWidget:React.FC<IssuePageProps> = ({ issues }) => {
 

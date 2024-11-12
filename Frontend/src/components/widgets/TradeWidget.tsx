@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Trade, TradePageProps } from "../../interfaces";
-import '../../pages/Home/HomePage.css';
+import './widgets.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoneyBillTrendUp } from "@fortawesome/free-solid-svg-icons";
 
