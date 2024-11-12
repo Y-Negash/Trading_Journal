@@ -1,4 +1,4 @@
-/* .issue-container{
+.issue-container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -22,4 +22,4 @@
     text-align: left;
     padding-left: 0.5rem;
     margin: 0.3rem;
-} */
+}
