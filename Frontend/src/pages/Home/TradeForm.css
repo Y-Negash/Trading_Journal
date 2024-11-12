@@ -1,12 +1,13 @@
 .form-container {
     display: flex;
     flex-direction:column;
+    height: 20%;
     justify-content: center;
     background-color: white;
     padding: 1rem;
     margin: 3rem 2rem;
     border-radius: 1rem;
-    box-shadow: 5px 6px 15px 9px #6b5ca5;
+    box-shadow: inset 0px 0px 7px 3px #6b5ca5;
 }
 
 .trade-form {
@@ -20,7 +21,6 @@
     flex-direction: column;
     flex: 1;
     padding: 0.5rem 2rem;
-    /* margin-right: 5rem; */
     margin: 1rem 3rem;
 }
 
@@ -94,3 +94,4 @@ label {
     box-shadow: 0 0 #000;
     transform: translateY(4px);
 }
+
