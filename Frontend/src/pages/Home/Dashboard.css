@@ -1,6 +1,8 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 17fr;
+    grid-template-rows: max-content;
+    height: 100%;
 }
+
 

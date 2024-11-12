@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -23,20 +22,31 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  min-height: 100vh;
-  background-color:var(--background-color);
+ html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
 
 a {
   font-weight: 500;
-  color: var(--link-color);
+  /* color: var(--link-color); */
   text-decoration: inherit;
 }
 
 a:hover {
   color: var(--link-color1);
 }
+
+
+
 
 
 
