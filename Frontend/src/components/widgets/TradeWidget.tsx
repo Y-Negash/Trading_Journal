@@ -3,7 +3,6 @@ import { Trade, TradePageProps } from "../../interfaces";
 import '../../pages/Home/HomePage.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoneyBillTrendUp } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 
 const TradeWidget:React.FC<TradePageProps>= ({trades}) => {
     
