@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Issue, IssuePageProps } from "../../interfaces";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBug } from "@fortawesome/free-solid-svg-icons";
+import './widgets.css';
 
 const IssueWidget:React.FC<IssuePageProps> = ({ issues }) => {
 
@@ -29,7 +30,6 @@ const IssueWidget:React.FC<IssuePageProps> = ({ issues }) => {
     return(
         <div className="recent-issues">
             <h3 className="widget-title">Recent Issues</h3>
-            <hr/>
             <div className="recent-issue-list">
 
             {mappedLatestIssues}

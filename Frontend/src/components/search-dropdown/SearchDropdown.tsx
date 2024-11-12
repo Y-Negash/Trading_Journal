@@ -48,7 +48,7 @@ const SearchDropdown: React.FC<SearchDropdownProps> = ({
                 onChange={handleChange}
                 onClick={() => setIsOpen(!isOpen)}
                 required
-                className="input"
+                className="dropdown-input"
             />
         <div className={`arrow ${isOpen ? "open" : ""}`}></div>
             {isOpen && (

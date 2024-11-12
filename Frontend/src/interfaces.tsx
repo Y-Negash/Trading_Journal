@@ -16,7 +16,7 @@ export interface Trade {
     issues?: Issue[]; 
 }
 
-export interface HomePageProps{
+export interface DashboardProps{
     trades: Trade[],
     issues: Issue[],
     addTrade: (trade: Omit<Trade, 'id'>) => Promise<void>;

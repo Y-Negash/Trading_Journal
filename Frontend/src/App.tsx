@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import HomePage from './pages/Home/HomePage';
+import Dashboard from './pages/Home/Dashboard';
 import AnalyticsPage from './pages/Analytics/AnalyticsPage';
 import IssuesPage from './pages/Issues/IssuesPage';
 import TradePage from './pages/TradePage/TradePage';
@@ -41,7 +41,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <HomePage addTrade={addTrade} trades={trades} issues={issues}/>,
+      element: <Dashboard addTrade={addTrade} trades={trades} issues={issues}/>,
     },
     {
       path: '/analytics',

@@ -1,0 +1,10 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 17fr;
+    grid-template-rows: max-content;
+    height: 100%;
+}
+
+.dashboard-container {
+    overflow-y: hidden;
+}

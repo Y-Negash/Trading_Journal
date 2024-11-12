@@ -65,51 +65,63 @@ const TradeForm: React.FC<TradeFormProps> = ({
         <h2 id="form-title">Add A Trade </h2>
         <form onSubmit={handleSubmit} className="trade-form">
         <div className="trade-fields">
-            <label>Name</label>
-            <SearchDropdown 
-                name={name} 
-                setName={setName} 
-            />
-            <label>Date </label>
-            <input 
-                id="date" 
-                type="date" 
-                value={tradeDate}
-                onChange={(e) => {setTradeDate(e.target.value)}}
-                required
+            <div className="label-input-pair">
+                <label>Name</label>
+                <SearchDropdown 
+                    name={name} 
+                    setName={setName} 
                 />
-            <label>Entry Point </label>
-            <input 
-                id="entry" 
-                type="number" 
-                value={entryPoint}
-                onChange={(e) => {setEntryPoint(e.target.valueAsNumber)}}
-                required
-                />
-            <label>Exit Point </label>
-            <input 
-                id="exit" 
-                type="number" 
-                value={exitPoint}
-                onChange={(e) => {setExitPoint(e.target.valueAsNumber)}}
-                required
-                />
-            <label>Stop Loss </label>
-            <input 
-                id="stop" 
-                type="number" 
-                value={stopLoss}
-                onChange={(e) => {setStopLoss(e.target.valueAsNumber)}}
-                required
-                />
-            <label>Take Profit </label>
-            <input 
-                id="take" 
-                type="number" 
-                value={takeProfit}
-                onChange={(e) => {setTakeProfit(e.target.valueAsNumber)}}
-                required
-                />
+            </div>
+            <div className="label-input-pair">
+                <label>Date </label>
+                <input 
+                    id="date" 
+                    type="date" 
+                    value={tradeDate}
+                    onChange={(e) => {setTradeDate(e.target.value)}}
+                    required
+                    />
+                </div>
+            <div className="label-input-pair">
+                <label>Entry Point </label>
+                <input 
+                    id="entry" 
+                    type="number" 
+                    value={entryPoint}
+                    onChange={(e) => {setEntryPoint(e.target.valueAsNumber)}}
+                    required
+                    />  
+            </div>
+            <div className="label-input-pair">
+                <label>Exit Point </label>
+                <input 
+                    id="exit" 
+                    type="number" 
+                    value={exitPoint}
+                    onChange={(e) => {setExitPoint(e.target.valueAsNumber)}}
+                    required
+                    />
+                </div>
+            <div className="label-input-pair">
+                <label>Stop Loss </label>
+                <input 
+                    id="stop" 
+                    type="number" 
+                    value={stopLoss}
+                    onChange={(e) => {setStopLoss(e.target.valueAsNumber)}}
+                    required
+                    />  
+            </div>
+            <div className="label-input-pair">
+                <label>Take Profit </label>
+                <input 
+                    id="take" 
+                    type="number" 
+                    value={takeProfit}
+                    onChange={(e) => {setTakeProfit(e.target.valueAsNumber)}}
+                    required
+                    />
+                </div>   
             <div className="calculator-links">
                 <a href="https://www.forextime.com/uk/trading-tools/trading-calculator/pip-calculator" target="_blank">Pip Calculator</a>
                 <a href="https://www.myfxbook.com/forex-calculators/position-size" target="_blank">Position Size Calculator</a>

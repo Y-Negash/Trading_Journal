@@ -1,74 +1,102 @@
 .form-container {
-    display: flex;
-    flex-direction:column;
-    height: 20%;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content;
+    grid-row: 2 / 3;
     background-color: white;
-    padding: 1rem;
-    margin: 3rem 2rem;
+    margin: 1rem 2rem;
     border-radius: 1rem;
-    box-shadow: inset 0px 0px 7px 3px #6b5ca5;
+    box-shadow: 1px 3px 10px 3px var(--shadow-color);
 }
 
 .trade-form {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: 2;
+    grid-column: 1 / 3;
 }
 
-.trade-fields, .issue-fields {
+.trade-fields {
     display: flex;
     flex-direction: column;
-    flex: 1;
-    padding: 0.5rem 2rem;
-    margin: 1rem 3rem;
+    padding: 2rem 3rem 1.5rem 4rem;
 }
 
-input {
-    margin-bottom: 0.5rem;
-    padding: 0.2rem;
-    
+.issue-fields{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 3rem 1.5rem 4rem;
+}
+.label-input-pair{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-label {
+.label-input-pair:first-of-type input{
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.label-input-pair input{
+    border: 1px solid grey;
+    border-radius: 3px;
+    width: 80%;
+    margin: 0.2rem 0;
+    color: var(--button-color);
+    font-weight: 600;
+}
+
+
+.label-input-pair label {
     margin: 0.5rem 0rem;
-    font-size: 20px;
 }
 
 .error {
-    
     border-radius: 5px;
     padding: 0 0.4rem;
     color: red;
     text-align: end;
 }
 
+#issue-name{
+    border: 1px solid grey;
+    border-radius: 3px;
+    padding: 0.5rem;
+    color: var(--button-color);
+    font-weight: 600;
+}
+
 #issue-description {
     width: 100%;
     height: 100%;
+    border: 1px solid grey;
+    border-radius: 3px;
     margin-bottom: 0.5rem;
     font-family: segoe UI;
+    resize: none;
+    color: var(--button-color);
+    font-weight: 600;
 }
 #form-title {
-    margin-left: 2rem;
-    font-weight: 500;
-    font-size: 35px;
+    font-family: Roboto, sans-serif;
+    font-size: x-large;
+    font-weight: 600;
     text-align: center;
-    padding: 1rem 0 0 0;
-    color: black;
-    text-shadow: 0px 0px 2px var(--dashboard-color);
+    grid-column: 1 / 3;
+    margin-top: 1rem;
+    color: var(--button-color);
 }
 
 .issue-fields button, .trade-fields a {
-    font-size: 24px;
-    background-color: var(--dashboard-color);
+    background-color: var(--button-color);
     padding: 0.6em 1.2em;
-    box-shadow: 1px 2px 2px black;
+    box-shadow: 1px 2px 2px rgb(4, 4, 55);
     color: whitesmoke;
     border-radius: 8px;
-    border: 2px solid var(--border-color);
-    font-weight: 500;
+    border: 1px solid black;
     font-family: inherit;
+    font-weight: 500;
     cursor: pointer;
     transition: border-color 0.25s;
 }
@@ -76,12 +104,13 @@ label {
 .calculator-links{
     display: flex;
     gap: 10px;
-    margin-top: 1rem; 
+    padding-top: 1.5rem;
+    grid-column: 1 / 3;
+    text-align: center;
 }
 
 .trade-fields a {
     margin: 1rem 0rem;
-    font-size: 18px;
     margin: 0;
     width: 50%;
 }
@@ -94,4 +123,3 @@ label {
     box-shadow: 0 0 #000;
     transform: translateY(4px);
 }
-

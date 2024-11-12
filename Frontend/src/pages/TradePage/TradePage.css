@@ -1,13 +1,8 @@
 #tradepage-title{
     text-align: center;
     font-size: xx-large;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
+    margin-top: 1rem;
+    font-family: Helvetica, sans-serif;
 }
 
 .trade-container{

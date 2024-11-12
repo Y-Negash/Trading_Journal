@@ -23,3 +23,10 @@
     padding-left: 0.5rem;
     margin: 0.3rem;
 }
+
+#issuepage-title{
+    text-align: center;
+    font-size: xx-large;
+    margin-top: 1rem;
+    font-family: Helvetica, sans-serif;
+}

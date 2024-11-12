@@ -1,12 +1,17 @@
+nav {
+    grid-row: 1 / 3;
+}
 #navbar-links {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
-    border: 0.1rem solid black;
-    border-radius: 1rem;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    background-color: white;
+    align-items: center;
+    height: 100%;
+    background-color:var(--nav-color);
+    position: fixed;
+    top: 0;
+    padding: 2rem;
+    box-shadow:  2px 0px 8px 0.5px var(--button-color);
 }
 
 .navbar-link {
