@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBug } from "@fortawesome/free-solid-svg-icons";
 
 const IssueWidget:React.FC<IssuePageProps> = ({ issues }) => {
+
     const [latestIssues, setlatestIssues] = useState<Issue[]>([]);
 
     useEffect(() => {
@@ -13,7 +14,6 @@ const IssueWidget:React.FC<IssuePageProps> = ({ issues }) => {
         setlatestIssues(issues);
     }
     }, [issues])
-    console.log(latestIssues)
 
     const mappedLatestIssues = latestIssues.map((recentIssue) => {
         return(

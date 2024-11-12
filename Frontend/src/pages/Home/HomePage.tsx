@@ -14,7 +14,7 @@ const HomePage: React.FC<HomePageProps> = ({addTrade, trades, issues}) => {
             <NavBar />
             <section className="widgets-container">
                 <TradeWidget trades={trades}/>
-                <IssueWidget issues={issues} />
+                <IssueWidget issues={issues}/>
             </section>
             <TradeForm addTrade={addTrade} />
             
