@@ -20,11 +20,9 @@ const TradeForm: React.FC<TradeFormProps> = ({
     const [errorMessage, setErrorMessage] = useState("");
     
     
-    const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        
+    const validateForm = () => {
         if(!name){
-            return; // makes name required for submission
+            return;
         }
 
         if (!issueName || !issueDescription) {
@@ -33,17 +31,16 @@ const TradeForm: React.FC<TradeFormProps> = ({
         }
             setErrorMessage("");
 
-        // issue name character limit
         if(issueName.length > 30){
             setErrorMessage("Please shorten the issue name, you've reached the limit");
             return
         }
-        setErrorMessage("");
-        
-        // reverses date for uk date format
-        const reversedDate = tradeDate.split("-").reverse().join("-");
+            setErrorMessage("");    
+    }
 
-        const tradeName = name.concat(" ", reversedDate); // more unique name
+    const readableTrade = () => {
+        const reversedDate = tradeDate.split("-").reverse().join("-");
+        const tradeName = name!.concat(" ", reversedDate); // more unique name
 
         const trade = {
             name: tradeName,
@@ -55,9 +52,22 @@ const TradeForm: React.FC<TradeFormProps> = ({
             issueName,
             issueDescription
         }
-        console.log(tradeName)
 
-        addTrade(trade);
+         return trade;
+    }
+    
+    const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+       
+        try {
+            validateForm();
+            const newTrade = readableTrade();
+            addTrade(newTrade);
+           console.log("Trade should be added to the list")
+        } catch (error) {
+            console.error("The trade is not being recognised")
+        } 
+        
         setName(null);
         setTradeDate("");
         setEntryPoint(0);
