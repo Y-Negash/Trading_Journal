@@ -10,13 +10,13 @@ const TradeForm: React.FC<TradeFormProps> = ({
  }) => {
 
     const [name, setName] = useState<string | null>(null);
-    const[tradeDate, setTradeDate] = useState("");
-    const[entryPoint, setEntryPoint] = useState(0);
-    const[exitPoint, setExitPoint] = useState(0);
-    const[stopLoss, setStopLoss] = useState(0);
-    const[takeProfit, setTakeProfit] = useState(0);
-    const[issueName, setIssueName] = useState<string | undefined>("");
-    const[issueDescription, setIssueDescription] = useState<string | undefined>("");
+    const [tradeDate, setTradeDate] = useState("");
+    const [entryPoint, setEntryPoint] = useState(0);
+    const [exitPoint, setExitPoint] = useState(0);
+    const [stopLoss, setStopLoss] = useState(0);
+    const [takeProfit, setTakeProfit] = useState(0);
+    const [issueName, setIssueName] = useState<string | undefined>("");
+    const [issueDescription, setIssueDescription] = useState<string | undefined>("");
     const [errorMessage, setErrorMessage] = useState("");
     
     
@@ -32,6 +32,14 @@ const TradeForm: React.FC<TradeFormProps> = ({
             return;
         }
             setErrorMessage("");
+
+        // issue name character limit
+        if(issueName.length > 30){
+            setErrorMessage("Please shorten the issue name, you've reached the limit");
+            return
+        }
+        setErrorMessage("");
+        
         // reverses date for uk date format
         const reversedDate = tradeDate.split("-").reverse().join("-");
 
