@@ -35,7 +35,9 @@ function App() {
         });
     const newTrade = await response.json();
     setTrades([...trades, newTrade]);
-    setIssues([...issues, newTrade.issues[0]]);
+    if(newTrade.issues[0] !== undefined){
+      setIssues([...issues, newTrade.issues[0]]);
+    }
   }
  
   const router = createBrowserRouter([

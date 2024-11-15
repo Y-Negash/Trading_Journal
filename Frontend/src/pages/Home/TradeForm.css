@@ -59,12 +59,26 @@
     text-align: end;
 }
 
+#note {
+    display: flex;
+    justify-content: flex-end;
+    color: darkblue;
+    background-color: #76afff42;
+    padding:0.2rem 0.8rem;
+    font-weight: 400;
+    font-size: large;
+    border-radius: 3px;
+    box-shadow: -1px -1px 1px 1px grey;
+    margin-bottom: 0.3rem;
+}
 #issue-name{
     border: 1px solid grey;
     border-radius: 3px;
     padding: 0.5rem;
     color: var(--button-color);
     font-weight: 600;
+    margin-bottom: 0.3rem;
+
 }
 
 #issue-description {

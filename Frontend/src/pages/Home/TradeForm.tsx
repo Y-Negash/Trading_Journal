@@ -20,22 +20,23 @@ const TradeForm: React.FC<TradeFormProps> = ({
     const [errorMessage, setErrorMessage] = useState("");
     
     
-    const validateForm = () => {
-        if(!name){
-            return;
-        }
+    const validateForm = ():number => {
 
-        if (!issueName || !issueDescription) {
-            setErrorMessage("Please give your issue a name and description.");
-            return;
+        if (!issueName && !issueDescription){ // no issue 
+            return 0;
+        }
+        if (!issueName && issueDescription) {  // only issue description
+            setErrorMessage("Please give your issue a name");
+            return 1;
         }
             setErrorMessage("");
 
-        if(issueName.length > 30){
+        if(issueName && issueName.length > 30){ // long issue name
             setErrorMessage("Please shorten the issue name, you've reached the limit");
-            return
+            return 1;
         }
-            setErrorMessage("");    
+            setErrorMessage("");  
+            return 2;
     }
 
     const readableTrade = () => {
@@ -58,16 +59,28 @@ const TradeForm: React.FC<TradeFormProps> = ({
     
     const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-       
-        try {
-            validateForm();
-            const newTrade = readableTrade();
-            addTrade(newTrade);
-           console.log("Trade should be added to the list")
-        } catch (error) {
-            console.error("The trade is not being recognised")
-        } 
         
+        const validity = validateForm();
+
+        if(validity == 1){
+            return;
+        }
+        
+        let newTrade = readableTrade();
+
+        if(validity == 0){
+           
+            newTrade = {
+                ...newTrade,
+                issueName: undefined,
+                issueDescription: undefined
+            }
+            addTrade(newTrade);
+        }
+        if(validity == 2){
+            addTrade(newTrade);
+        }
+
         setName(null);
         setTradeDate("");
         setEntryPoint(0);
@@ -146,7 +159,8 @@ const TradeForm: React.FC<TradeFormProps> = ({
             </div>
         </div>
         <div className="issue-fields">
-            <label>Issue Name <em>(optional)</em> </label>
+            <p id="note">Note - Adding an issue is optional</p>
+            <label>Issue Name <em></em> </label>
             <input 
                 id="issue-name" 
                 type="text" 

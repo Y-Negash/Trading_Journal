@@ -31,7 +31,6 @@ const TradePage: React.FC<TradePageProps> = ({ trades }) => {
     const mappedTrades = trades.map((trade) => {
 
         const tradeType= getTradeType(trade);
-        console.log(tradeType);
         return (
                 <ul key={trade.id}  className="trade-list">
                     <h3>{trade.name}</h3>
