@@ -17,14 +17,15 @@ const IssueWidget:React.FC<IssuePageProps> = ({ issues }) => {
     }, [issues])
 
     const mappedLatestIssues = latestIssues.map((recentIssue) => {
-        return(
-            <a href="/issues">
-                <li key={recentIssue.issueId} className="recent-issue">
-                    <span className="icon"><FontAwesomeIcon icon={faBug} /></span>
-                    <span className="trade-name">{recentIssue.issueName}</span>
-                </li>
-            </a>
-        )
+
+            return(
+                <a href="/issues">
+                    <li key={recentIssue.issueId} className="recent-issue">
+                        <span className="icon"><FontAwesomeIcon icon={faBug} /></span>
+                        <span className="trade-name">{recentIssue.issueName}</span>
+                    </li>
+                </a>
+            )
     })
 
     return(

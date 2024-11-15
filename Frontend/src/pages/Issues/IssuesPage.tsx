@@ -9,7 +9,6 @@ const IssuesPage: React.FC<IssuePageProps> = ({issues}) => {
     const mappedIssues = issues.map((issue) =>{
         const {issueName, issueDescription} = issue;
 
-        // if issue name & des or just name exist, creates trade tile
         if(issueName && issueDescription || issueName && !issueDescription){ 
             return(
             
@@ -24,7 +23,7 @@ const IssuesPage: React.FC<IssuePageProps> = ({issues}) => {
             return;
         }
 })
-console.log(issues)
+
     return(
         <>
         <div className="container">
