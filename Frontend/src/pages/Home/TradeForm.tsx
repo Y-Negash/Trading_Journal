@@ -15,8 +15,8 @@ const TradeForm: React.FC<TradeFormProps> = ({
     const [exitPoint, setExitPoint] = useState(0);
     const [stopLoss, setStopLoss] = useState(0);
     const [takeProfit, setTakeProfit] = useState(0);
-    const [issueName, setIssueName] = useState<string | null>("");
-    const [issueDescription, setIssueDescription] = useState<string | null>("");
+    const [issueName, setIssueName] = useState<string | undefined>("");
+    const [issueDescription, setIssueDescription] = useState<string | undefined>("");
     const [errorMessage, setErrorMessage] = useState("");
     
     
@@ -72,8 +72,8 @@ const TradeForm: React.FC<TradeFormProps> = ({
            
             newTrade = {
                 ...newTrade,
-                issueName: null,
-                issueDescription: null
+                issueName: undefined,
+                issueDescription: undefined
             }
             addTrade(newTrade);
         }
