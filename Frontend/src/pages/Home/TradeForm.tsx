@@ -15,25 +15,28 @@ const TradeForm: React.FC<TradeFormProps> = ({
     const [exitPoint, setExitPoint] = useState(0);
     const [stopLoss, setStopLoss] = useState(0);
     const [takeProfit, setTakeProfit] = useState(0);
-    const [issueName, setIssueName] = useState<string | undefined>("");
-    const [issueDescription, setIssueDescription] = useState<string | undefined>("");
+    const [issueName, setIssueName] = useState<string | null>("");
+    const [issueDescription, setIssueDescription] = useState<string | null>("");
     const [errorMessage, setErrorMessage] = useState("");
     
     
-    const validateForm = ():boolean => {
+    const validateForm = ():number => {
 
-        if (!issueName && issueDescription) {
+        if (!issueName && !issueDescription){ // no issue 
+            return 0;
+        }
+        if (!issueName && issueDescription) {  // only issue description
             setErrorMessage("Please give your issue a name");
-            return false;
+            return 1;
         }
             setErrorMessage("");
 
-        if(issueName && issueName.length > 30){
+        if(issueName && issueName.length > 30){ // long issue name
             setErrorMessage("Please shorten the issue name, you've reached the limit");
-            return false;
+            return 1;
         }
             setErrorMessage("");  
-            return true;
+            return 2;
     }
 
     const readableTrade = () => {
@@ -56,14 +59,28 @@ const TradeForm: React.FC<TradeFormProps> = ({
     
     const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-       
-        if(!validateForm()){
+        
+        const validity = validateForm();
+
+        if(validity == 1){
             return;
         }
         
-        const newTrade = readableTrade();
-        
-        addTrade(newTrade);
+        let newTrade = readableTrade();
+
+        if(validity == 0){
+           
+            newTrade = {
+                ...newTrade,
+                issueName: null,
+                issueDescription: null
+            }
+            addTrade(newTrade);
+        }
+        if(validity == 2){
+            addTrade(newTrade);
+        }
+
         setName(null);
         setTradeDate("");
         setEntryPoint(0);
