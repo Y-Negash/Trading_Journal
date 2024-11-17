@@ -3,6 +3,7 @@ package com.example.trading_journal.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class Trade {
     private double takeProfit;
 
     @Column(name = "trade_date")
-    private String tradeDate;
+    private LocalDate tradeDate;
 
     @JsonIgnoreProperties({"issue"})
     @OneToMany(mappedBy = "trade", cascade = CascadeType.ALL)
@@ -41,7 +42,7 @@ public class Trade {
 
     public Trade(){}
 
-    public Trade(String name, double entryPoint, double exitPoint, double stopLoss, double takeProfit, String tradeDate) {
+    public Trade(String name, double entryPoint, double exitPoint, double stopLoss, double takeProfit, LocalDate tradeDate) {
         this.name = name;
         this.entryPoint = entryPoint;
         this.exitPoint = exitPoint;
@@ -108,11 +109,11 @@ public class Trade {
         this.takeProfit = takeProfit;
     }
 
-    public String getTradeDate() {
+    public LocalDate getTradeDate() {
         return tradeDate;
     }
 
-    public void setTradeDate(String tradeDate) {
+    public void setTradeDate(LocalDate tradeDate) {
         this.tradeDate = tradeDate;
     }
 

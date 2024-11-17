@@ -11,6 +11,8 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+
 @Component
 public class DataLoader implements ApplicationRunner {
 
@@ -36,10 +38,10 @@ public class DataLoader implements ApplicationRunner {
         traderRepository.save(trader2);
         traderRepository.save(trader3);
 
-        Trade trade1 = new Trade("EUR/USD1",650,344,333,241,"14/10/2024");
-        Trade trade2 = new Trade("USD/JPY1",50,34,3,4,"13/10/2024");
-        Trade trade3 = new Trade("GBP/USD1",86,45,30,20,"12/10/2024");
-        Trade trade4 = new Trade("AUD/USD1",65,44,33,41,"11/10/2024");
+        Trade trade1 = new Trade("EUR/USD1",650,344,333,241,LocalDate.of(2024,10,14));
+        Trade trade2 = new Trade("USD/JPY1",50,34,3,4,LocalDate.of(2024,10,13));
+        Trade trade3 = new Trade("GBP/USD1",86,45,30,20,LocalDate.of(2024,10,12));
+        Trade trade4 = new Trade("AUD/USD1",65,44,33,41,LocalDate.of(2024,10,12));
 
 
         tradeRepository.save(trade4);
@@ -47,13 +49,17 @@ public class DataLoader implements ApplicationRunner {
         tradeRepository.save(trade3);
         tradeRepository.save(trade2);
 
-        Issue goodNote = new Issue("14/10/2024","Issue 1","Great trade, I analysed well!");
-        Issue okayNote = new Issue("13/10/2024","Issue 2","This was quite average, I could've have improved here");
-        Issue badNote = new Issue("12/10/2024","Issue 3","This is one of the worst I've done :( ");
+        Issue goodIssue = new Issue(LocalDate.of(2024,10,14),"Issue 1","Great trade, I analysed well!");
+        Issue okayIssue = new Issue(LocalDate.of(2024,10,13),"Issue 2","This was quite average, I could've have improved here");
+        Issue badIssue = new Issue(LocalDate.of(2024,10,12),"Issue 3","This is one of the worst I've done :( ");
+        Issue longAgoIssue = new Issue(LocalDate.of(2024,5,3),"Issue 3","This is one of the worst I've done :( ");
+        Issue weekAgoIssue = new Issue(LocalDate.of(2024,11,16),"Issue 3","This is one of the worst I've done :( ");
 
-        issueRepository.save(goodNote);
-        issueRepository.save(okayNote);
-        issueRepository.save(badNote);
+        issueRepository.save(goodIssue);
+        issueRepository.save(okayIssue);
+        issueRepository.save(badIssue);
+        issueRepository.save(longAgoIssue);
+        issueRepository.save(weekAgoIssue);
     }
 
 }

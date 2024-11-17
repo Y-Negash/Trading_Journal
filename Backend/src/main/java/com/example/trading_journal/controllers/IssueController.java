@@ -2,14 +2,10 @@ package com.example.trading_journal.controllers;
 
 import com.example.trading_journal.models.Issue;
 import com.example.trading_journal.services.IssueService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -37,9 +33,13 @@ public class IssueController {
         }
     }
 
-    @GetMapping("/date/{tradeDate}")
-    public ResponseEntity<List<Issue>> getIssueByDate(@PathVariable String tradeDate){
-        List<Issue> issues = issueService.getIssueByDate(tradeDate);
+    @GetMapping("/filter")
+    public ResponseEntity<List<Issue>> getIssueByFilterStatus(@RequestParam String status){
+
+        List<Issue> issues = issueService.getIssueByFilter(status);
+        if(issues == null){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         if(issues.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
