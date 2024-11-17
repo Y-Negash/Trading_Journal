@@ -57,17 +57,27 @@ const TradeForm: React.FC<TradeFormProps> = ({
          return trade;
     }
     
+    
     const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         
         const validity = validateForm();
 
+        let newTrade = {
+            name,
+            tradeDate,
+            entryPoint,
+            exitPoint,
+            stopLoss,
+            takeProfit,
+            issueName,
+            issueDescription
+        }
+        
         if(validity == 1){
             return;
         }
         
-        let newTrade = readableTrade();
-
         if(validity == 0){
            
             newTrade = {
@@ -75,9 +85,11 @@ const TradeForm: React.FC<TradeFormProps> = ({
                 issueName: undefined,
                 issueDescription: undefined
             }
+            console.log(newTrade)
             addTrade(newTrade);
         }
         if(validity == 2){
+            console.log(newTrade)
             addTrade(newTrade);
         }
 
@@ -90,6 +102,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
         setIssueName("");
         setIssueDescription("");
     }
+
 
     return(
         <article className="form-container">

@@ -4,7 +4,25 @@ import NavBar from "../../components/navigation/NavBar";
 import './TradePage.css';
 
 const TradePage: React.FC<TradePageProps> = ({ trades }) => {
-    
+
+    const newTradeName = (trade: Trade) => {
+        const { name, tradeDate, entryPoint, exitPoint, stopLoss, takeProfit, issues } = trade;
+        const reversedDate = tradeDate.split("-").reverse().join("-");
+        const tradeName = name!.concat(" ", reversedDate); // more unique name
+
+        const readableTrade = {
+            name: tradeName,
+            tradeDate: reversedDate,
+            entryPoint,
+            exitPoint,
+            stopLoss,
+            takeProfit,
+            issues
+        }
+
+         return readableTrade;
+    }
+ 
     const getTradeType = (trade: Trade) => {
     const { entryPoint, stopLoss, takeProfit } = trade; //destructure for simplicity
 
@@ -31,9 +49,10 @@ const TradePage: React.FC<TradePageProps> = ({ trades }) => {
     const mappedTrades = trades.map((trade) => {
 
         const tradeType= getTradeType(trade);
+        const readableTrade = newTradeName(trade);
         return (
                 <ul key={trade.id}  className="trade-list">
-                    <h3>{trade.name}</h3>
+                    <h3>{readableTrade.name}</h3>
                     <p>{tradeType}</p>
                     <div className="details">
                         <div className="detail-item">

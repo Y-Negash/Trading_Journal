@@ -7,7 +7,7 @@ export interface Issue {
 
 export interface Trade {
     id?: number;
-    name: string;
+    name: string | null;
     tradeDate: string;
     entryPoint: number;
     exitPoint: number;
