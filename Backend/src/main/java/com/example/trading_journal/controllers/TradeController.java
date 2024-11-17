@@ -34,6 +34,20 @@ public class TradeController {
         }
     }
 
+    @GetMapping("/filter")
+    public ResponseEntity<List<Trade>> getIssueByFilterStatus(@RequestParam String status){
+
+        List<Trade> trades = tradeService.getTradeByFilter(status);
+        if(trades == null){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        if(trades.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(trades, HttpStatus.OK);
+        }
+    }
+
     @PostMapping
     public ResponseEntity<Trade> createNewTrade(@RequestBody TradeDTO newTrade){
         Trade addedTrade= tradeService.addTrade(newTrade);

@@ -7,6 +7,7 @@ import com.example.trading_journal.repositories.TradeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,6 +16,9 @@ public class TradeService {
 
     @Autowired
     TradeRepository tradeRepository;
+
+    @Autowired
+    DateFilterService dateFilterService;
 
     public List<Trade> getAllTrades(){
         return tradeRepository.findAll();
@@ -48,5 +52,10 @@ public class TradeService {
         if(trade.isPresent()){
             tradeRepository.delete(trade.get());
         }
+    }
+
+    public List<Trade> getTradeByFilter(String filter){
+        LocalDate startDate = dateFilterService.getStartDate(filter);
+        return tradeRepository.findAllWithStartDateAfter(startDate);
     }
 }
