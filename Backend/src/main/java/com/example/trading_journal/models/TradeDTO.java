@@ -1,5 +1,7 @@
 package com.example.trading_journal.models;
 
+import java.time.LocalDate;
+
 public class TradeDTO {
 
     private String name;
@@ -7,14 +9,14 @@ public class TradeDTO {
     private double exitPoint;
     private double stopLoss;
     private double takeProfit;
-    private String tradeDate;
+    private LocalDate tradeDate;
     private String issueName;
     private String issueDescription;
 
 
     public TradeDTO(){}
 
-    public TradeDTO(String name, double entryPoint, int exitPoint, int stopLoss, int takeProfit, String tradeDate, String issueName, String issueDescription) {
+    public TradeDTO(String name, double entryPoint, int exitPoint, int stopLoss, int takeProfit, LocalDate tradeDate, String issueName, String issueDescription) {
         this.name = name;
         this.entryPoint = entryPoint;
         this.exitPoint = exitPoint;
@@ -65,11 +67,11 @@ public class TradeDTO {
         this.takeProfit = takeProfit;
     }
 
-    public String getTradeDate() {
+    public LocalDate getTradeDate() {
         return tradeDate;
     }
 
-    public void setTradeDate(String tradeDate) {
+    public void setTradeDate(LocalDate tradeDate) {
         this.tradeDate = tradeDate;
     }
 

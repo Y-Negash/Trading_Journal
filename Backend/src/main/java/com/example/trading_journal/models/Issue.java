@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 public class Issue {
 
@@ -18,7 +20,7 @@ public class Issue {
    private String issueDescription;
 
    @Column(name = "tradeDate")
-   private String tradeDate;
+   private LocalDate tradeDate;
 
    @JsonIgnore
    @ManyToOne
@@ -27,17 +29,17 @@ public class Issue {
 
     public Issue() {}
 
-    public Issue(String tradeDate, String issueName, String issueDescription) {
+    public Issue(LocalDate tradeDate, String issueName, String issueDescription) {
         this.tradeDate = tradeDate;
         this.issueName = issueName;
         this.issueDescription = issueDescription;
     }
 
-    public String getTradeDate(){
+    public LocalDate getTradeDate(){
         return tradeDate;
     }
 
-    public void setTradeDate(String tradeDate){
+    public void setTradeDate(LocalDate tradeDate){
         this.tradeDate = tradeDate;
     }
 
@@ -72,4 +74,5 @@ public class Issue {
     public void setTrade(Trade trade) {
         this.trade = trade;
     }
+
 }
