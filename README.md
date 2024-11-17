@@ -54,7 +54,7 @@ npm install
 
 Start the React development server:
 ```
-npm start
+npm run dev
 ```
 
 Open your browser and go to http://localhost:3000.
