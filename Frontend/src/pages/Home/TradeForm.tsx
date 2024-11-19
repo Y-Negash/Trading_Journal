@@ -38,25 +38,6 @@ const TradeForm: React.FC<TradeFormProps> = ({
             setErrorMessage("");  
             return 2;
     }
-
-    const readableTrade = () => {
-        const reversedDate = tradeDate.split("-").reverse().join("-");
-        const tradeName = name!.concat(" ", reversedDate); // more unique name
-
-        const trade = {
-            name: tradeName,
-            tradeDate: reversedDate,
-            entryPoint,
-            exitPoint,
-            stopLoss,
-            takeProfit,
-            issueName,
-            issueDescription
-        }
-
-         return trade;
-    }
-    
     
     const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
