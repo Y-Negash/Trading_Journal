@@ -7,7 +7,7 @@ export interface Issue {
 
 export interface Trade {
     id?: number;
-    name: string;
+    name: string | null;
     tradeDate: string;
     entryPoint: number;
     exitPoint: number;
@@ -27,8 +27,18 @@ export interface TradeFormProps{
 }
 
 export interface TradePageProps{
+    trades: Trade[],
+    filteredTrades: Trade[],
+    setFilteredTrades: React.Dispatch<React.SetStateAction<Trade[]>>
+    isFiltered: boolean,
+    setIsFiltered: React.Dispatch<React.SetStateAction<boolean>>
+    
+}
+
+export interface TradeWidgetProps{
     trades: Trade[]
 }
+
 export interface IssuePageProps{
     issues: Issue[]
 }
@@ -43,3 +53,8 @@ export interface SearchDropdownProps{
     setName: React.Dispatch<React.SetStateAction<string|null>>
 }
 
+export interface FilterProps{
+    setFilteredTrades: React.Dispatch<React.SetStateAction<Trade[]>>
+    setIsFiltered: React.Dispatch<React.SetStateAction<boolean>>
+    
+}

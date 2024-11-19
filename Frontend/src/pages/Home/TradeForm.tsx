@@ -38,14 +38,15 @@ const TradeForm: React.FC<TradeFormProps> = ({
             setErrorMessage("");  
             return 2;
     }
+    
+    const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        
+        const validity = validateForm();
 
-    const readableTrade = () => {
-        const reversedDate = tradeDate.split("-").reverse().join("-");
-        const tradeName = name!.concat(" ", reversedDate); // more unique name
-
-        const trade = {
-            name: tradeName,
-            tradeDate: reversedDate,
+        let newTrade = {
+            name,
+            tradeDate,
             entryPoint,
             exitPoint,
             stopLoss,
@@ -53,21 +54,11 @@ const TradeForm: React.FC<TradeFormProps> = ({
             issueName,
             issueDescription
         }
-
-         return trade;
-    }
-    
-    const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
         
-        const validity = validateForm();
-
         if(validity == 1){
             return;
         }
         
-        let newTrade = readableTrade();
-
         if(validity == 0){
            
             newTrade = {
@@ -75,9 +66,11 @@ const TradeForm: React.FC<TradeFormProps> = ({
                 issueName: undefined,
                 issueDescription: undefined
             }
+            console.log(newTrade)
             addTrade(newTrade);
         }
         if(validity == 2){
+            console.log(newTrade)
             addTrade(newTrade);
         }
 
@@ -90,6 +83,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
         setIssueName("");
         setIssueDescription("");
     }
+
 
     return(
         <article className="form-container">

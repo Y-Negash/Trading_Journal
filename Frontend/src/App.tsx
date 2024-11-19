@@ -10,6 +10,8 @@ function App() {
   
   const [trades, setTrades] = useState<Trade[]>([]);
   const [issues, setIssues] = useState<Issue[]>([]);
+  const [filteredTrades, setFilteredTrades] = useState<Trade[]>([]);
+  const [isFiltered, setIsFiltered] = useState<boolean>(false);
 
   const loadTrades = async () => {
     const trades = await fetch('http://localhost:8080/trades');
@@ -43,7 +45,12 @@ function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Dashboard addTrade={addTrade} trades={trades} issues={issues}/>,
+      element: 
+        <Dashboard 
+          addTrade={addTrade} 
+          trades={trades} 
+          issues={issues}
+          />,
     },
     {
       path: '/analytics',
@@ -51,11 +58,19 @@ function App() {
     },
     {
       path: '/issues',
-      element: <IssuesPage issues={issues}/>
+      element: 
+      <IssuesPage issues={issues}/>
     },
     {
       path: '/trades',
-      element: <TradePage trades={trades} />
+      element: 
+        <TradePage 
+          trades={trades} 
+          filteredTrades={filteredTrades}
+          setFilteredTrades={setFilteredTrades}
+          isFiltered={isFiltered}
+          setIsFiltered={setIsFiltered}
+          />
     }
   ]);
   

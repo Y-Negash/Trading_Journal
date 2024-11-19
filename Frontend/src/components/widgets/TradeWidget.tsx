@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { Trade, TradePageProps } from "../../interfaces";
+import { Trade, TradeWidgetProps } from "../../interfaces";
 import './widgets.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoneyBillTrendUp } from "@fortawesome/free-solid-svg-icons";
 
-const TradeWidget:React.FC<TradePageProps>= ({trades}) => {
+const TradeWidget:React.FC<TradeWidgetProps>= ({trades}) => {
     
     const [latestTrades, setLatestTrades]=useState<Trade[]>([]);
     
