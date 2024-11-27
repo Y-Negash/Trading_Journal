@@ -1,3 +1,13 @@
+.filter-container{ 
+    display: flex;
+    justify-content: flex-end;
+    height: fit-content;
+}
+
 .filter {
-    
+    border-radius: 3px;
+    padding: 0.4rem;
+    margin-right: 3rem;
+    width: 12rem;
+    font-size: 16px;
 }
