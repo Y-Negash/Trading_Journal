@@ -15,6 +15,7 @@ const Filter: React.FC<FilterProps> = ({
                 name="filter status" 
                 className="filter" 
                 onChange={(e) => {setStatus(e.target.value)}}
+                defaultValue={""}
             >
                 <option value="" disabled>Select Filter</option>
                 <option value="past-week">Past Week</option>
