@@ -6,7 +6,7 @@ export interface Issue {
 }
 
 export interface Trade {
-    id?: number;
+    tradeId?: number;
     name: string | null;
     tradeDate: string;
     entryPoint: number;
@@ -32,7 +32,7 @@ export interface TradePageProps{
     setFilteredTrades: React.Dispatch<React.SetStateAction<Trade[]>>
     isFiltered: boolean,
     setIsFiltered: React.Dispatch<React.SetStateAction<boolean>>
-    
+    deleteTrade: (id: number) => void
 }
 
 export interface TradeWidgetProps{

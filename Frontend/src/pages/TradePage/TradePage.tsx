@@ -3,9 +3,11 @@ import { Trade, TradePageProps } from '../../interfaces';
 import NavBar from "../../components/navigation/NavBar";
 import './TradePage.css';
 import Filter from '../../components/filters/Filter';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 const TradePage: React.FC<TradePageProps> = ({ 
-    trades, filteredTrades, setFilteredTrades, isFiltered, setIsFiltered
+    trades, filteredTrades, setFilteredTrades, isFiltered, setIsFiltered, deleteTrade
 }) => {
 
     const newTradeName = (trade: Trade) => {
@@ -50,12 +52,17 @@ const TradePage: React.FC<TradePageProps> = ({
     }
 
     const mappedTrades = (tradesToMap: Trade[]) =>  tradesToMap.map((trade) => {
-
+        
         const tradeType= getTradeType(trade);
         const readableTrade = newTradeName(trade);
+        const handleDelete = async(tradeId: number | undefined) => {
+            if(tradeId){
+                await deleteTrade(tradeId!); 
+            }
+        }
        
         return (
-                <ul key={trade.id}  className="trade-list">
+                <ul key={trade.tradeId}  className="trade-list">
                     <h3>{readableTrade.name}</h3>
                     <div>{tradeType}</div>
                     <div className="details">
@@ -81,10 +88,15 @@ const TradePage: React.FC<TradePageProps> = ({
                             <span>{trade.tradeDate}</span>
                         </div>
                         <hr/>
+                        <button className="icon" onClick={() => handleDelete(trade.tradeId)}>
+                        <FontAwesomeIcon icon={faTrashCan} />
+                        </button>
                     </div>
                 </ul>
         )
     })
+
+
 
     return(
         <div className="container">
