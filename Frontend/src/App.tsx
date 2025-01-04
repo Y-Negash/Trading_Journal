@@ -36,11 +36,25 @@ function App() {
         body: JSON.stringify(trade),
         });
     const newTrade = await response.json();
-    setTrades([...trades, newTrade]);
+    setTrades((prevTrades) => [...prevTrades, newTrade]);
     if(newTrade.issues[0] !== undefined){
-      setIssues([...issues, newTrade.issues[0]]);
+      setIssues((prevIssues) => [...prevIssues, newTrade.issues[0]]);
     }
   }
+  
+  const deleteTrade = async (tradeId: number) => {
+      await fetch(`http://localhost:8080/trades/${tradeId}`, {
+          method: 'DELETE'
+      })
+      setTrades((prevTrades) => prevTrades.filter((trade) => trade.tradeId !== tradeId)) 
+}
+
+const deleteIssue = async (issueId: number) => {
+  await fetch(`http://localhost:8080/issues/${issueId}`,{
+    method: 'DELETE'
+  })
+  setIssues((prevIssues) => prevIssues.filter((issue)=> issue.issueId !== issueId))
+}
  
   const router = createBrowserRouter([
     {
@@ -59,7 +73,10 @@ function App() {
     {
       path: '/issues',
       element: 
-      <IssuesPage issues={issues}/>
+      <IssuesPage 
+        issues={issues}
+        deleteIssue={deleteIssue}
+      />
     },
     {
       path: '/trades',
@@ -70,6 +87,7 @@ function App() {
           setFilteredTrades={setFilteredTrades}
           isFiltered={isFiltered}
           setIsFiltered={setIsFiltered}
+          deleteTrade = {deleteTrade}
           />
     }
   ]);

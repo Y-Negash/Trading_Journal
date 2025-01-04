@@ -15,7 +15,7 @@ const TradeWidget:React.FC<TradeWidgetProps>= ({trades}) => {
     const mappedLatestTrades = latestTrades.map((recentTrade)=>{
         return (
         <a href="/trades">
-            <li key={recentTrade.id} className="recent-trade">
+            <li key={recentTrade.tradeId} className="recent-trade">
                 <span className="icon"><FontAwesomeIcon icon={faMoneyBillTrendUp} /></span>
                 <span className="trade-name">{recentTrade.name}</span>
             </li>

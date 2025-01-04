@@ -6,7 +6,7 @@ export interface Issue {
 }
 
 export interface Trade {
-    id?: number;
+    tradeId?: number;
     name: string | null;
     tradeDate: string;
     entryPoint: number;
@@ -17,30 +17,34 @@ export interface Trade {
 }
 
 export interface DashboardProps{
-    trades: Trade[],
-    issues: Issue[],
+    trades: Trade[];
+    issues: Issue[];
     addTrade: (trade: Omit<Trade, 'id'>) => Promise<void>;
 }
 
 export interface TradeFormProps{
-    addTrade: (trade: Omit<Trade, 'id'>) => void,
+    addTrade: (trade: Omit<Trade, 'id'>) => void;
 }
 
 export interface TradePageProps{
-    trades: Trade[],
-    filteredTrades: Trade[],
-    setFilteredTrades: React.Dispatch<React.SetStateAction<Trade[]>>
-    isFiltered: boolean,
-    setIsFiltered: React.Dispatch<React.SetStateAction<boolean>>
-    
+    trades: Trade[];
+    filteredTrades: Trade[];
+    setFilteredTrades: React.Dispatch<React.SetStateAction<Trade[]>>;
+    isFiltered: boolean;
+    setIsFiltered: React.Dispatch<React.SetStateAction<boolean>>;
+    deleteTrade: (id: number) => void;
 }
 
 export interface TradeWidgetProps{
-    trades: Trade[]
+    trades: Trade[];
+}
+export interface IssueWidgetProps{
+    issues: Issue[];
 }
 
 export interface IssuePageProps{
-    issues: Issue[]
+    issues: Issue[];
+    deleteIssue: (id: number) => void;
 }
 
 export interface Option {
@@ -54,7 +58,7 @@ export interface SearchDropdownProps{
 }
 
 export interface FilterProps{
-    setFilteredTrades: React.Dispatch<React.SetStateAction<Trade[]>>
+    setFilteredTrades: React.Dispatch<React.SetStateAction<Trade[]>>,
     setIsFiltered: React.Dispatch<React.SetStateAction<boolean>>
     
 }
