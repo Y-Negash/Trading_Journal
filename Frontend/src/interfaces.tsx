@@ -41,6 +41,7 @@ export interface TradeWidgetProps{
 
 export interface IssuePageProps{
     issues: Issue[]
+    deleteIssue: (id: number) => void
 }
 
 export interface Option {

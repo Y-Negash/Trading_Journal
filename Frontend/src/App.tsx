@@ -44,9 +44,16 @@ function App() {
   
   const deleteTrade = async (tradeId: number) => {
       await fetch(`http://localhost:8080/trades/${tradeId}`, {
-          method: 'DELETE',
+          method: 'DELETE'
       })
       setTrades((prevTrades) => prevTrades.filter((trade) => trade.tradeId !== tradeId)) 
+}
+
+const deleteIssue = async (issueId: number) => {
+  await fetch(`http://localhost:8080/issues/${issueId}`,{
+    method: 'DELETE'
+  })
+  setIssues((prevIssues) => prevIssues.filter((issue)=> issue.issueId !== issueId))
 }
  
   const router = createBrowserRouter([
@@ -66,7 +73,10 @@ function App() {
     {
       path: '/issues',
       element: 
-      <IssuesPage issues={issues}/>
+      <IssuesPage 
+        issues={issues}
+        deleteIssue={deleteIssue}
+      />
     },
     {
       path: '/trades',
