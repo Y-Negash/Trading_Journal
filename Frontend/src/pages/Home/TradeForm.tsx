@@ -153,8 +153,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
             </div>
         </div>
         <div className="issue-fields">
-            <p id="note">Note - Adding an issue is optional</p>
-            <label>Issue Name <em></em> </label>
+            <label id="issue-label">Issue Name<span id="note">Note - Adding an issue is optional</span> </label>
             <input 
                 id="issue-name" 
                 type="text" 

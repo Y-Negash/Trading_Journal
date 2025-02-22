@@ -3,7 +3,9 @@
     gap: 1rem;
     justify-content: center;
     width: 100%;
+    padding: 0.5rem 1.5rem 0rem 1.5rem;
 }
+
 
 .recent-trades, .recent-issues {
     display: flex;
@@ -11,11 +13,12 @@
     flex: 1;
     background-color: white;
     border-radius: 1rem;
-    padding: 1rem;
-    margin: 1.5rem 2rem;
+    padding: 0.5rem;
+    margin: 1.5rem 2rem 0rem 2rem;
     box-shadow: 1px 3px 10px 3px var(--shadow-color);
-    align-items: center; 
+    align-items: center;
 }
+
 
 .recent-trade, .recent-issue {
     display: flex;
