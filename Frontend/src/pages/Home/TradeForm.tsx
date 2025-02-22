@@ -90,7 +90,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
         <h2 id="form-title">Add A Trade </h2>
         <form onSubmit={handleSubmit} className="trade-form">
         <div className="trade-fields">
-            <div className="label-input-pair">
+            <div className="label-input-pair name">
                 <label>Name</label>
                 <SearchDropdown 
                     name={name} 
