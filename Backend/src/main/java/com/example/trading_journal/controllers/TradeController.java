@@ -35,7 +35,7 @@ public class TradeController {
     }
 
     @GetMapping("/filter")
-    public ResponseEntity<List<Trade>> getIssueByFilterStatus(@RequestParam String status){
+    public ResponseEntity<List<Trade>> getTradeByFilterStatus(@RequestParam String status){
 
         List<Trade> trades = tradeService.getTradeByFilter(status);
         if(trades == null){
