@@ -22,7 +22,8 @@ Backend:
 
 ## Pages
 **Home Page:** 
-> Allows users to add a new trade by filling in the trade form.
+> Allows users to add a new trade and associated issue by filling in the trade form.
+![screenshot](assets/dashboard.png)
 
 **Trades Page:** 
 > Displays a list of trades retrieved from the backend API.
