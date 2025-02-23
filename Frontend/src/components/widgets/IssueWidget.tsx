@@ -22,19 +22,17 @@ const IssueWidget:React.FC<IssueWidgetProps> = ({ issues }) => {
                 <a href="/issues">
                     <li key={recentIssue.issueId} className="recent-issue">
                         <span className="icon"><FontAwesomeIcon icon={faBug} /></span>
-                        <span className="trade-name">{recentIssue.issueName}</span>
+                        <p className="trade-name">{recentIssue.issueName}</p>
                     </li>
                 </a>
-            )
+            ) 
     })
 
     return(
         <div className="recent-issues">
             <h3 className="widget-title">Recent Issues</h3>
-            <div className="recent-issue-list">
-
-            {mappedLatestIssues}
-            </div>
+            {mappedLatestIssues.length ? 
+            <div className="recent-issue-list">{mappedLatestIssues}</div> : <p className="unavailable-display">---  No issues have been added  ---</p>}
         </div>
     )
 }
