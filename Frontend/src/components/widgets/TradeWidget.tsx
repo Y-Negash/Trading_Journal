@@ -17,7 +17,7 @@ const TradeWidget:React.FC<TradeWidgetProps>= ({trades}) => {
         <a href="/trades">
             <li key={recentTrade.tradeId} className="recent-trade">
                 <span className="icon"><FontAwesomeIcon icon={faMoneyBillTrendUp} /></span>
-                <span className="trade-name">{recentTrade.name}</span>
+                <p className="trade-name">{recentTrade.name}</p>
             </li>
         </a> 
         )
@@ -26,10 +26,8 @@ const TradeWidget:React.FC<TradeWidgetProps>= ({trades}) => {
     return(
         <div className="recent-trades">
             <h3 className="widget-title">Recent Trades</h3>
-            <div className="recent-trade-list">
-
-            {mappedLatestTrades}
-            </div>
+            {mappedLatestTrades.length > 0 ?
+            <div className="recent-trade-list">{mappedLatestTrades}</div> : <p className="unavailable-display">---  No trades have been added  ---</p>}  
         </div>
     )
 }

@@ -8,7 +8,7 @@
 
 
 .recent-trades, .recent-issues {
-    display: flex;
+    display: inline-block;
     flex-direction: column;
     flex: 1;
     background-color: white;
@@ -22,40 +22,54 @@
 
 
 .recent-trade, .recent-issue {
-    display: flex;
+    margin: 0.3rem 0rem 0.3rem 2rem;
+    padding: 0.3rem 3rem;
     align-items: center;
-    justify-content: flex-start;
-    padding: 0.5rem;
     font-size: large;
-    width: 100%; 
     font-weight: 400;
-    color: black;
+    color: rgb(91, 82, 82);
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(128, 128, 128, 0.119);
+    width: 90%;
 }
 
 .recent-trade:hover, .recent-issue:hover {
-    border: 2px dotted var(--shadow-color);
+    background-color: #76afff42;
     border-radius: 2px;
 }
 
+.recent-trade:active, .recent-issue:active {
+    transform: translateY(2px);
+}
 .widget-title {
-    font-size: x-large;
-    font-weight: 600;
+    font-size: 1.3rem;
+    font-weight: 400;
     font-family: Roboto, sans-serif;
     text-align: center;
-    margin-bottom: 0.3rem;
     color: var(--button-color);
+    margin: 0.2rem;
 }
 
 .icon {
-    padding-right: 8rem; 
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    padding-left: 5rem;
 }
 
-.trade-name {
-    display: inline-block;
-    text-align: left; 
+li > p {
+    display: inline-flex;
+    width: 80%;
+    justify-content:flex-start;
+    padding-left: 6rem;
+    /* border: 1px solid blue; */
 }
 
-hr {
-    width: 100%;
+.unavailable-display {
+    color: gray;
+    font-size: 1rem;      
+    font-style: italic;   
+    text-align: center;   
+    margin-top: 40px; 
 }
