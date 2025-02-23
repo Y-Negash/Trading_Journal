@@ -55,11 +55,11 @@ public class DataLoader implements ApplicationRunner {
         Issue longAgoIssue = new Issue(LocalDate.of(2024,5,3),"Issue 3","This is one of the worst I've done :( ");
         Issue weekAgoIssue = new Issue(LocalDate.of(2024,11,16),"Issue 3","This is one of the worst I've done :( ");
 
+        issueRepository.save(longAgoIssue);
+        issueRepository.save(weekAgoIssue);
         issueRepository.save(goodIssue);
         issueRepository.save(okayIssue);
         issueRepository.save(badIssue);
-        issueRepository.save(longAgoIssue);
-        issueRepository.save(weekAgoIssue);
     }
 
 }
