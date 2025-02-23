@@ -32,16 +32,6 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-
-.icon {
-    background-color: rgba(80, 152, 235, 0.5);
-    border-radius: 0.1rem;
-    position: absolute;
-    right: 35px;
-    bottom: 20px;
-    padding: 0.2rem 0.6rem;
-}
-
 .button :hover {
     background-color: rgba(150, 179, 237, 0.833);
 }
