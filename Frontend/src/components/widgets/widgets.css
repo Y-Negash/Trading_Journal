@@ -12,12 +12,12 @@
     flex-direction: column;
     flex: 1;
     background-color: white;
-    border-radius: 1rem;
+    border-radius: 24px;
     padding: 0.5rem;
-    margin: 1.5rem 2rem 0rem 2rem;
+    margin: 1rem 2rem 0rem 2rem;
     box-shadow: 1px 3px 10px 3px var(--shadow-color);
     align-items: center;
-    height: 11.55rem;
+    height: 95%;
 }
 
 
@@ -33,23 +33,25 @@
     justify-content: space-around;
     background-color: rgba(128, 128, 128, 0.119);
     width: 90%;
+    border-radius: 0.5rem;
 }
 
 .recent-trade:hover, .recent-issue:hover {
     background-color: #76afff42;
-    border-radius: 2px;
+    border-radius: 0.5rem;
 }
 
 .recent-trade:active, .recent-issue:active {
     transform: translateY(2px);
 }
+
 .widget-title {
     font-size: 1.3rem;
     font-weight: 400;
     font-family: Roboto, sans-serif;
     text-align: center;
     color: var(--button-color);
-    margin: 0.2rem;
+    margin: 1rem;
 }
 
 .icon {
@@ -63,7 +65,6 @@ li > p {
     width: 80%;
     justify-content:flex-start;
     padding-left: 6rem;
-    /* border: 1px solid blue; */
 }
 
 .unavailable-display {
@@ -72,4 +73,48 @@ li > p {
     font-style: italic;   
     text-align: center;   
     margin-top: 40px; 
+}
+
+@media (max-width: 1206px) {
+
+.widgets-container {
+    padding: 0.5rem 3.5rem 0rem 3.5rem;
+}
+
+.recent-trades, .recent-issues {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 1rem;
+    margin: 0;
+    height: fit-content;
+}
+
+.recent-trade, .recent-issue {
+    margin: 0.3rem 0rem;
+    padding:0.3rem 8rem;
+    width: 100%;
+    font-size: small;
+}
+
+.widget-title {
+    font-size: 1.3rem;
+    font-weight: 400;
+    font-family: Roboto, sans-serif;
+    text-align: center;
+    color: var(--button-color);
+    margin: 0.2rem;
+    margin-top: 0.2rem;
+}
+li > p {
+    display: inline;
+    justify-content:flex-start;
+    padding: 0;
+}
+
+.icon {
+    padding: 0;
+    padding-right: 1rem;
+}
+
 }
