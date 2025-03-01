@@ -26,8 +26,9 @@ Backend:
 ![screenshot](assets/dashboard.png)
 
 **Trades Page:** 
-> Displays a list of trades retrieved from the backend API.
-> 
+> Displays a list of trades retrieved from the backend API. Can also filter trades by past week, past month, 3 months, 6 months and a full year.
+![screenshot](assets/tradepage.png)
+
 **Issues Page:** 
 > Tracks bugs or issues related to trades.
 
