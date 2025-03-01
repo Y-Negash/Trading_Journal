@@ -93,7 +93,8 @@
 
 @media (max-width: 560px){
     .widgets-container {
-        margin-top: 4rem;
+        margin-top: 5rem;
+        margin-left: 0.5rem;
     }
 
     .unavailable-display {

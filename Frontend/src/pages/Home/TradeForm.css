@@ -293,6 +293,7 @@
     .form-container {
         height: fit-content;
         margin-bottom: 1rem;
+        margin-left: 1rem;
     }
 
     .label-input-pair {
