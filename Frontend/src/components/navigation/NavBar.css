@@ -32,15 +32,16 @@ nav {
 @media (max-width:560px){
 
     nav {
-        position: fixed;
+        position: sticky;
         top: 0;
+        left: 0;
         z-index: 2;
     }
-
+    
     #navbar-links {
         flex-direction: row;
         height:10%;
+        margin: 0;
         width: 100%;
-        padding: 0;
     }
 }
