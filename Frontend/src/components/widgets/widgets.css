@@ -89,6 +89,14 @@
 .widget-title {
     font-size: 1.1rem;
 }
-
 }
 
+@media (max-width: 560px){
+    .widgets-container {
+        margin-top: 4rem;
+    }
+
+    .unavailable-display {
+        padding-top: 2rem;
+    }
+}
