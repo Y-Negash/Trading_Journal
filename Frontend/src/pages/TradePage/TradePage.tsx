@@ -88,8 +88,8 @@ const TradePage: React.FC<TradePageProps> = ({
                             <span>{trade.tradeDate}</span>
                         </div>
                         <hr/>
-                        <div className="icon" onClick={() => handleDelete(trade.tradeId)}>
-                        <FontAwesomeIcon icon={faTrashCan} />
+                        <div className="delete-icon" onClick={() => handleDelete(trade.tradeId)}>
+                            <FontAwesomeIcon icon={faTrashCan} />
                         </div>
                     </div>
                 </ul>

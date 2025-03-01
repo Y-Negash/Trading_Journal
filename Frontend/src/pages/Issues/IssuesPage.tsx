@@ -1,4 +1,3 @@
-import React from "react";
 import NavBar from "../../components/navigation/NavBar";
 import { IssuePageProps } from '../../interfaces';
 import './IssuePage.css';
@@ -8,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const IssuesPage: React.FC<IssuePageProps> = ({issues, deleteIssue}) => {
+    
     const mappedIssues = issues.map((issue) =>{
         const {issueName, issueDescription} = issue;
         const handleDelete = (issueId: number | undefined) => {
@@ -17,6 +17,7 @@ const IssuesPage: React.FC<IssuePageProps> = ({issues, deleteIssue}) => {
         }
 
         if(issueName && issueDescription || issueName && !issueDescription){ 
+
             return(
             
                 <ul key={issue.issueId} className="issue-list">
@@ -25,9 +26,9 @@ const IssuesPage: React.FC<IssuePageProps> = ({issues, deleteIssue}) => {
                     <p>{issue.tradeDate}</p>
                     <p className="issue-box">{issueDescription}</p>
                     <div className="button">
-                    <div className="icon" onClick={() => handleDelete(issue.issueId)}>
-                        <FontAwesomeIcon icon={faTrashCan} />
-                    </div>
+                        <div className="delete-icon" onClick={() => handleDelete(issue.issueId)}>
+                            <FontAwesomeIcon icon={faTrashCan} />
+                        </div>
                     </div>
                 </ul>
             )
