@@ -23,7 +23,7 @@ const IssuesPage: React.FC<IssuePageProps> = ({issues, deleteIssue}) => {
                     <h3>{issueName}</h3>
                     <hr />
                     <p>{issue.tradeDate}</p>
-                    <p>{issueDescription}</p>
+                    <p className="issue-box">{issueDescription}</p>
                     <div className="button">
                     <div className="icon" onClick={() => handleDelete(issue.issueId)}>
                         <FontAwesomeIcon icon={faTrashCan} />

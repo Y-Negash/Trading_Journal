@@ -21,8 +21,8 @@
 
 .issue-list p {
     text-align: left;
-    padding-left: 0.5rem;
-    margin: 0.3rem;
+    padding: 0.5rem;
+    /* border: 1px solid black; */
 }
 
 #issuepage-title{
@@ -30,6 +30,19 @@
     font-size: xxx-large;
     margin-top: 1rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.issue-box {
+    border: 2px solid red;
+    overflow-y: hidden;
+    width: 100%;
+    height: 50%;
+}
+
+.button {
+    position: relative;
+    top: 0.5rem;
+   
 }
 
 .button :hover {
