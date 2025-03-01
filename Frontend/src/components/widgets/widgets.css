@@ -68,18 +68,27 @@
     font-size: 1rem;      
     font-style: italic;   
     text-align: center;   
-    margin-top: 40px; 
+    padding: 4rem; 
 }
 
 @media (max-width: 920px) {
 
 .widgets-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
 }
 
 .recent-trades, .recent-issues {
     width: 100%;
 }
+
+.recent-trade, .recent-issue {
+    font-size: 14px;
+}
+
+.widget-title {
+    font-size: 1.1rem;
+}
+
 }
 

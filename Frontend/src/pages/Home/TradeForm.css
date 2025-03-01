@@ -95,6 +95,8 @@
     resize: none;
     color: var(--button-color);
     font-weight: 600;
+    padding-top: 0.2rem;
+    padding-left: 0.4rem;
 }
 
 #form-title {
@@ -112,15 +114,13 @@
 .calculator-links {
     display: flex;
     gap: 30px;
-    margin: -0.7rem -1rem 0rem 1rem;
     text-align: center;
     position: relative;
     top: 1rem;
-    right: 1rem;
     border: 1.5px solid grey;
     border-radius: 4px;
     background-color: #76afff42;
-    padding: 0.5rem;
+    padding: 1rem 0.5rem;
 }
 
 .calculator-links > a {
@@ -147,7 +147,7 @@
     background-color: var(--button-color);
     box-shadow: 1px 2px 2px rgb(4, 4, 55);
     padding: 0.5rem;
-    margin-top: 0.6rem;
+    margin-top: 1rem;
     display: inline-block;
     border-radius: 8px;
     font-size: 20px;
@@ -160,6 +160,9 @@
 
 @media (max-width: 1440px) {
 
+    .trade-form {
+        max-height: fit-content;        
+    }
     .label-input-pair input{
         width: 55%;
         margin: 0.2rem 0;
@@ -180,9 +183,13 @@
     #note {
         font-size: small;
     }
+
+    .issue-fields > button{
+        margin-top: 1.3rem;
+    }
 }
 
-@media (min-width:500px) and (max-width: 1200px) {
+@media (min-width:921px) and (max-width: 1200px) {
     
     #issue-label {
         flex-direction: column;
@@ -197,15 +204,77 @@
         display: flex;
         flex-direction: column;
         gap: 3px;
-        margin: 0rem -1rem 0rem 1rem;
         text-align: center;
         border: none;
         background-color: transparent;
         padding: 0rem;
-        top: 0.5rem
+        top: 0.6rem;
     }
 
     .calculator-links > a {
         border-radius: 3px;
     }
+}
+
+@media (max-width: 920px) {
+
+    .form-container{
+        top: 10rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    .trade-form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .trade-fields {
+        padding: 1rem 3rem;
+        padding-bottom: 0rem;
+        height: 50%;
+    }
+    
+    .issue-fields {
+        padding: 0rem 3rem;
+        margin-top: -1.5rem;
+    }
+
+    #issue-description {
+        width: 100%;
+        height: 7rem;
+        margin-bottom: 0.8rem;
+    }
+
+    #issue-label {
+        flex-direction: column-reverse;
+    }
+
+    #note {
+        text-align: end;
+    }
+
+    .calculator-links {
+        top: 22.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        border: none;
+        text-align: center;
+        background-color: transparent;
+        padding: 0rem;  
+    }
+
+    .issue-fields > button {
+        margin: 0;
+    }
+    .calculator-links > a {
+        font-size: medium;
+        padding: 0.4rem;
+        border: none;
+        border-radius: 2px;
+        background-color: #0034a3a3;
+    }
+
 }
