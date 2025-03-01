@@ -29,7 +29,8 @@ Backend:
 > Displays a list of trades retrieved from the backend API.
 > 
 **Issues Page:** 
-> Tracks bugs or issues related to trades.
+> Tracks bugs or issues related to trades. You can freely delete issues without deleting trades they're associated with.
+![screenshot](assets/issuepage.png)
 
 **Analytics Page:** 
 > (In future) Will analyze trades and provide detailed performance statistics.

@@ -13,16 +13,24 @@
     margin: 1rem;
     text-align: center;
     padding: 0.5rem;
-    width: 16%;
-    height: 14rem;
+    width: 20%;
+    height: 15rem;
     box-shadow: 1px 3px 8px 2px #084192;
     position: relative;
 }
 
 .issue-list p {
     text-align: left;
-    padding-left: 0.5rem;
-    margin: 0.3rem;
+    padding: 0.5rem;
+}
+
+.issue-list p:first-of-type {
+    font-size: 14px;
+    color: whitesmoke;
+    font-weight: 700;
+    background-color: grey;
+    text-align: center;
+    margin-top: 0.3rem;
 }
 
 #issuepage-title{
@@ -32,10 +40,33 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.button :hover {
-    background-color: rgba(150, 179, 237, 0.833);
+.issue-box {
+    background-color: rgba(60, 80, 134, 0.179);
+    border-radius: 3px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    height: 55%;
+    word-wrap: break-word;
+    white-space: pre-wrap; 
 }
 
-.button :active {
+.issue-box::-webkit-scrollbar {
+    width: 8px; /* Thin scrollbar */
+}
+
+.issue-box::-webkit-scrollbar-thumb {
+    background: rgba(60, 80, 134, 0.5); 
+    border-radius: 10px;
+}
+
+.button {
+    position: relative;
+    top: 0.35rem;
+    border: 1px solid grey;
+    border-radius: 3rem;
+}
+
+.button:active {
     transform: translateY(2px);
 }
