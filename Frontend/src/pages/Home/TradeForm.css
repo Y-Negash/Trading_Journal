@@ -192,7 +192,7 @@
 @media (min-width:921px) and (max-width: 1200px) {
     
     #issue-label {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     #note {
@@ -208,11 +208,21 @@
         border: none;
         background-color: transparent;
         padding: 0rem;
-        top: 0.6rem;
+        top: 1rem;
     }
 
     .calculator-links > a {
         border-radius: 3px;
+    }
+
+    #issue-description {
+        width: 100%;
+        height: 11rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .issue-fields > button {
+        margin: 0;
     }
 }
 
