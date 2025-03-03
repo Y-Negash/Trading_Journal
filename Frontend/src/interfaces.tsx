@@ -47,7 +47,15 @@ export interface IssuePageProps{
     deleteIssue: (id: number) => void;
 }
 
-export interface Option {
+export interface AnalyticsProps{
+    trades: Trade[];
+}
+
+export interface DoughnutProps{
+    trades: Trade[];
+  }
+
+export interface Option{
     id: number,
     name: string
 }

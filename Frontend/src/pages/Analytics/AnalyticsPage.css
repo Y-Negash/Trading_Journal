@@ -4,3 +4,38 @@
     margin-top: 16rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+.doughnut{
+    position: relative;
+    display: inline-block;
+    height: 230px;
+    width: 250px;
+    margin-top: 2rem;
+}
+
+.doughnut > p{
+  position: absolute;
+  top: 42%; 
+  left: 40%;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.doughnut > h2 {
+    text-align: center;
+    position: relative;
+    bottom: 1.5rem;
+}
+
+.chart {
+    background-color: white;
+    border-radius: 1.5rem;
+    margin: 1rem;
+    text-align: center;
+    padding: 0.5rem;
+    width: 20%;
+    height: fit-content;
+    box-shadow: 1px 3px 8px 2px #6e7c8d;
+    position: relative;
+}
