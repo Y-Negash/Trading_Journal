@@ -1,4 +1,4 @@
-import { Chart as ChartJS, ArcElement, Tooltip, Legend, plugins } from 'chart.js';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { calculateWinRate } from '../../utils/tradeUtils';
 import { Doughnut } from 'react-chartjs-2';
 import { DoughnutProps } from "../../interfaces";
