@@ -64,19 +64,22 @@ const deleteIssue = async (issueId: number) => {
           addTrade={addTrade} 
           trades={trades} 
           issues={issues}
-          />,
+        />,
     },
     {
       path: '/analytics',
-      element: <AnalyticsPage />
+      element: 
+        <AnalyticsPage 
+          trades={trades}
+        />
     },
     {
       path: '/issues',
       element: 
-      <IssuesPage 
-        issues={issues}
-        deleteIssue={deleteIssue}
-      />
+        <IssuesPage 
+          issues={issues}
+          deleteIssue={deleteIssue}
+        />
     },
     {
       path: '/trades',

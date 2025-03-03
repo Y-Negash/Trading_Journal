@@ -5,6 +5,7 @@ import './TradePage.css';
 import Filter from '../../components/filters/Filter';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { getTradeType } from "../../utils/tradeUtils";
 
 const TradePage: React.FC<TradePageProps> = ({ 
     trades, filteredTrades, setFilteredTrades, isFiltered, setIsFiltered, deleteTrade
@@ -28,32 +29,21 @@ const TradePage: React.FC<TradePageProps> = ({
          return readableTrade;
     }
  
-    const getTradeType = (trade: Trade) => {
-    const { entryPoint, stopLoss, takeProfit } = trade; //destructure for simplicity
-
-        // Check for SELL conditions
-        if (takeProfit !== 0 && entryPoint > takeProfit) {
-            return <button className="sell">SELL</button>;
-        }
-        if (stopLoss !== 0 && entryPoint > stopLoss) {
-            return <button className="sell">SELL</button>;
-        }
-
-        // Check for BUY conditions
-        if (takeProfit !== 0 && entryPoint < takeProfit) {
-            return <button className="buy">BUY</button>;
-        }
-        if (stopLoss !== 0 && entryPoint < stopLoss) {
-            return <button className="buy">BUY</button>;
-        }
-
-        // If none of the conditions are met, indicate EMPTY
-        return <p>EMPTY</p>;
-    }
-
+   
     const mappedTrades = (tradesToMap: Trade[]) =>  tradesToMap.map((trade) => {
         
-        const tradeType= getTradeType(trade);
+        const tradeType = () => {
+            const type = getTradeType(trade);
+            if(type === "BUY"){
+                return <button className="buy">BUY</button>;
+            } 
+            else if(type === "SELL"){
+                return <button className="sell">SELL</button>;
+            } else {
+                return <p>EMPTY</p>
+            }
+        };
+
         const readableTrade = newTradeName(trade);
         const handleDelete = async(tradeId: number | undefined) => {
             if(tradeId){
@@ -64,7 +54,7 @@ const TradePage: React.FC<TradePageProps> = ({
         return (
                 <ul key={trade.tradeId}  className="trade-list">
                     <h3>{readableTrade.name}</h3>
-                    <div>{tradeType}</div>
+                    <div>{tradeType()}</div>
                     <div className="details">
                         <div className="detail-item">
                             <p>Entry Point:</p>
