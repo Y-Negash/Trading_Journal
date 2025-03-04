@@ -45,3 +45,71 @@ export const calculateWinRate = (trades: Trade[]) => {
     console.log(winRate)
     return winRate;
 }
+
+export const calculateBuySellMetric = (trades: Trade[]) => {
+
+    let buyCount = 0;
+    let sellCount = 0;
+
+    trades.forEach((trade) => {
+        const tradeType = getTradeType(trade);
+
+        if (tradeType === "BUY") {
+            buyCount++;
+        } 
+        else if (tradeType === "SELL") {
+            sellCount++;
+        }
+        })
+    
+    return { buyCount, sellCount };
+}
+
+
+const calculateTotalRisk = (trades: Trade[]) => {
+    let totalRisk = 0;
+    trades.forEach((trade) => {
+
+        const tradeType = getTradeType(trade);
+        let risk = 0;
+
+        if(tradeType === "BUY"){
+            risk = trade.entryPoint - trade.stopLoss;
+        }
+        else if (tradeType === "SELL"){
+            risk = trade.stopLoss - trade.entryPoint;
+        }
+
+        totalRisk = totalRisk + risk;
+    })
+
+    return totalRisk;
+}
+
+const calculateTotalReward = (trades: Trade[]) => {
+    let totalReward = 0;
+    trades.forEach((trade) => {
+
+        const tradeType = getTradeType(trade);
+        let reward = 0;
+
+        if(tradeType === "BUY"){
+            reward = trade.takeProfit - trade.entryPoint;
+        }
+        else if (tradeType === "SELL"){
+            reward = trade.entryPoint - trade.takeProfit;
+        }
+
+        totalReward = totalReward + reward;
+    })
+
+    return totalReward;
+}
+
+export const getRiskToRewardRatio = (trades: Trade[]) => {
+    const totalRisk = calculateTotalRisk(trades);
+    const totalReward= calculateTotalReward(trades);
+    const ratio = totalReward / totalRisk;
+
+    return {totalRisk, totalReward, ratio};
+} 
