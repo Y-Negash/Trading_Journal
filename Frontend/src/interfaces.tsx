@@ -51,7 +51,7 @@ export interface AnalyticsProps{
     trades: Trade[];
 }
 
-export interface DoughnutProps{
+export interface ChartProps{
     trades: Trade[];
   }
 
