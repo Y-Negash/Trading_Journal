@@ -1,3 +1,11 @@
+.analytics-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    place-items: center;
+    gap: 3rem;
+}
+
 #analytics-title{
     text-align: center;
     font-size: xxx-large;
@@ -31,11 +39,9 @@
 .chart {
     background-color: white;
     border-radius: 1.5rem;
-    margin: 1rem;
     text-align: center;
     padding: 0.5rem;
     width: 20%;
     height: fit-content;
     box-shadow: 1px 3px 8px 2px #6e7c8d;
-    position: relative;
 }
