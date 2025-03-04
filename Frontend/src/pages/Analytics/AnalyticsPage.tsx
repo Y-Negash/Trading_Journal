@@ -17,8 +17,10 @@ const AnalyticsPage:React.FC<AnalyticsProps> = ({trades}) => {
   const totalTrade = trades.length;
 
   // Risk to Reward Chart
-  const riskToRewardRatio = getRiskToRewardRatio(trades).ratio.toFixed(0);
-   console.log(riskToRewardRatio);
+  let riskToRewardRatio = getRiskToRewardRatio(trades).ratio.toFixed(0);
+   if(trades.length === 0){
+    riskToRewardRatio = '0';
+   }
   
   return (
     <div className="analytics-container">
