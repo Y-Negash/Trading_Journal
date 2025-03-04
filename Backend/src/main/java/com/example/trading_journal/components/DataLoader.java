@@ -38,10 +38,10 @@ public class DataLoader implements ApplicationRunner {
         traderRepository.save(trader2);
         traderRepository.save(trader3);
 
-        Trade trade1 = new Trade("EUR/USD1",650,344,333,241,LocalDate.of(2024,10,14));
-        Trade trade2 = new Trade("USD/JPY1",50,34,3,4,LocalDate.of(2024,10,13));
-        Trade trade3 = new Trade("GBP/USD1",86,45,30,20,LocalDate.of(2024,10,12));
-        Trade trade4 = new Trade("AUD/USD1",65,44,33,41,LocalDate.of(2024,10,12));
+        Trade trade1 = new Trade("EUR/USD1",650,880,500,880,LocalDate.of(2024,10,14));
+        Trade trade2 = new Trade("USD/JPY1",1200,1350,1350,600,LocalDate.of(2024,10,13));
+        Trade trade3 = new Trade("GBP/USD1",3566,1700,3700,1700,LocalDate.of(2024,10,12));
+        Trade trade4 = new Trade("AUD/USD1",65,170,30,170,LocalDate.of(2024,10,12));
 
 
         tradeRepository.save(trade4);
@@ -49,17 +49,18 @@ public class DataLoader implements ApplicationRunner {
         tradeRepository.save(trade3);
         tradeRepository.save(trade2);
 
-        Issue goodIssue = new Issue(LocalDate.of(2024,10,14),"Issue 1","Great trade, I analysed well!");
-        Issue okayIssue = new Issue(LocalDate.of(2024,10,13),"Issue 2","This was quite average, I could've have improved here");
-        Issue badIssue = new Issue(LocalDate.of(2024,10,12),"Issue 3","This is one of the worst I've done :( ");
-        Issue longAgoIssue = new Issue(LocalDate.of(2024,5,3),"Issue 3","This is one of the worst I've done :( ");
-        Issue weekAgoIssue = new Issue(LocalDate.of(2024,11,16),"Issue 3","This is one of the worst I've done :( ");
+        Issue earlyExit = new Issue(LocalDate.of(2024,10,14), "Exited Too Early", "Closed the trade too early due to fear of reversal. Should have trusted the original take profit target.");
+        Issue marketTiming = new Issue(LocalDate.of(2024,10,13), "Missed Market Timing", "Forgot to check for London session open, which caused unexpected volatility.");
+        Issue badRiskManagement = new Issue(LocalDate.of(2023,10,12), "No Stop Loss", "Entered without setting a stop loss, leading to a larger loss than expected.");
+        Issue newsEvent = new Issue(LocalDate.of(2024,5,3), "News Disruption", "Jerome Powell speech caused sudden price spike, didn't account for scheduled news event.");
+        Issue revengeTrade = new Issue(LocalDate.of(2024,11,16), "Revenge Trade", "Took a second trade immediately after a loss to try and recover, resulting in another loss.");
 
-        issueRepository.save(longAgoIssue);
-        issueRepository.save(weekAgoIssue);
-        issueRepository.save(goodIssue);
-        issueRepository.save(okayIssue);
-        issueRepository.save(badIssue);
+
+        issueRepository.save(earlyExit);
+        issueRepository.save(marketTiming);
+        issueRepository.save(badRiskManagement);
+        issueRepository.save(newsEvent);
+        issueRepository.save(revengeTrade);
     }
 
 }
