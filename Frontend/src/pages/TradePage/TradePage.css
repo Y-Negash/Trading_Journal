@@ -1,28 +1,47 @@
 #tradepage-title{
-    text-align: center;
+    text-align: start;
     font-size: xxx-large;
-    margin-top: 1rem;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    place-items: center;
+    padding: 1.5rem;
+    padding-left: 3rem;
+    background: rgba(149, 168, 196, 0.507); 
+    box-shadow: 0px 2px 4px lightgray;
+  } 
+
+.trade-page > main {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
 }
 
-.trade-container{
-    display: flex;
-    flex-direction: row;
-    margin-top: 2rem;
-    margin-left: 2rem;
-    gap: 1rem;
-    flex-wrap: wrap;
+.trade-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 1rem; 
+    justify-content: start;
+    margin: 0rem 1rem;
 }
+  
 
 .trade-list{
     background-color: white;
-    border-radius: 1.5rem;
     margin: 1rem;
     text-align: center;
-    padding: 0.5rem;
-    width: 16%;
-    height: fit-content;
-    box-shadow: 1px 3px 8px 2px #719AD3;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.151);
+    border-radius: 0.5rem 0.5rem 0rem 0rem;
+}
+
+.trade-list > h4 {
+    background-color: #0D2F62;
+    padding: 0.8rem;
+    color: white;
+    border-radius: 0.5rem 0.5rem 0rem 0rem;
 }
 
 .trade-list p {
@@ -32,40 +51,51 @@
 }
 
 .sell, .buy {
-    border-radius: 2px;
+    
     font-size: 1em;
     font-weight: 500;
-    padding: 0.1rem 0.6rem;
+    padding: 0.3rem 0.6rem;
     font-family: inherit;
-    color: whitesmoke;
+    color: darkslategrey;
     transition: border-color 0.25s;
     border: none;
     width: 100%;
 }
 
 .sell {
-    background-color: var(--tradepage-color);
+    background-color: lightcoral;
 }
 
 .buy {
-    background-color: var(--tradepage-color1);
+    background-color: rgba(164, 244, 164, 0.538);
 }
   
 .details {
     display: flex;
     flex-direction: column;
-    padding: 0 0.5rem;
-    padding-bottom: 0.4rem;
+    margin: 0.5rem 1rem;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .detail-item {
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    padding: 5px 0;
+    padding: 8.5px 0;
 }
 
-.detail-item p {
-    margin: 0;
-}
+.detail-item p {margin: 0;}
 
+.delete-icon{margin-top: 0.3rem;}
+
+.delete-icon:active {transform: translateY(3px);}
+
+@media (max-width: 1000px){
+
+    .trade-page {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+}

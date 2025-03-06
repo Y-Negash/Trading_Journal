@@ -10,7 +10,6 @@ nav {
     justify-content: space-around;
     align-items: center;
     height: 100%;
-    
 }
 
 .navbar-link {
@@ -20,22 +19,24 @@ nav {
 
 .navbar-link svg {
     color: var(--button-color2); 
+    height: 18px;
+
   }
 
 
 @media (min-width: 2560px){
     .navbar-link svg {
-        height: 30px;
+        height: 35px;
       }
 }  
 
-@media (min-width: 1440px){
+@media (max-width: 1440px){
     .navbar-link svg {
         height: 18px;
       }
 }  
 
-@media (max-width: 719px){
+@media (max-width: 1000px){
    
     #navbar-links {
         display: flex;

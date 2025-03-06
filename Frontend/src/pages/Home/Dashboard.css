@@ -50,6 +50,15 @@ main {
 
 }
 
+@media (max-width: 1000px){
+
+    .page-container{
+        display: flex;
+        flex-direction: column;
+        min-height:  100vh;
+    }
+}
+
 @media (max-width: 719px) {
   
     .page-container{

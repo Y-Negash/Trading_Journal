@@ -13,7 +13,7 @@ const Dashboard: React.FC<DashboardProps> = ({addTrade, trades, issues}) => {
         <div className="page-container">
             <NavBar />
             <main>
-                <section aria-labelledby="recent-activities-header" className="recent-activities">
+                <section aria-labelledby="recent-activities-header">
                     <h2 id="recent-activities-header" className="sr-only">Recent User Activities</h2>
                     <div className="widget-container">
                         <TradeWidget trades={trades}/>
@@ -21,7 +21,7 @@ const Dashboard: React.FC<DashboardProps> = ({addTrade, trades, issues}) => {
                     </div>
                 </section>
 
-                <section aria-labelledby="dashboard-form-header" className="dashboard-form">
+                <section aria-labelledby="dashboard-form-header">
                     <h2 id="dashboard-form-header" className="sr-only">Dashboard Controls</h2>
                         <TradeForm addTrade={addTrade} />
                 </section>
