@@ -1,39 +1,13 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif, Roboto;
-  line-height: 1.5;
-  font-weight: 600;
-  --background-color: #dde2e8;
-  --link-color: #646cff;
-  --link-color1: white;
-  --border-color: #433a69;
-  --dashboard-color: #C5DCFC;
-  --nav-color: #64A1F7;
-  --shadow-color: #719ad390;
-  --button-color: #0034A3;
-  --tradepage-color: #719AD3;
-  --tradepage-color1: #5f1a4c;
-  
-  
-  
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box; 
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  max-width: 100%;
+html, body, #root {
   min-height: 100vh;
-  overflow-x: hidden;
-  background-color: var(--dashboard-color);
+  width: 100vw;
+  background-color: var(--background-color);
 }
 
 a {
@@ -43,10 +17,25 @@ a {
 
 a:hover {
   color: var(--link-color1);
+} 
+
+:root {
+  font-family: system-ui, Ariel, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --background-color: #e2e7ed;
+  --primary-color: #0D2F62;
+  --secondary-color: #6d89b7;
+  --tertiary-color: rgba(128, 128, 128, 0.119);
+  --button-color1: #E5A00D;
+  --button-color2: rgb(213, 215, 232);
+  --input-color: rgb(113, 112, 112);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-
-
 
 
 

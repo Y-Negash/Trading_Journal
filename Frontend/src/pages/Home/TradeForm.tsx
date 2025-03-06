@@ -87,17 +87,17 @@ const TradeForm: React.FC<TradeFormProps> = ({
 
     return(
         <article className="form-container">
-        <h2 id="form-title">Add A Trade </h2>
+        <h2 id="form-title">New Trade </h2>
         <form onSubmit={handleSubmit} className="trade-form">
         <div className="trade-fields">
-            <div className="label-input-pair name">
+            <div className="label-input-pair grid-top">
                 <label>Name</label>
                 <SearchDropdown 
                     name={name} 
                     setName={setName} 
                 />
             </div>
-            <div className="label-input-pair">
+            <div className="label-input-pair grid-top">
                 <label>Date </label>
                 <input 
                     id="date" 
@@ -153,9 +153,9 @@ const TradeForm: React.FC<TradeFormProps> = ({
             </div>
         </div>
         <div className="issue-fields">
-            <label id="issue-label">Issue Name<span id="note">Note - Adding an issue is optional</span> </label>
+            <label id="issue-name">Issue Name<span id="note">Note - Adding an issue is optional</span> </label>
             <input 
-                id="issue-name" 
+                id="issue-name-input" 
                 type="text" 
                 value={issueName}
                 onChange={(e) => {setIssueName(e.target.value)}}

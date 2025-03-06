@@ -23,7 +23,7 @@ const AnalyticsPage:React.FC<AnalyticsProps> = ({trades}) => {
    }
   
   return (
-    <div className="analytics-container">
+    <div className="page-container">
       <NavBar />
       <section className="doughnut chart">
         <p>{percentage}</p>
