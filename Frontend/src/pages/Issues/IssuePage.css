@@ -52,7 +52,7 @@
 }
 
 .issue-box::-webkit-scrollbar {
-    width: 8px; /* Thin scrollbar
+    width: 8px; 
 }
 
 .issue-box::-webkit-scrollbar-thumb {
