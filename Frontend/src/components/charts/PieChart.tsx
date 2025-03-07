@@ -16,7 +16,7 @@ const PieChart: React.FC<ChartProps> = ({trades}) => {
         datasets: [
             {
                 data: [totalBuy, totalSell],
-                backgroundColor: ['indigo', 'lightblue'],
+                backgroundColor: ['lightblue', 'lightcyan'],
                 cutout: '0%',
             }
         ]

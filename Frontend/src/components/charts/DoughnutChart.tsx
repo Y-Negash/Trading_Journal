@@ -15,9 +15,8 @@ const DoughnutChart: React.FC<ChartProps> = ({ trades }) => {
       datasets: [
           {
               data: [winRate, loseRate],
-              backgroundColor: ['blue', 'lightgrey'],
+              backgroundColor: ['lightblue', 'lightgrey'],
               cutout: '55%',
-              borderColor: ['black'],
               radius: '70%',
             }
         ]

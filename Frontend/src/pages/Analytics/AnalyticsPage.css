@@ -1,47 +1,105 @@
-/* .analytics-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    place-items: center;
-    gap: 3rem;
-} */
-
 #analytics-title{
-    text-align: center;
+    text-align: start;
     font-size: xxx-large;
-    margin-top: 16rem;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-.doughnut{
-    position: relative;
-    display: inline-block;
-    height: 230px;
-    width: 250px;
-    margin-top: 2rem;
+.analytics-page > main {
+    padding: 0;
+    gap: 0;
 }
 
-.doughnut > p{
-  position: absolute;
-  top: 42%; 
-  left: 40%;
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
-}
-
-.doughnut > h2 {
-    text-align: center;
-    position: relative;
-    bottom: 1.5rem;
+.chart-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, 4fr);
+    padding: 2rem 1rem;
+    gap: 2rem;
 }
 
 .chart {
+    grid-row: 1;
     background-color: white;
-    border-radius: 1.5rem;
+    border-radius: 0.3rem;
     text-align: center;
-    padding: 0.5rem;
-    width: 20%;
-    height: fit-content;
-    box-shadow: 1px 3px 8px 2px #6e7c8d;
+    padding: 1rem;
+    width: 100%;
+    height: 350px;
+    margin: auto;
+    box-shadow: 1px 2px 6px 2px #6e7c8d;
+}
+
+#doughnut-title {
+    margin-top: -1.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.doughnut{
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#doughnut-value {
+    position: relative;
+    top: 67%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+.pie {
+    grid-row: 2;
+}
+
+.pie > p {
+    padding: 1rem;
+}
+
+#pie-title{
+    margin-top: 0.5rem;
+}
+
+.trade-count-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.trade-count-container > h2 {
+    font-size: 80px;
+    padding: 2rem;
+    margin: 1rem;
+    border: 2px dashed grey;
+}
+
+.trade-count-container > p {
+    padding: 1rem;
+    font-style: italic;
+}
+
+.total-trades{
+    display: flex;
+    justify-content: center;
+}
+
+.horizontal-bar {
+    grid-column: 3 / 5;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.profit-graph {
+    grid-row: 2;
+    grid-column: 2 / 5;
+    width: 100%;
+    height: 100%;
 }
