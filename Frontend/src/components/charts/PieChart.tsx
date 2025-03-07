@@ -22,10 +22,20 @@ const PieChart: React.FC<ChartProps> = ({trades}) => {
         ]
     }
 
+    const options = {
+        responsive: true,
+        layout: {
+            padding: {
+                left: 10,
+                right: 10
+            }
+        }
+    }
+
     
     return (
-        <div>
-            <Doughnut data={data} key="buy-sell-chart"/>
+        <div className="pie-chart">
+            <Doughnut data={data} key="buy-sell-chart" options={options}/>
         </div>
     );
 

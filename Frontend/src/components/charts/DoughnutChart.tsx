@@ -1,4 +1,4 @@
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend, ChartOptions } from 'chart.js';
 import { calculateWinRate } from '../../utils/tradeUtils';
 import { Doughnut } from 'react-chartjs-2';
 import { ChartProps } from "../../interfaces";
@@ -22,9 +22,19 @@ const DoughnutChart: React.FC<ChartProps> = ({ trades }) => {
         ]
   };
 
+  const options:ChartOptions<'doughnut'> = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false
+      }
+    }
+
+  }
+
   return (
-    <div>
-      <Doughnut data={data} key="win-rate-chart" />
+    <div className='doughnut-chart'>
+      <Doughnut data={data} key="win-rate-chart" options={options} />
     </div>
   );
 };

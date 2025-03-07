@@ -31,8 +31,8 @@ const AnalyticsPage:React.FC<AnalyticsProps> = ({trades}) => {
         <div className="chart-container">
         <section aria-labelledby="win-rate" className="doughnut chart">
           <h3 id="win-rate" className="sr-only">Win Rate Chart</h3>
-          <p id="doughnut-value">{percentage}</p>
           <DoughnutChart trades={trades} />
+          <p id="doughnut-value">{percentage}</p>
           <h2 id="doughnut-title">Win Rate</h2>
         </section>
         <section aria-labelledby="buy-sell" className="pie chart">
@@ -43,15 +43,18 @@ const AnalyticsPage:React.FC<AnalyticsProps> = ({trades}) => {
         <section aria-labelledby="total-trades" className="total-trades chart">
           <h3 id="total-trades" className="sr-only">Total Trades Count</h3>
           <div className="trade-count-container">
-            <h2>{totalTrade}</h2>
-            <h3>Total Trades</h3>
-            <p>The number of trades you have currently </p>
+            <p className="count">{totalTrade}</p>
+            <h2 id="total-trades-title">Total Trades</h2>
+            <p>The number of trades recorded in your portfolio.</p>
           </div>
         </section>
         <section aria-labelledby="risk-reward" className="horizontal-bar chart">
           <h3 id="risk-reward" className="sr-only">Risk To Reward Chart</h3>
           <HorizontalBarChart trades={trades}/>
-          <p>Risk to Reward Ratio: {riskToRewardRatio}</p>
+          <div className="ratio-container">
+            <p className="count">{riskToRewardRatio}</p>
+            <h2 id="risk-reward-title">Risk to Reward Ratio</h2>
+          </div>
         </section>
         <section aria-labelledby="profit-graph" className="profit-graph chart">
           <h3 id="profit-graph" className="sr-only">Profit by Date</h3>

@@ -16,22 +16,36 @@ const HorizontalBarChart: React.FC<ChartProps> = ({ trades }) => {
     datasets: [
       {
         data: [totalRisk, totalReward],
-        backgroundColor: ['darkred', 'green'],
-        barThickness: 50
+        backgroundColor: ['rgb(251, 197, 197, 0.8)', 'rgb(205, 255, 227, 0.8)'],
+        barThickness: 50,
+        borderColor: ['red', 'green'],
+        borderWidth: 0.5,
       }
     ]
   };
 
   const options: ChartOptions<'bar'> = {
     responsive: true,
+    maintainAspectRatio: true,
+    indexAxis: 'y',
     plugins: {
       legend: {
         display: false,
       }
+    },
+    scales: {
+      y: {
+        position: 'right'
+      },
+      x: {
+        reverse: true
+      }
     }
   };
+
+
   return (
-    <div>
+    <div className="bar-chart">
       <Bar data={data} key="risk-reward-chart" options={options} />
     </div>
   );

@@ -30,6 +30,7 @@ main {
     height: 13rem;
     width: 100%;
     justify-content: space-evenly;
+    margin-top: 1rem;
 }
 
 @media (min-width: 2560px){
