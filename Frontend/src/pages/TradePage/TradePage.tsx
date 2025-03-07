@@ -1,4 +1,3 @@
-import React from "react";
 import { Trade, TradePageProps } from '../../interfaces';
 import NavBar from "../../components/navigation/NavBar";
 import './TradePage.css';

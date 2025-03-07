@@ -1,4 +1,3 @@
-import React from "react";
 import TradeForm from "./TradeForm";
 import './Dashboard.css';
 import { DashboardProps } from '../../interfaces';

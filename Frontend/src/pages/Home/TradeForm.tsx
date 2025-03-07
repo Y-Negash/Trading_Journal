@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
 import './TradeForm.css';
 import SearchDropdown from "../../components/search-dropdown/SearchDropdown";
 import { TradeFormProps } from "../../interfaces";
@@ -22,17 +22,21 @@ const TradeForm: React.FC<TradeFormProps> = ({
     
     const validateForm = ():number => {
 
-        if (!issueName && !issueDescription){ // no issue 
+        if (!issueName && !issueDescription){ 
             return 0;
         }
-        if (!issueName && issueDescription) {  // only issue description
+        if (!issueName && issueDescription) { 
             setErrorMessage("Please give your issue a name");
             return 1;
         }
             setErrorMessage("");
 
-        if(issueName && issueName.length > 30){ // long issue name
+        if(issueName && issueName.length > 30){ 
             setErrorMessage("Please shorten the issue name, you've reached the limit");
+            return 1;
+        }
+        if(issueDescription && issueDescription.length > 255){
+            setErrorMessage("Please shorten your description, you've reached character limit");
             return 1;
         }
             setErrorMessage("");  

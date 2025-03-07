@@ -2,12 +2,12 @@
     text-align: start;
     font-size: xxx-large;
     color: rgb(255, 255, 255);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);}
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
 
-header {
+.trade-page > header {
     display: flex;
     justify-content: space-between;
-    place-items: center;
     padding: 1.5rem;
     padding-left: 3rem;
     background: rgba(149, 168, 196, 0.507); 
@@ -97,5 +97,24 @@ header {
         display: flex;
         flex-direction: column;
         height: 100vh;
+    }
+
+    .trade-page header {
+        display: flex;
+        flex-direction: column;
+        padding-top: 0;
+    }
+
+    #tradepage-title {
+        padding-bottom: 0.5rem;
+    }
+}
+
+
+@media (max-width: 320px) {
+    
+    #tradepage-title{
+        font-size: 30px;
+        text-wrap: nowrap;
     }
 }
