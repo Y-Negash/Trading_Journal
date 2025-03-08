@@ -1,4 +1,4 @@
-import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
+import { ArcElement, Chart as ChartJS, ChartOptions, Legend, Tooltip } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import { ChartProps } from "../../interfaces";
 import { calculateBuySellMetric } from "../../utils/tradeUtils";
@@ -16,16 +16,36 @@ const PieChart: React.FC<ChartProps> = ({trades}) => {
         datasets: [
             {
                 data: [totalBuy, totalSell],
-                backgroundColor: ['indigo', 'lightblue'],
+                backgroundColor: ['lightblue', 'lightcyan'],
                 cutout: '0%',
             }
         ]
     }
 
+    const options:ChartOptions<'doughnut'> = {
+        responsive: true,
+        layout: {
+            padding: {
+                left: 10,
+                right: 10
+            }
+        },
+        plugins: {
+            tooltip: {
+                callbacks: {
+                  label: function (tooltipItem) {
+                    const value = tooltipItem.raw; 
+        
+                    return ` ${value} trades`; 
+                  }}
+              }
+        }
+    }
+
     
     return (
-        <div>
-            <Doughnut data={data} key="buy-sell-chart"/>
+        <div className="pie-chart">
+            <Doughnut data={data} key="buy-sell-chart" options={options}/>
         </div>
     );
 

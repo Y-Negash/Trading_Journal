@@ -1,4 +1,4 @@
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend, ChartOptions } from 'chart.js';
 import { calculateWinRate } from '../../utils/tradeUtils';
 import { Doughnut } from 'react-chartjs-2';
 import { ChartProps } from "../../interfaces";
@@ -8,24 +8,40 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const DoughnutChart: React.FC<ChartProps> = ({ trades }) => {
   
   const winRate = calculateWinRate(trades);
-  const loseRate = 100 - winRate;
+  const loseRate = (100 - winRate).toFixed(0);
   
   const data = {
       labels: ['Wins', 'Losses'],
       datasets: [
           {
               data: [winRate, loseRate],
-              backgroundColor: ['blue', 'lightgrey'],
+              backgroundColor: ['lightblue', 'lightgrey'],
               cutout: '55%',
-              borderColor: ['black'],
               radius: '70%',
             }
         ]
   };
 
+  const options:ChartOptions<'doughnut'> = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false
+      },
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            const value = tooltipItem.raw; 
+
+            return ` ${value}%`; 
+          }}
+      }
+    }
+  }
+
   return (
-    <div>
-      <Doughnut data={data} key="win-rate-chart" />
+    <div className='doughnut-chart'>
+      <Doughnut data={data} key="win-rate-chart" options={options} />
     </div>
   );
 };

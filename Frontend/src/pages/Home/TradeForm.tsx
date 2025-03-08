@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from "react";
+import { FormEvent, useState } from "react";
 import './TradeForm.css';
 import SearchDropdown from "../../components/search-dropdown/SearchDropdown";
 import { TradeFormProps } from "../../interfaces";
@@ -18,21 +18,25 @@ const TradeForm: React.FC<TradeFormProps> = ({
     const [issueName, setIssueName] = useState<string | undefined>("");
     const [issueDescription, setIssueDescription] = useState<string | undefined>("");
     const [errorMessage, setErrorMessage] = useState("");
-    
-    
+
+        
     const validateForm = ():number => {
 
-        if (!issueName && !issueDescription){ // no issue 
+        if (!issueName && !issueDescription){ 
             return 0;
         }
-        if (!issueName && issueDescription) {  // only issue description
+        if (!issueName && issueDescription) { 
             setErrorMessage("Please give your issue a name");
             return 1;
         }
             setErrorMessage("");
 
-        if(issueName && issueName.length > 30){ // long issue name
+        if(issueName && issueName.length > 30){ 
             setErrorMessage("Please shorten the issue name, you've reached the limit");
+            return 1;
+        }
+        if(issueDescription && issueDescription.length > 255){
+            setErrorMessage("Please shorten your description, you've reached character limit");
             return 1;
         }
             setErrorMessage("");  
@@ -87,17 +91,17 @@ const TradeForm: React.FC<TradeFormProps> = ({
 
     return(
         <article className="form-container">
-        <h2 id="form-title">Add A Trade </h2>
+        <h2 id="form-title">New Trade </h2>
         <form onSubmit={handleSubmit} className="trade-form">
         <div className="trade-fields">
-            <div className="label-input-pair name">
+            <div className="label-input-pair grid-top">
                 <label>Name</label>
                 <SearchDropdown 
                     name={name} 
                     setName={setName} 
                 />
             </div>
-            <div className="label-input-pair">
+            <div className="label-input-pair grid-top">
                 <label>Date </label>
                 <input 
                     id="date" 
@@ -153,9 +157,9 @@ const TradeForm: React.FC<TradeFormProps> = ({
             </div>
         </div>
         <div className="issue-fields">
-            <label id="issue-label">Issue Name<span id="note">Note - Adding an issue is optional</span> </label>
+            <label id="issue-name">Issue Name<span id="note">Note - Adding an issue is optional</span> </label>
             <input 
-                id="issue-name" 
+                id="issue-name-input" 
                 type="text" 
                 value={issueName}
                 onChange={(e) => {setIssueName(e.target.value)}}

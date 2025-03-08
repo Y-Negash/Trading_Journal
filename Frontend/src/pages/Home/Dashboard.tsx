@@ -1,4 +1,3 @@
-import React from "react";
 import TradeForm from "./TradeForm";
 import './Dashboard.css';
 import { DashboardProps } from '../../interfaces';
@@ -10,14 +9,22 @@ import IssueWidget from "../../components/widgets/IssueWidget";
 const Dashboard: React.FC<DashboardProps> = ({addTrade, trades, issues}) => {
 
     return(
-        <div className="dashboard-container container">
+        <div className="page-container">
             <NavBar />
-            <section className="widgets-container">
-                <TradeWidget trades={trades}/>
-                <IssueWidget issues={issues}/>
-            </section>
-            <TradeForm addTrade={addTrade} />
-            
+            <main>
+                <section aria-labelledby="recent-activities-header">
+                    <h2 id="recent-activities-header" className="sr-only">Recent User Activities</h2>
+                    <div className="widget-container">
+                        <TradeWidget trades={trades}/>
+                        <IssueWidget issues={issues}/>
+                    </div>
+                </section>
+
+                <section aria-labelledby="dashboard-form-header">
+                    <h2 id="dashboard-form-header" className="sr-only">Dashboard Controls</h2>
+                        <TradeForm addTrade={addTrade} />
+                </section>
+            </main>
         </div>
     );
 }

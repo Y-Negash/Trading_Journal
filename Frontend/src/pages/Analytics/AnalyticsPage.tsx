@@ -1,4 +1,3 @@
-import React from "react";
 import NavBar from "../../components/navigation/NavBar";
 import './AnalyticsPage.css';
 import { AnalyticsProps } from "../../interfaces";
@@ -6,6 +5,7 @@ import DoughnutChart from "../../components/charts/DoughnutChart";
 import { calculateWinRate, getRiskToRewardRatio  } from "../../utils/tradeUtils";
 import PieChart from "../../components/charts/PieChart";
 import HorizontalBarChart from "../../components/charts/HorizontalBarChart";
+import LineChart from "../../components/charts/LineChart";
 
 const AnalyticsPage:React.FC<AnalyticsProps> = ({trades}) => {
 
@@ -21,29 +21,53 @@ const AnalyticsPage:React.FC<AnalyticsProps> = ({trades}) => {
    if(trades.length === 0){
     riskToRewardRatio = '0';
    }
+
   
   return (
-    <div className="analytics-container">
+    <div className="analytics-page page-container">
       <NavBar />
-      <section className="doughnut chart">
-        <p>{percentage}</p>
-        <DoughnutChart trades={trades} />
-        <h2>Win Rate</h2>
-      </section>
-      <section className="pie chart">
-        <PieChart  trades={trades} />
-      </section>
-      <section className="total-trades chart">
-        <div>
-          <h2>{totalTrade}</h2>
-          <h3>Total Trades</h3>
-          <p>The number of trades you have currently </p>
+      <main>
+        <header>
+          <h3 id="analytics-title">Your Performance</h3>
+        </header>
+        <div className="chart-container">
+        <section aria-labelledby="win-rate" className="doughnut chart">
+          <h3 id="win-rate" className="sr-only">Win Rate Chart</h3>
+          <DoughnutChart trades={trades} />
+          <p id="doughnut-value">{percentage}</p>
+          <h2 id="doughnut-title">Win Rate</h2>
+        </section>
+        <section aria-labelledby="buy-sell" className="pie chart">
+          <h3 id="buy-sell" className="sr-only">Buy Sell Pie Chart</h3>
+          <PieChart  trades={trades} />
+          <h2 id="pie-title">Trade Type</h2>
+        </section>
+        <section aria-labelledby="total-trades" className="total-trades chart">
+          <h3 id="total-trades" className="sr-only">Total Trades Count</h3>
+          <div className="trade-count-container">
+            <p className="count">{totalTrade}</p>
+            <h2 id="total-trades-title">Total Trades</h2>
+            <p>The number of trades recorded in your portfolio.</p>
+          </div>
+        </section>
+        <section aria-labelledby="risk-reward" className="horizontal-bar chart">
+          <h3 id="risk-reward" className="sr-only">Risk To Reward Chart</h3>
+          <HorizontalBarChart trades={trades}/>
+          <div className="ratio-container">
+            <p className="count">{riskToRewardRatio}</p>
+            <h2 id="risk-reward-title">Risk to Reward Ratio</h2>
+          </div>
+        </section>
+        <section aria-labelledby="profit-graph" className="line chart">
+          <h3 id="profit-graph" className="sr-only">Profit by Date</h3>
+          <div className="history-text">
+            <h2>Trade History</h2>
+            <p>This visualizes your trade history and profit over time, providing insights into your performance and trends.</p>
+          </div>
+          <LineChart trades={trades}/>
+        </section>
         </div>
-      </section>
-      <section className="horizontal-bar chart">
-        <HorizontalBarChart trades={trades}/>
-        <p>Risk to Reward Ratio: {riskToRewardRatio}</p>
-      </section>
+      </main>
     </div>
   );
 }

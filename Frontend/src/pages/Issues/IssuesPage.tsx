@@ -21,7 +21,7 @@ const IssuesPage: React.FC<IssuePageProps> = ({issues, deleteIssue}) => {
             return(
             
                 <ul key={issue.issueId} className="issue-list">
-                    <h3>{issueName}</h3>
+                    <h4>{issueName}</h4>
                     <hr />
                     <p>{issue.tradeDate}</p>
                     <p className="issue-box">{issueDescription}</p>
@@ -38,15 +38,18 @@ const IssuesPage: React.FC<IssuePageProps> = ({issues, deleteIssue}) => {
 })
 
     return(
-        <>
-        <div className="container">
-        <h3 id="issuepage-title">Issue Page</h3>
+        <div className="issue-page page-container">
             <NavBar />
-            <section className="issue-container">
-                {mappedIssues}
-            </section>
+            <main>
+                <header>
+                    <h3 id="issuepage-title">Your Issues</h3>
+                </header>
+                <section aria-labelledby="issue-list-header" className="issue-container">
+                    <h3 id="issue-list-header" className="sr-only">List of recorded Issues</h3>
+                    {mappedIssues}
+                </section>
+            </main>
         </div>
-        </>
     );
 }
 

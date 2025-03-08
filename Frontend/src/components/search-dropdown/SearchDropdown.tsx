@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import options from "../../assets/currency-pair.json";
 import { Option, SearchDropdownProps } from "../../interfaces";
 import './searchDropdown.css';
+import { useState } from "react";
 
 const SearchDropdown: React.FC<SearchDropdownProps> = ({    
     name,

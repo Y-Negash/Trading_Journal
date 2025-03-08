@@ -1,4 +1,3 @@
-import React from "react";
 import { Trade, TradePageProps } from '../../interfaces';
 import NavBar from "../../components/navigation/NavBar";
 import './TradePage.css';
@@ -35,12 +34,12 @@ const TradePage: React.FC<TradePageProps> = ({
         const tradeType = () => {
             const type = getTradeType(trade);
             if(type === "BUY"){
-                return <button className="buy">BUY</button>;
+                return <p className="buy">BUY</p>;
             } 
             else if(type === "SELL"){
-                return <button className="sell">SELL</button>;
+                return <p className="sell">SELL</p>;
             } else {
-                return <p>EMPTY</p>
+                return <p className="empty">EMPTY</p>
             }
         };
 
@@ -53,7 +52,7 @@ const TradePage: React.FC<TradePageProps> = ({
        
         return (
                 <ul key={trade.tradeId}  className="trade-list">
-                    <h3>{readableTrade.name}</h3>
+                    <h4>{readableTrade.name}</h4>
                     <div>{tradeType()}</div>
                     <div className="details">
                         <div className="detail-item">
@@ -87,18 +86,22 @@ const TradePage: React.FC<TradePageProps> = ({
     })
 
 
-
     return(
-        <div className="container">
+        <div className="trade-page page-container">
             <NavBar />
-            <h3 id="tradepage-title">Trade Page</h3>
-            <Filter 
-                setFilteredTrades={setFilteredTrades}
-                setIsFiltered={setIsFiltered}
-            /> 
-            <div className="trade-container">
-                {isFiltered ? mappedTrades(filteredTrades) : mappedTrades(trades) }
-            </div>
+            <main>
+                <header>
+                    <h3 id="tradepage-title">Your Trades</h3>
+                    <Filter 
+                        setFilteredTrades={setFilteredTrades}
+                        setIsFiltered={setIsFiltered}
+                    /> 
+                </header>
+                <section aria-labelledby="trade-list-header" className="trade-container">
+                    <h3 id="trade-list-header" className="sr-only">List of Recorded Trades</h3>
+                    {isFiltered ? mappedTrades(filteredTrades) : mappedTrades(trades) }
+                </section>
+            </main>
         </div>
     )
 }
