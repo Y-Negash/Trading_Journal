@@ -34,7 +34,8 @@ Backend:
 ![screenshot](assets/issuepage.png)
 
 **Analytics Page:** 
-> (In future) Will analyze trades and provide detailed performance statistics.
+> Analyses your trades and provides performance statistics.
+![screenshot](assets/analytics.png)
 
 
 ## Setup and Installation
@@ -60,5 +61,5 @@ Start the React development server:
 npm run dev
 ```
 
-Open your browser and go to http://localhost:3000.
+Open your browser and go to http://localhost:5173.
 
