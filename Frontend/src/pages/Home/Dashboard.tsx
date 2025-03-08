@@ -9,7 +9,7 @@ import IssueWidget from "../../components/widgets/IssueWidget";
 const Dashboard: React.FC<DashboardProps> = ({addTrade, trades, issues}) => {
 
     return(
-        <div className="page-container">
+        <div className="dashboard page-container">
             <NavBar />
             <main>
                 <section aria-labelledby="recent-activities-header">
