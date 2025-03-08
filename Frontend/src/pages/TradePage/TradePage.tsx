@@ -34,12 +34,12 @@ const TradePage: React.FC<TradePageProps> = ({
         const tradeType = () => {
             const type = getTradeType(trade);
             if(type === "BUY"){
-                return <button className="buy">BUY</button>;
+                return <p className="buy">BUY</p>;
             } 
             else if(type === "SELL"){
-                return <button className="sell">SELL</button>;
+                return <p className="sell">SELL</p>;
             } else {
-                return <p>EMPTY</p>
+                return <p className="empty">EMPTY</p>
             }
         };
 
