@@ -5,6 +5,7 @@ import DoughnutChart from "../../components/charts/DoughnutChart";
 import { calculateWinRate, getRiskToRewardRatio  } from "../../utils/tradeUtils";
 import PieChart from "../../components/charts/PieChart";
 import HorizontalBarChart from "../../components/charts/HorizontalBarChart";
+import LineChart from "../../components/charts/LineChart";
 
 const AnalyticsPage:React.FC<AnalyticsProps> = ({trades}) => {
 
@@ -20,6 +21,7 @@ const AnalyticsPage:React.FC<AnalyticsProps> = ({trades}) => {
    if(trades.length === 0){
     riskToRewardRatio = '0';
    }
+
   
   return (
     <div className="analytics-page page-container">
@@ -56,9 +58,13 @@ const AnalyticsPage:React.FC<AnalyticsProps> = ({trades}) => {
             <h2 id="risk-reward-title">Risk to Reward Ratio</h2>
           </div>
         </section>
-        <section aria-labelledby="profit-graph" className="profit-graph chart">
+        <section aria-labelledby="profit-graph" className="line chart">
           <h3 id="profit-graph" className="sr-only">Profit by Date</h3>
-          <p>Upcoming graph</p>
+          <div className="history-text">
+            <h2>Trade History</h2>
+            <p>This visualizes your trade history over time, providing insights into your performance and trends.</p>
+          </div>
+          <LineChart trades={trades}/>
         </section>
         </div>
       </main>

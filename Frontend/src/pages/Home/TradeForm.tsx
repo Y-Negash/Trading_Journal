@@ -18,8 +18,8 @@ const TradeForm: React.FC<TradeFormProps> = ({
     const [issueName, setIssueName] = useState<string | undefined>("");
     const [issueDescription, setIssueDescription] = useState<string | undefined>("");
     const [errorMessage, setErrorMessage] = useState("");
-    
-    
+
+        
     const validateForm = ():number => {
 
         if (!issueName && !issueDescription){ 

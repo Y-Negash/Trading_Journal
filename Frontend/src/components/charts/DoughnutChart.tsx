@@ -27,9 +27,16 @@ const DoughnutChart: React.FC<ChartProps> = ({ trades }) => {
     plugins: {
       legend: {
         display: false
+      },
+      tooltip: {
+        callbacks: {
+          label: function (tooltipItem) {
+            const value = tooltipItem.raw; 
+
+            return ` ${value}%`; 
+          }}
       }
     }
-
   }
 
   return (

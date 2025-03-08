@@ -7,7 +7,7 @@ ChartJS.register(BarElement, Tooltip, CategoryScale, LinearScale);
 
 const HorizontalBarChart: React.FC<ChartProps> = ({ trades }) => {
   
-    const riskToRewardRatio = getRiskToRewardRatio(trades);
+  const riskToRewardRatio = getRiskToRewardRatio(trades);
   const totalRisk = riskToRewardRatio.totalRisk;
   const totalReward = riskToRewardRatio.totalReward;
 
@@ -31,6 +31,14 @@ const HorizontalBarChart: React.FC<ChartProps> = ({ trades }) => {
     plugins: {
       legend: {
         display: false,
+      },
+      tooltip: {
+        callbacks: {
+          label: function(tooltipItem){
+            const value = tooltipItem.raw;
+            return ` £${value}`
+          }
+        }
       }
     },
     scales: {
