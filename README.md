@@ -1,7 +1,7 @@
 # Trading Journal 📓
 The Trading Journal is a full-stack web application built with React for the frontend and Spring Boot for the backend. 
 It allows users to document and track their trades by inputting key details such as entry/exit points, stop loss, take profit, and trade date. 
-The backend processes and stores the trade data, enabling data persistence and future enhancements like analytics.
+The backend processes and stores the trade data, enabling data persistence and enhancements like analytics.
 
 ### Frontend:
 - Log trades with details such as trade name, date, entry/exit points, stop loss, and take profit.
