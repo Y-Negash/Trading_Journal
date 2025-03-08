@@ -62,7 +62,7 @@ const AnalyticsPage:React.FC<AnalyticsProps> = ({trades}) => {
           <h3 id="profit-graph" className="sr-only">Profit by Date</h3>
           <div className="history-text">
             <h2>Trade History</h2>
-            <p>This visualizes your trade history over time, providing insights into your performance and trends.</p>
+            <p>This visualizes your trade history and profit over time, providing insights into your performance and trends.</p>
           </div>
           <LineChart trades={trades}/>
         </section>
