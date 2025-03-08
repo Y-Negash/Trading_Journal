@@ -1,4 +1,4 @@
-import { ArcElement, Chart as ChartJS, ChartOptions, Legend, plugins, Tooltip } from "chart.js";
+import { ArcElement, Chart as ChartJS, ChartOptions, Legend, Tooltip } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import { ChartProps } from "../../interfaces";
 import { calculateBuySellMetric } from "../../utils/tradeUtils";

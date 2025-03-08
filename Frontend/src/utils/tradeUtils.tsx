@@ -42,7 +42,7 @@ export const calculateWinRate = (trades: Trade[]) => {
     const totalWins = wins.length;
 
     const winRate = (totalWins / totalTrade) * 100;
-    return winRate.toFixed(0);
+    return winRate;
 }
 
 export const calculateBuySellMetric = (trades: Trade[]) => {

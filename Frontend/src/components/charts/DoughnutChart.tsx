@@ -8,7 +8,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const DoughnutChart: React.FC<ChartProps> = ({ trades }) => {
   
   const winRate = calculateWinRate(trades);
-  const loseRate = 100 - winRate;
+  const loseRate = (100 - winRate).toFixed(0);
   
   const data = {
       labels: ['Wins', 'Losses'],
