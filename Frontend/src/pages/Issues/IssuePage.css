@@ -55,7 +55,7 @@
     background-color: white;
     margin: 1rem;
     text-align: center;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.151);
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.241);
     border-radius: 0.5rem 0.5rem 0rem 0rem;
     display: flex;
     flex-direction: column;
@@ -83,10 +83,8 @@
 
 .button {
     background-color: var(--button-color2);
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.151);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.151);
     padding: 0.3rem;
-    border-top: 0.03px solid rgba(0, 0, 0, 0.241);
-
 }
 
 .button:active {
