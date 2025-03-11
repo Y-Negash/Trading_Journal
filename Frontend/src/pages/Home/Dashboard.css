@@ -53,7 +53,7 @@
 
 @media (max-width: 1000px){
 
-    .page-container{
+    .dashboard{
         display: flex;
         flex-direction: column;
         min-height:  100vh;
@@ -62,15 +62,15 @@
 
 @media (max-width: 719px) {
   
-    .page-container{
+    .dashboard{
         display: flex;
         flex-direction: column;
         min-height:  100vh;
     }
 
-    main {
+    .dashboard main{
         padding: 0;
-        padding: 1rem;
+        padding: 1rem; 
     }
 
     .widget-container {

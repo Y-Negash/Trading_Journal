@@ -9,8 +9,6 @@ import "../../components/charts/Chart.css";
 
 const AnalyticsPage:React.FC<AnalyticsProps> = ({trades}) => {
 
-
-  //Total Trades Chart
   const totalTrade = trades.length;
   
   return (
@@ -25,8 +23,8 @@ const AnalyticsPage:React.FC<AnalyticsProps> = ({trades}) => {
           <PieChart trades={trades} />
           <section aria-labelledby="total-trades-header" className="total-trades chart">
             <h3 id="total-trades-header" className="sr-only">Total Trades Count</h3>
-            <div className="trades-count">
-              <p className="count">{totalTrade}</p>
+            <p className="count">{totalTrade}</p>
+            <div className="trades-count-text">
               <h2 className="chart-title">Total Trades</h2>
               <p>The number of trades recorded in your portfolio.</p>
             </div>

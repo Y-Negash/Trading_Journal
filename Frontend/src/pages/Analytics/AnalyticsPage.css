@@ -1,3 +1,6 @@
+/* .analytics-page main{
+
+} */
 .chart-container {
     display: grid;
     grid-template-columns: 1fr 1fr auto;
@@ -26,4 +29,49 @@
 
 .chart-title {
     color: var(--primary-color);
+}
+
+
+@media (min-width: 2560px){
+    .chart-title{
+        font-size: 60px;
+    }
+
+    .chart-container {
+        grid-template-columns: 1fr 1fr 2fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "winrate tradetype riskreward"
+        "totaltrades profitline profitline";
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1269px) {
+    .chart-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+            "winrate tradetype"
+            "riskreward totaltrades"
+            "profitline profitline";
+    }
+}
+
+@media (max-width: 767px) {
+    .chart-container {
+        grid-template-columns: minmax(300px, auto);
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: 
+            "winrate"
+            "tradetype"
+            "riskreward"
+            "totaltrades"
+            "profitline";
+        gap: 0;
+    }
+
+    .chart{
+        margin: 1rem;
+    }
+
 }

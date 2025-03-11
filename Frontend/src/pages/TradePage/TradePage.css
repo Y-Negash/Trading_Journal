@@ -100,11 +100,13 @@
     }
 }
 
+@media (max-width: 719px){
+    .trade-container{
+        margin: 0;
 
-@media (max-width: 320px) {
-    
-    #tradepage-title{
-        font-size: 30px;
-        text-wrap: nowrap;
+    }
+
+    .trade-list {
+        margin: 0.5rem;
     }
 }

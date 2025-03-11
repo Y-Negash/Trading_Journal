@@ -31,7 +31,7 @@ const HorizontalBarChart: React.FC<ChartProps> = ({ trades }) => {
 
   const options: ChartOptions<'bar'> = {
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     indexAxis: 'y',
     plugins: {
       legend: {
