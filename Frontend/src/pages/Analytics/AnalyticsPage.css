@@ -1,174 +1,77 @@
-#analytics-title{
-    text-align: start;
-    font-size: xxx-large;
-    color: rgb(255, 255, 255);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-}
+/* .analytics-page main{
 
-.analytics-page > main {
-    padding: 0;
-    gap: 0;
-}
-
+} */
 .chart-container {
     display: grid;
+    grid-template-columns: 1fr 1fr auto;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: repeat(4, 4fr);
-    padding: 2rem 1rem;
+    grid-template-areas: 
+    "winrate tradetype riskreward"
+    "totaltrades profitline profitline";
     gap: 2rem;
+    padding: 1rem;
+    height: 100%;
 }
 
+.doughnut-chart { grid-area: winrate; }
+.total-trades { grid-area: totaltrades; }
+.pie-chart { grid-area: tradetype; }
+.bar-chart { grid-area: riskreward; }
+.line-chart { grid-area: profitline; }
+
 .chart {
-    grid-row: 1;
     background-color: white;
     border-radius: 0.3rem;
     text-align: center;
     padding: 1rem;
-    width: 100%;
-    height: 280px;
-    margin: auto;
     box-shadow: 1px 2px 6px 2px #6e7c8d;
 }
 
-/* Win Rate Chart */
-.doughnut {
-    padding-top: 0;
-    padding-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.doughnut-chart {
-    height: 100%;
-}
-
-#doughnut-value {
-    position: relative;
-    left: 2%;
-    bottom: 56.5%;
-    font-size: 1.5rem;
-    font-weight: bold;
+.chart-title {
     color: var(--primary-color);
 }
 
-#doughnut-title{
-    position: relative;
-    bottom: 25%;
-    color: var(--primary-color);
+
+@media (min-width: 2560px){
+    .chart-title{
+        font-size: 60px;
+    }
+
+    .chart-container {
+        grid-template-columns: 1fr 1fr 2fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "winrate tradetype riskreward"
+        "totaltrades profitline profitline";
+    }
 }
 
-/* Trade Type Chart */
-.pie {
-    grid-row: 2;
+@media (min-width: 768px) and (max-width: 1269px) {
+    .chart-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+            "winrate tradetype"
+            "riskreward totaltrades"
+            "profitline profitline";
+    }
 }
 
-.pie-chart {
-    height: 85%;
-    display: flex;
-    justify-content: center;
+@media (max-width: 767px) {
+    .chart-container {
+        grid-template-columns: minmax(300px, auto);
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: 
+            "winrate"
+            "tradetype"
+            "riskreward"
+            "totaltrades"
+            "profitline";
+        gap: 0;
+    }
+
+    .chart{
+        margin: 1rem;
+    }
+
 }
-
-#pie-title{
-    margin-top: 0.5rem;
-    color: var(--primary-color);
-}
-
-/* Total Trades Chart */
-.trade-count-container{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.count {
-    font-size: 60px;
-    font-style: normal;
-    padding: 1rem;
-    margin: 1rem 2rem 1rem 2rem;
-    color: var(--primary-color);
-    border: 2px dashed grey;
-    border-radius: 0.3rem;
-    color: var(--primary-color);
-}
-
-.trade-count-container p:last-of-type {
-    padding: 0.5rem 1.5rem;
-    text-align: center;
-    color: #14376cd3;
-    font-size: 14px;
-}
-
-.total-trades{
-    display: flex;
-    justify-content: center;
-}
-
-/* Risk to Reward Chart */
-.horizontal-bar {
-    grid-column: 3 / 5;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    gap: 0.5rem;
-    width: fit-content;
-    max-width: fit-content;
-}
-
-.bar-chart{
-    border-radius: 0.2rem;
-    padding: 0rem 1rem;
-    background-color: rgba(240, 251, 255, 0.622);
-    height: 100%;
-    width: 100%;
-    margin-top: 0.3rem;
-    display: flex;
-    align-items: center;
-}
-
-
-.ratio-container > p {
-    margin-top: 0rem;
-}
-
-/* Profit by date graph */
-.line {
-    grid-row: 2;
-    grid-column: 2 / 5;
-    min-width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.profit-graph {
-    height: 100%;
-    width: 65%;
-    display: flex;
-    margin-left: 1rem;
-    justify-content: center;
-    background-color: rgba(240, 251, 255, 0.622);
-  }
-  
-  .history-text{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 40%;
-    max-height: 100%;
-    width: 31%;
-    justify-content: center;
-    box-shadow: 1px 0.5px 7px rgba(0, 0, 0, 0.305);
-}
-
-
-.history-text > p {
-    text-align: center;
-    color: #14376cd3;
-    padding: 1rem 1.6rem;
-    font-size: 14px;
-}
-
-  h2 {
-    color: var(--primary-color);
-  }
-
-  

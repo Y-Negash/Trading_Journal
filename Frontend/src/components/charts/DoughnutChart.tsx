@@ -17,13 +17,13 @@ const DoughnutChart: React.FC<ChartProps> = ({ trades }) => {
               data: [winRate, loseRate],
               backgroundColor: ['lightblue', 'lightgrey'],
               cutout: '55%',
-              radius: '70%',
             }
         ]
   };
 
   const options:ChartOptions<'doughnut'> = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         display: false
@@ -40,9 +40,13 @@ const DoughnutChart: React.FC<ChartProps> = ({ trades }) => {
   }
 
   return (
-    <div className='doughnut-chart'>
-      <Doughnut data={data} key="win-rate-chart" options={options} />
-    </div>
+    <section aria-labelledby="win-rate" className="doughnut-chart chart">
+          <h3 id="win-rate" className="sr-only">Win Rate Chart</h3>
+          <div id='doughnut'>
+            <Doughnut data={data} options={options} />
+          </div>
+          <h2 className="chart-title">Win Rate</h2>
+    </section>
   );
 };
 

@@ -24,6 +24,7 @@ const PieChart: React.FC<ChartProps> = ({trades}) => {
 
     const options:ChartOptions<'doughnut'> = {
         responsive: true,
+        maintainAspectRatio: false,
         layout: {
             padding: {
                 left: 10,
@@ -44,9 +45,13 @@ const PieChart: React.FC<ChartProps> = ({trades}) => {
 
     
     return (
-        <div className="pie-chart">
-            <Doughnut data={data} key="buy-sell-chart" options={options}/>
-        </div>
+        <section aria-labelledby="buy-sell" className="pie-chart chart">
+          <h3 id="buy-sell" className="sr-only">Buy Sell Pie Chart</h3>
+          <div id='pie'>
+            <Doughnut data={data} options={options} />
+          </div>
+          <h2 className="chart-title">Trade Type</h2>
+        </section>
     );
 
 }

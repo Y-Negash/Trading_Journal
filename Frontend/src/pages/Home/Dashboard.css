@@ -1,24 +1,14 @@
-.page-container {
+.dashboard{
     display: grid;
     grid-template-columns: 1fr 10fr;
     height: 100vh;
 }
 
-.page-container header {
-    display: flex;
-    justify-content: space-between;
-    place-items: center;
-    padding: 1.5rem;
-    padding-left: 3rem;
-    background: rgba(149, 168, 196, 0.507); 
-    box-shadow: 0px 2px 4px lightgray;
-}
-
-main {
+.dashboard main {
     grid-column: 2;
     display: grid;
     grid-template-rows: 1fr 3fr;
-    gap: 1.3rem;
+    gap: 3rem;
     overflow-y: auto;
     padding: 1.5rem 4rem 1rem 4rem;
 
@@ -63,7 +53,7 @@ main {
 
 @media (max-width: 1000px){
 
-    .page-container{
+    .dashboard{
         display: flex;
         flex-direction: column;
         min-height:  100vh;
@@ -72,15 +62,15 @@ main {
 
 @media (max-width: 719px) {
   
-    .page-container{
+    .dashboard{
         display: flex;
         flex-direction: column;
         min-height:  100vh;
     }
 
-    main {
+    .dashboard main{
         padding: 0;
-        padding: 1rem;
+        padding: 1rem; 
     }
 
     .widget-container {

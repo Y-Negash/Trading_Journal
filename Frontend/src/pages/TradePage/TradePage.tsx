@@ -89,14 +89,14 @@ const TradePage: React.FC<TradePageProps> = ({
     return(
         <div className="trade-page page-container">
             <NavBar />
+            <header>
+                <h3 className='title'>Your Trades</h3>
+                <Filter 
+                    setFilteredTrades={setFilteredTrades}
+                    setIsFiltered={setIsFiltered}
+                /> 
+            </header>
             <main>
-                <header>
-                    <h3 id="tradepage-title">Your Trades</h3>
-                    <Filter 
-                        setFilteredTrades={setFilteredTrades}
-                        setIsFiltered={setIsFiltered}
-                    /> 
-                </header>
                 <section aria-labelledby="trade-list-header" className="trade-container">
                     <h3 id="trade-list-header" className="sr-only">List of Recorded Trades</h3>
                     {isFiltered ? mappedTrades(filteredTrades) : mappedTrades(trades) }

@@ -30,7 +30,7 @@ const LineChart: React.FC<ChartProps> = ({ trades }) => {
 
   const options:ChartOptions<'line'> = {
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     scales: {
         y: {
             ticks: {
@@ -43,9 +43,16 @@ const LineChart: React.FC<ChartProps> = ({ trades }) => {
   }
 
   return (
-    <div className="profit-graph">
-      <Line data={data} options={options} />
-    </div>
+    <section aria-labelledby="profit-graph" className="line-chart chart">
+      <h3 id="profit-graph" className="sr-only">Profit by Date</h3>
+      <div className="history-text">
+        <h2 className="chart-title">Trade History</h2>
+        <p>This visualizes your trade history and profit over time, providing insights into your performance and trends.</p>
+      </div>
+      <div id="line">
+        <Line data={data} options={options}/>
+      </div>
+    </section>
   );
 };
 

@@ -73,8 +73,7 @@
     
     .recent-trade, .recent-issue {
         font-size: 30px;
-        font-weight: 600;
-        color: rgb(91, 82, 82);
+         color: rgb(91, 82, 82);
     }
     
     .recent-issue-list, .recent-trade-list {
