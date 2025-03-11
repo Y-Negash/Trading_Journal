@@ -33,126 +33,403 @@
     },
     {
       "id": 9,
-      "name": "CHF/USD"
-    },
-    {
-      "id": 10,
       "name": "CHF/JPY"
     },
     {
-      "id": 11,
+      "id": 10,
       "name": "EUR/AUD"
     },
     {
-      "id": 12,
+      "id": 11,
       "name": "EUR/CAD"
     },
     {
-      "id": 13,
+      "id": 12,
       "name": "EUR/CHF"
     },
     {
-      "id": 14,
+      "id": 13,
       "name": "EUR/GBP"
     },
     {
-      "id": 15,
+      "id": 14,
       "name": "EUR/JPY"
     },
     {
-      "id": 16,
+      "id": 15,
       "name": "EUR/NZD"
     },
     {
-      "id": 17,
+      "id": 16,
       "name": "GBP/AUD"
     },
     {
-      "id": 18,
+      "id": 17,
       "name": "GBP/CAD"
     },
     {
-      "id": 19,
+      "id": 18,
       "name": "GBP/CHF"
     },
     {
-      "id": 20,
+      "id": 19,
       "name": "GBP/JPY"
     },
     {
-      "id": 21,
-      "name": "GBP/NZD"
+      "id": 20,
+      "name": "NZD/GBP"
     },
     {
-      "id": 22,
+      "id": 21,
       "name": "GBP/USD"
     },
     {
-      "id": 23,
+      "id": 22,
       "name": "NZD/AUD"
     },
     {
-      "id": 24,
+      "id": 23,
       "name": "NZD/CAD"
     },
     {
-      "id": 25,
+      "id": 24,
       "name": "NZD/CHF"
     },
     {
-      "id": 26,
+      "id": 25,
       "name": "NZD/JPY"
     },
     {
-      "id": 27,
+      "id": 26,
       "name": "NZD/USD"
     },
     {
-      "id": 28,
-      "name": "USD/CAD"
-    },
-    {
-      "id": 29,
+      "id": 27,
       "name": "USD/CHF"
     },
     {
-      "id": 30,
+      "id": 28,
       "name": "USD/JPY"
     },
     {
-      "id": 31,
+      "id": 29,
       "name": "USD/HKD"
     },
     {
-      "id": 32,
+      "id": 30,
       "name": "USD/SGD"
     },
     {
-      "id": 33,
+      "id": 31,
       "name": "USD/SEK"
     },
     {
-      "id": 34,
+      "id": 32,
       "name": "USD/NOK"
     },
     {
-      "id": 35,
+      "id": 33,
       "name": "USD/INR"
     },
     {
-      "id": 36,
+      "id": 34,
       "name": "USD/BRL"
     },
     {
-      "id": 37,
+      "id": 35,
       "name": "USD/ZAR"
     },
     {
-      "id": 38,
+      "id": 36,
       "name": "USD/TRY"
     },
     {
-      "id": 39,
+      "id": 37,
       "name": "USD/MXN"
     }
+    {
+      "id": 38,
+      "name": "USD/AUD"
+    },
+    {
+      "id": 39,
+      "name": "CHF/AUD"
+    },
+    {
+      "id": 40,
+      "name": "JPY/AUD"
+    },
+    {
+      "id": 41,
+      "name": "NZD/AUD"
+    },
+    {
+      "id": 42,
+      "name": "CAD/CHF"
+    },
+    {
+      "id": 43,
+      "name": "CAD/JPY"
+    },
+    {
+      "id": 44,
+      "name": "CHF/JPY"
+    },
+    {
+      "id": 45,
+      "name": "EUR/AUD"
+    },
+    {
+      "id": 46,
+      "name": "CAD/EUR"
+    },
+    {
+      "id": 47,
+      "name": "CHF/EUR"
+    },
+    {
+      "id": 48,
+      "name": "GBP/EUR"
+    },
+    {
+      "id": 49,
+      "name": "JPY/EUR"
+    },
+    {
+      "id": 50,
+      "name": "NZD/EUR"
+    },
+    {
+      "id": 51,
+      "name": "AUD/GBP"
+    },
+    {
+      "id": 52,
+      "name": "CAD/GBP"
+    },
+    {
+      "id": 53,
+      "name": "CHF/GBP"
+    },
+    {
+      "id": 54,
+      "name": "JPY/GBP"
+    },
+    {
+      "id": 55,
+      "name": "GBP/NZD"
+    },
+    {
+      "id": 56,
+      "name": "USD/GBP"
+    },
+    {
+      "id": 57,
+      "name": "NZD/AUD"
+    },
+    {
+      "id": 58,
+      "name": "CAD/NZD"
+    },
+    {
+      "id": 59,
+      "name": "CHF/NZD"
+    },
+    {
+      "id": 60,
+      "name": "JPY/NZD"
+    },
+    {
+      "id": 61,
+      "name": "USD/NZD"
+    },
+    {
+      "id": 62,
+      "name": "USD/CAD"
+    },
+    {
+      "id": 63,
+      "name": "CHF/USD"
+    },
+    {
+      "id": 64,
+      "name": "JPY/USD"
+    },
+    {
+      "id": 65,
+      "name": "HKD/USD"
+    },
+    {
+      "id": 66,
+      "name": "SGD/USD"
+    },
+    {
+      "id": 67,
+      "name": "SEK/USD"
+    },
+    {
+      "id": 68,
+      "name": "NOK/USD"
+    },
+    {
+      "id": 69,
+      "name": "INR/USD"
+    },
+    {
+      "id": 70,
+      "name": "BRL/USD"
+    },
+    {
+      "id": 71,
+      "name": "ZAR/USD"
+    },
+    {
+      "id": 72,
+      "name": "TRY/USD"
+    },
+    {
+      "id": 73,
+      "name": "MXN/USD"
+    },
+    {
+      "id": 74,
+      "name": "AUD/EUR"
+    },
+    {
+      "id": 75,
+      "name": "EUR/DKK"
+    },
+    {
+      "id": 75,
+      "name": "DKK/EUR"
+    },
+    {
+      "id": 76,
+      "name": "EUR/HKD"
+    },
+    {
+      "id": 77,
+      "name": "HKD/EUR"
+    },
+    {
+      "id": 78,
+      "name": "EUR/NOK"
+    },
+    {
+      "id": 78,
+      "name": "NOK/EUR"
+    },
+    {
+      "id": 79,
+      "name": "EUR/PLN"
+    },
+    {
+      "id": 80,
+      "name": "PLN/EUR"
+    },
+    {
+      "id": 81,
+      "name": "EUR/SEK"
+    },
+    {
+      "id": 82,
+      "name": "SEK/EUR"
+    },
+    {
+      "id": 83,
+      "name": "EUR/TRY"
+    },
+    {
+      "id": 84,
+      "name": "TRY/EUR"
+    },
+    {
+      "id": 85,
+      "name": "EUR/USD"
+    },
+    {
+      "id": 86,
+      "name": "USD/EUR"
+    },
+    {
+      "id": 87,
+      "name": "GBP/DKK"
+    },
+    {
+      "id": 88,
+      "name": "DKK/GBP"
+    },
+    {
+      "id": 89,
+      "name": "GBP/PLN"
+    },
+    {
+      "id": 90,
+      "name": "PLN/GBP"
+    },
+    {
+      "id": 91,
+      "name": "GBP/SEK"
+    },
+    {
+      "id": 92,
+      "name": "SEK/GBP"
+    },
+    {
+      "id": 93,
+      "name": "USD/CZK"
+    },
+    {
+      "id": 94,
+      "name": "CZK/USD"
+    },
+    {
+      "id": 95,
+      "name": "USD/DKK"
+    },
+    {
+      "id": 96,
+      "name": "DKK/USD"
+    },
+    {
+      "id": 97,
+      "name": "USD/HUF"
+    },
+    {
+      "id": 98,
+      "name": "HUF/USD"
+    },
+    {
+      "id": 99,
+      "name": "USD/PLN"
+    },
+    {
+      "id": 100,
+      "name": "PLN/USD"
+    },
+    {
+      "id": 101,
+      "name": "XAG/USD"
+    },
+    {
+      "id": 102,
+      "name": "USD/XAG"
+    },
+    {
+      "id": 103,
+      "name": "XAU/EUR"
+    },
+    {
+      "id": 104,
+      "name": "EUR/XAU"
+    },
+    {
+      "id": 105,
+      "name": "XAU/USD"
+    },
+    {
+      "id": 106,
+      "name": "USD/XAU"
+    }
+    
 ]
