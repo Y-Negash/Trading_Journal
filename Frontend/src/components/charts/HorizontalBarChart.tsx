@@ -11,6 +11,11 @@ const HorizontalBarChart: React.FC<ChartProps> = ({ trades }) => {
   const totalRisk = riskToRewardRatio.totalRisk;
   const totalReward = riskToRewardRatio.totalReward;
 
+  let ratio = getRiskToRewardRatio(trades).ratio.toFixed(0);
+   if(trades.length === 0){
+    ratio = '0';
+   }
+
   const data = {
     labels: ['Risk', 'Reward'],
     datasets: [
@@ -53,9 +58,16 @@ const HorizontalBarChart: React.FC<ChartProps> = ({ trades }) => {
 
 
   return (
-    <div className="bar-chart">
-      <Bar data={data} key="risk-reward-chart" options={options} />
-    </div>
+    <section aria-labelledby="risk-reward" className="bar-chart chart">
+      <h3 id="risk-reward" className="sr-only">Risk To Reward Chart</h3>
+      <div id="bar">
+        <Bar data={data} options={options}/>
+      </div>
+      <div className="ratio-container">
+        <p className="count">{ratio}</p>
+        <h2 className="chart-title">Risk to Reward Ratio</h2>
+      </div>
+    </section>
   );
 };
 
