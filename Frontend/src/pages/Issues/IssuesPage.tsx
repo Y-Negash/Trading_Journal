@@ -40,10 +40,10 @@ const IssuesPage: React.FC<IssuePageProps> = ({issues, deleteIssue}) => {
     return(
         <div className="issue-page page-container">
             <NavBar />
+            <header>
+                <h3 className='title'>Your Issues</h3>
+            </header>
             <main>
-                <header>
-                    <h3 id="issuepage-title">Your Issues</h3>
-                </header>
                 <section aria-labelledby="issue-list-header" className="issue-container">
                     <h3 id="issue-list-header" className="sr-only">List of recorded Issues</h3>
                     {mappedIssues}
