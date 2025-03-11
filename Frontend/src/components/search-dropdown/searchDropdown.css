@@ -1,6 +1,5 @@
 .dropdown-container {
     position: relative;
-    cursor: default;
     border-color: transparent transparent #999;
     border-width: 0 5px 5px;
 }

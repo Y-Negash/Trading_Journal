@@ -43,7 +43,7 @@ const SearchDropdown: React.FC<SearchDropdownProps> = ({
         <div className="dropdown-container">
             <input
                 type="text"
-                placeholder="Choose option..."
+                placeholder="Start typing..."
                 value={name ? name : searchQuery}
                 onChange={handleChange}
                 onClick={() => setIsOpen(!isOpen)}
