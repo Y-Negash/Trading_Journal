@@ -90,7 +90,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
 
 
     return(
-        <article className="form-container">
+        <section className="form-container">
         <h2 id="form-title">New Trade </h2>
         <form onSubmit={handleSubmit} className="trade-form">
         <div className="trade-fields">
@@ -175,7 +175,7 @@ const TradeForm: React.FC<TradeFormProps> = ({
             <button type="submit">Submit</button>
         </div>
         </form>
-        </article>
+        </section>
     )
 }
 

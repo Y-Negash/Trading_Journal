@@ -19,7 +19,7 @@ const Dashboard: React.FC<DashboardProps> = ({addTrade, trades, issues}) => {
                         <IssueWidget issues={issues}/>
                     </div>
                 </section>
-                <section aria-labelledby="dashboard-form-header">
+                <section aria-labelledby="dashboard-form-header" className="form">
                     <h2 id="dashboard-form-header" className="sr-only">Dashboard Controls</h2>
                         <TradeForm addTrade={addTrade} />
                 </section>

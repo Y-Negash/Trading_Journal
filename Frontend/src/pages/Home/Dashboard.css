@@ -23,6 +23,10 @@
     margin-top: 1rem;
 }
 
+.form {
+    display: flex;
+}
+
 @media (min-width: 2560px){
     .dashboard main{
         gap: 5rem;

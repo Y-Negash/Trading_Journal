@@ -48,9 +48,9 @@
     color: #333;
 }
 
-@media (min-width: 2560px){
+@media (min-width: 2000px){
     .dropdown-input{
-        padding: 1.5rem;
+        padding: 1.4rem;
         font-size: x-large;
     }
 
@@ -60,11 +60,6 @@
     }
 
     .arrow{
-        border-color: #999 transparent transparent;
-        border-style: solid;
-        border-width: 20px 15px 0;
-        position: absolute;
-        right: 1rem;
-        top: 2rem;
+        border-color: transparent;
     }
 }
