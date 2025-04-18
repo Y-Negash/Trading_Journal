@@ -70,13 +70,14 @@ input {
 .calculator-links {
     grid-column: span 2;
     display: flex;
-    justify-content: space-between;
-    background-color: var(--button-color2);
-    text-align: center;
-    border-radius: 1.3rem 0rem;
-    position: relative;
-    bottom: 0.5rem;
+    justify-content: space-evenly;
     height: fit-content;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.calculator-links span {
+    margin: 0.5rem;
 }
 
 #issue-name {
@@ -136,7 +137,6 @@ input {
 }
 
 .calculator-links > a {
-    padding: 8px 0px;
     font-size: 0.9rem;
     width: 100%;
     color: darkblue;
