@@ -3,7 +3,7 @@
     background-color: white;
     border-radius: 1rem;
     flex-direction: column;
-    flex-grow: 1;
+    width: 100%;
 }
 
 
@@ -21,7 +21,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     width: 45%;
-    padding: 0.5rem 2rem;
+    /* padding: 0.5rem 2rem; */
+    margin: 1rem 0;
+    padding: 0 2rem;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.229);
     border-radius: 1rem;
     
@@ -31,9 +33,11 @@
     display: flex;
     flex-direction: column;
     width: 45%;
-    padding: 0.5rem 2rem;
+    margin: 1rem 0;
+    padding: 0 2rem;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.229);
     border-radius: 1rem;
+    /* background-color: yellow; */
 }
 
 .label-input-pair {
@@ -148,8 +152,9 @@ input {
     font-weight: 700;
     cursor: pointer;
     transition: border-color 0.25s;
-    padding: 0.6rem;
+    padding: 0.4rem;
     margin-left: 45%;
+    margin-bottom: 0.5rem;
     border: none;
 }
 
@@ -159,42 +164,55 @@ input {
 }
 
 @media (min-width: 2000px){
-
-    .issue-fields {
-        margin-top: 0.5rem;
-    }
     
     label {
         font-weight: bold;
-        font-size: 25px;
+        font-size: 1.5rem;
     }
     
-    input {
-        padding: 1.5rem;
-        font-size: 20px;
+    input, #date, #issue-description {
+        padding: 1rem;
+        font-size: 1rem;
+        border-color: black;
+    }
+
+    #issue-name-input {
+        width: 100%;
     }
 
     .calculator-links > a {
         font-size: 1.5rem;
     }
     .error {
-        font-size: large;
+        font-size: 2rem;
     }
     
     #note {
         font-size: x-large;        
     }
-    
+
     #issue-description {
-        height: 100%;
+        font-size: x-large;
+        height: 60%;
+    }
+
+    .issue-fields button {
+        margin-top: 2rem;
+        font-size: 2.5rem;
     }
     
     #form-title {
         font-size: 2rem;
     }
+
+    .trade-fields {
+        display: flex;
+        flex-direction: column;
+    }
+
 }
 
-@media (min-width: 1700px) and (max-width: 1900px){
+@media (min-width: 1600px) and (max-width: 2000px){
    
    label {
        font-weight: bold;
@@ -215,21 +233,19 @@ input {
    }
 
    .calculator-links > a {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
    }
 }
 
-@media (min-width: 510px) and (max-width: 1245px) {
-    .form-container {
-        width: 100%;
-    }
+@media (min-width: 510px) and (max-width: 1500px) {
+    
     .trade-form{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         width: 100%;
-        gap: 0;
+        gap: 1rem;
     }
     
     .trade-fields, .issue-fields{
@@ -253,6 +269,7 @@ input {
         margin: 0rem 6rem;
         padding: 0.8rem;
     }
+
 }
 
 @media (max-width: 510px) {
