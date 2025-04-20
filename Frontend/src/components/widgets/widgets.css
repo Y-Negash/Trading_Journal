@@ -105,7 +105,7 @@
     .unavailable-display {
         color: gray;
         font-size: 1.3rem;       
-        padding: 2rem; 
+        margin: 4rem;
         height: 85%;
         display: flex;
         align-items: center;
