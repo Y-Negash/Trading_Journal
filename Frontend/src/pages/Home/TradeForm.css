@@ -107,6 +107,10 @@ input {
     font-family: Arial;
 }
 
+#note-icon {
+    margin-right: 0.6rem;
+}
+
 
 #issue-description {
     min-height: 11rem;

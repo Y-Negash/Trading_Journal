@@ -3,7 +3,7 @@ import './TradeForm.css';
 import SearchDropdown from "../../components/search-dropdown/SearchDropdown";
 import { TradeFormProps } from "../../interfaces";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUpRightFromSquare, faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -161,7 +161,10 @@ const TradeForm: React.FC<TradeFormProps> = ({
             </div>
         </div>
         <div className="issue-fields">
-            <label id="issue-name">Issue Name<span id="note">Note - Adding an issue is optional</span> </label>
+            <label id="issue-name">Issue Name<span id="note">
+                <span id="note-icon"><FontAwesomeIcon icon={faCircleExclamation}/></span>
+                    Adding an issue is optional
+                </span> </label>
             <input 
                 id="issue-name-input" 
                 type="text" 
