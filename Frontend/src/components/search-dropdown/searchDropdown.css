@@ -50,8 +50,9 @@
 
 @media (min-width: 2000px){
     .dropdown-input{
-        padding: 1.4rem;
-        font-size: x-large;
+        padding: 1rem;
+        font-size: 1rem; 
+        border-color: black;      
     }
 
     .options{

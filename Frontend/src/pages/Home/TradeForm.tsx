@@ -2,6 +2,8 @@ import { FormEvent, useState } from "react";
 import './TradeForm.css';
 import SearchDropdown from "../../components/search-dropdown/SearchDropdown";
 import { TradeFormProps } from "../../interfaces";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare, faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -152,12 +154,17 @@ const TradeForm: React.FC<TradeFormProps> = ({
                     />
                 </div>   
             <div className="calculator-links">
-                <a href="https://www.forextime.com/uk/trading-tools/trading-calculator/pip-calculator" target="_blank">Pip Calculator</a>
-                <a href="https://www.myfxbook.com/forex-calculators/position-size" target="_blank">Position Size Calculator</a>
+                <a href="https://www.forextime.com/uk/trading-tools/trading-calculator/pip-calculator" target="_blank">
+                <span><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></span>Pip Calculator</a>
+                <a href="https://www.myfxbook.com/forex-calculators/position-size" target="_blank">
+                <span><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></span>Position Size Calculator</a>
             </div>
         </div>
         <div className="issue-fields">
-            <label id="issue-name">Issue Name<span id="note">Note - Adding an issue is optional</span> </label>
+            <label id="issue-name">Issue Name<span id="note">
+                <span id="note-icon"><FontAwesomeIcon icon={faCircleExclamation}/></span>
+                    Adding an issue is optional
+                </span> </label>
             <input 
                 id="issue-name-input" 
                 type="text" 
